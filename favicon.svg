@@ -1,0 +1,6 @@
+<!-- favicon.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="#5A67D8"/>
+  <path d="M35 45L50 60L75 35" stroke="white" stroke-width="8" fill="none"/>
+  <text x="50" y="85" text-anchor="middle" fill="white" font-size="14" font-family="Arial">BMI</text>
+</svg>

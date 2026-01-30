@@ -1,0 +1,17 @@
+# robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /cgi-bin/
+
+# Sitemap location
+Sitemap: https://harmony-bmi-calculator.com/sitemap.xml
+Sitemap: https://www.harmony-bmi-calculator.com/sitemap.xml
+
+# Crawl delay (optional)
+# Crawl-delay: 10
+
+# Allow Google AdSense bot
+User-agent: Mediapartners-Google
+Allow: /

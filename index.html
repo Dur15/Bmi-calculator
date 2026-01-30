@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator - Calculate Your Body Mass Index</title>
+  <meta name="description" content="Free online BMI calculator. Learn about Body Mass Index, its categories, and health implications. Get personalized recommendations.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6647512446024977"
+     crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-6647512446024977">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <!-- Add these lines after your existing meta tags -->
+   <link rel="icon" href="favicon.ico" type="image/x-icon">
+   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+   <link rel="manifest" href="manifest.json">
+   <meta name="theme-color" content="#5A67D8">
+   <meta name="msapplication-TileColor" content="#5A67D8">
+   <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Harmony BMI Calculator",
+        "description": "Free online Body Mass Index calculator with comprehensive health guides and articles",
+        "url": "https://harmony-bmi-calculator.com",
+        "applicationCategory": "HealthApplication",
+        "operatingSystem": "Any",
+        "author": {
+          "@type": "Organization",
+          "name": "Harmony BMI Calculator"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+  <div class="bg-circle circle-3"></div>
+
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-calculator"></i>
+        <span>BMI Calculator</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="/" class="active"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#calculator"><i class="fas fa-calculator"></i> Calculator</a></li>
+        <li><a href="#guide"><i class="fas fa-book"></i> BMI Guide</a></li>
+        <li><a href="blog.html"><i class="fas fa-newspaper"></i> Articles</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Medical Disclaimer Banner -->
+  <div class="medical-disclaimer glass-card">
+    <div class="disclaimer-icon">
+      <i class="fas fa-shield-alt"></i>
+    </div>
+    <div class="disclaimer-content">
+      <h4>Medical Disclaimer</h4>
+      <p>This tool provides general health information based on WHO BMI guidelines. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        <span class="title-line">Understand Your</span>
+        <span class="title-line accent">Body Mass Index</span>
+      </h1>
+      <p class="hero-subtitle">
+        BMI is a simple screening tool to estimate healthy weight ranges. 
+        Use our calculator to check your BMI and learn how it impacts your health.
+      </p>
+      <a href="#calculator" class="hero-button">
+        <i class="fas fa-calculator"></i>
+        Calculate Now
+      </a>
+    </div>
+    <div class="hero-illustration">
+      <div class="illustration-circle"></div>
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Healthy lifestyle" class="illustration-img" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section id="calculator" class="calculator-section">
+    <div class="calculator-container">
+      <div class="glass-card calculator-card">
+        <div class="card-header">
+          <h2><i class="fas fa-calculator"></i> BMI Calculator</h2>
+          <div class="theme-switch">
+            <label class="switch">
+              <input type="checkbox" id="unitSwitch">
+              <span class="slider"></span>
+            </label>
+            <span class="switch-label">Imperial Units</span>
+          </div>
+        </div>
+        <form id="bmiForm" class="calculator-form">
+          <div class="input-group">
+            <label for="age"><i class="fas fa-user"></i> Age (2-120 years)</label>
+            <div class="input-wrapper">
+              <input type="number" id="age" placeholder="Age in years" min="2" max="120" required>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="height"><i class="fas fa-ruler-vertical"></i> Height</label>
+            <div class="input-wrapper">
+              <input type="number" id="height" placeholder="Height in centimeters" step="0.1" required>
+              <span class="input-unit" id="heightUnit">cm</span>
+            </div>
+          </div>
+          <div class="input-group">
+            <label for="weight"><i class="fas fa-weight"></i> Weight</label>
+            <div class="input-wrapper">
+              <input type="number" id="weight" placeholder="Weight in kilograms" step="0.1" required>
+              <span class="input-unit" id="weightUnit">kg</span>
+            </div>
+          </div>
+          <button type="submit" class="calculate-btn">
+            <i class="fas fa-calculator"></i> Calculate BMI
+          </button>
+        </form>
+      </div>
+
+      <!-- Enhanced BMI Result Section -->
+      <div class="glass-card result-card">
+        <div id="result" class="result-placeholder">
+          <div class="placeholder-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Your BMI Result</h3>
+          <p>Enter your details to calculate your Body Mass Index</p>
+        </div>
+        
+        <div class="result-visualization">
+          <div class="bmi-scale">
+            <div class="scale-bar">
+              <div class="scale-segment underweight" data-range="<18.5"></div>
+              <div class="scale-segment normal" data-range="18.5-24.9"></div>
+              <div class="scale-segment overweight" data-range="25-29.9"></div>
+              <div class="scale-segment obese" data-range="30+"></div>
+            </div>
+            <div class="scale-marker"></div>
+            <div class="scale-labels">
+              <span>Underweight</span>
+              <span>Healthy</span>
+              <span>Overweight</span>
+              <span>Obese</span>
+            </div>
+          </div>
+          
+          <div class="health-recommendation">
+            <div id="tips" class="tips-content">
+              <div class="tips-header">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Health Recommendations</h3>
+              </div>
+              <p class="tips-text">
+                BMI is a screening tool that estimates body fat based on height and weight. 
+                While useful for population studies, it has limitations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Section -->
+  <section id="guide" class="guide-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <i class="fas fa-book-open"></i> BMI Guide
+      </h2>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <div class="guide-icon">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <h3>What is BMI?</h3>
+          <p>
+            Body Mass Index (BMI) is a value derived from mass (weight) and height. 
+            It's used to categorize weight ranges that may lead to health problems.
+          </p>
+          <ul>
+            <li><i class="fas fa-check-circle"></i> Underweight: BMI < 18.5</li>
+            <li><i class="fas fa-check-circle"></i> Normal weight: 18.5–24.9</li>
+            <li><i class="fas fa-check-circle"></i> Overweight: 25–29.9</li>
+            <li><i class="fas fa-check-circle"></i> Obese: BMI ≥ 30</li>
+          </ul>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <h3>How to Calculate</h3>
+          <p>
+            The formula is:
+            <code>BMI = weight (kg) / (height (m))²</code>
+            For imperial units:
+            <code>BMI = [weight (lbs) / (height (in))²] × 703</code>
+          </p>
+        </div>
+        <div class="guide-card">
+          <div class="guide-icon">
+            <i class="fas fa-heartbeat"></i>
+          </div>
+          <h3>Health Implications</h3>
+          <p>
+            BMI correlates with body fat and health risks:
+          </p>
+          <ul>
+            <li><i class="fas fa-arrow-up"></i> High BMI → Increased risk of heart disease, diabetes</li>
+            <li><i class="fas fa-arrow-down"></i> Low BMI → Nutritional deficiencies, osteoporosis</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="guide-section">
+    <div class="section-container">
+      <h2 class="section-title">
+        <i class="fas fa-question-circle"></i> Frequently Asked Questions
+      </h2>
+      
+      <div class="faq-container">
+        <div class="faq-card">
+          <div class="faq-question">
+            <h3>How accurate is BMI for measuring health?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>BMI is a useful population-level screening tool but has limitations for individuals. It doesn't distinguish between muscle and fat, and may be less accurate for:</p>
+            <ul>
+              <li>Athletes with high muscle mass</li>
+              <li>Pregnant women</li>
+              <li>Elderly individuals with muscle loss</li>
+              <li>Certain ethnic groups with different body compositions</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-card">
+          <div class="faq-question">
+            <h3>Should children use the same BMI categories?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>No, pediatric BMI uses age and sex-specific percentiles. For children 2-19 years old:</p>
+            <ul>
+              <li><strong>Underweight:</strong> BMI < 5th percentile</li>
+              <li><strong>Healthy weight:</strong> 5th to <85th percentile</li>
+              <li><strong>Overweight:</strong> 85th to <95th percentile</li>
+              <li><strong>Obese:</strong> ≥95th percentile</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-card">
+          <div class="faq-question">
+            <h3>What are better alternatives to BMI?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>For more precise health assessments, consider:</p>
+            <ul>
+              <li><strong>Waist circumference:</strong> Measures abdominal fat</li>
+              <li><strong>Body fat percentage:</strong> Via skinfold calipers or DEXA scans</li>
+              <li><strong>Waist-to-hip ratio:</strong> Better predictor of cardiovascular risk</li>
+              <li><strong>Blood tests:</strong> Cholesterol, blood sugar, etc.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="faq-card">
+          <div class="faq-question">
+            <h3>Why does BMI matter for health?</h3>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>BMI correlates with several health risks:</p>
+            <ul>
+              <li><strong>High BMI:</strong> Increased risk of type 2 diabetes, hypertension, heart disease</li>
+              <li><strong>Low BMI:</strong> Higher risk of osteoporosis, anemia, immune issues</li>
+            </ul>
+            <p>However, BMI is just one indicator among many for health assessment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fas fa-calculator"></i>
+          <span>BMI Calculator</span>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <a href="/">Home</a>
+          <a href="#calculator">Calculator</a>
+          <a href="#guide">BMI Guide</a>
+          <a href="blog.html">Articles</a>
+          <a href="about.html">About Us</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="contact.html" style="color: #a0aec0;">Contact: support@bmicalculator.example.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

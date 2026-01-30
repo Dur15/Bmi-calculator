@@ -1,0 +1,21 @@
+# .gitignore
+
+# Sensitive data
+config.js
+.env
+.env.local
+secrets.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
