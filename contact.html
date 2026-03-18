@@ -11,35 +11,32 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    <!-- Add these lines after your existing meta tags -->
-   <link rel="icon" href="favicon.ico" type="image/x-icon">
-   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-   <link rel="manifest" href="manifest.json">
-   <meta name="theme-color" content="#5A67D8">
-   <meta name="msapplication-TileColor" content="#5A67D8">
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6647512446024977"
-     crossorigin="anonymous"></script>
-   <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Harmony BMI Calculator",
-        "description": "Free online Body Mass Index calculator with comprehensive health guides and articles",
-        "url": "https://harmony-bmi-calculator.com",
-        "applicationCategory": "HealthApplication",
-        "operatingSystem": "Any",
-        "author": {
-          "@type": "Organization",
-          "name": "Harmony BMI Calculator"
-        },
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#5A67D8">
+  <meta name="msapplication-TileColor" content="#5A67D8">
+  <!-- Structured Data for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Harmony BMI Calculator",
+      "description": "Free online Body Mass Index calculator with comprehensive health guides and articles",
+      "url": "https://harmony-bmi-calculator.com",
+      "applicationCategory": "HealthApplication",
+      "operatingSystem": "Any",
+      "author": {
+        "@type": "Organization",
+        "name": "Harmony BMI Calculator"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       }
-    </script>
+    }
+  </script>
 </head>
 <body>
   <!-- Background Elements -->
@@ -74,44 +71,6 @@
       <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: var(--gray);">
         Have questions, feedback, or need support? We're here to help you with BMI calculations, health information, or any technical issues.
       </p>
-
-      <div class="guide-grid">
-        <div class="guide-card">
-          <div class="guide-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <h3>General Inquiries</h3>
-          <p>For general questions, feedback, or information about our services:</p>
-          <p style="margin-top: 15px;">
-            <strong>Email:</strong> info@bmicalculator.example.com<br>
-            <strong>Response Time:</strong> 24-48 hours
-          </p>
-        </div>
-
-        <div class="guide-card">
-          <div class="guide-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Privacy & Data Questions</h3>
-          <p>For privacy concerns, data requests, or GDPR/CCPA inquiries:</p>
-          <p style="margin-top: 15px;">
-            <strong>Email:</strong> privacy@bmicalculator.example.com<br>
-            <strong>Data Protection Officer:</strong> dpo@bmicalculator.example.com
-          </p>
-        </div>
-
-        <div class="guide-card">
-          <div class="guide-icon">
-            <i class="fas fa-handshake"></i>
-          </div>
-          <h3>Partnership & Business</h3>
-          <p>For business partnerships, advertising, or collaboration opportunities:</p>
-          <p style="margin-top: 15px;">
-            <strong>Email:</strong> partnerships@bmicalculator.example.com<br>
-            <strong>Business Hours:</strong> Mon-Fri, 9AM-5PM PST
-          </p>
-        </div>
-      </div>
 
       <div class="glass-card" style="margin-top: 40px;">
         <h2 style="text-align: center; margin-bottom: 30px;"><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
@@ -150,17 +109,6 @@
           </button>
         </form>
       </div>
-
-      <div class="glass-card" style="margin-top: 40px; text-align: center;">
-        <h2><i class="fas fa-map-marker-alt"></i> Mailing Address</h2>
-        <div style="margin: 25px 0;">
-          <p style="font-size: 1.1rem; line-height: 1.8;">
-            <strong>BMI Calculator</strong><br>
-            123 Health Tech Avenue, Suite 456<br>
-            San Francisco, CA 94107<br>
-            United States
-          </p>
-        </div>
         
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
           <div style="background: rgba(90, 103, 216, 0.05); padding: 20px; border-radius: 10px; min-width: 200px;">
@@ -221,7 +169,7 @@
       </div>
       
       <div class="footer-copyright">
-        <p>&copy; 2025 BMI Calculator. All rights reserved. | Contact: support@bmicalculator.example.com</p>
+        <p>&copy; 2025 BMI Calculator. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -230,14 +178,11 @@
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // For demo purposes - in production, this would connect to a backend
       alert('Thank you for your message! This is a demo form. In a real implementation, this would send your message to our team.');
       
-      // Reset form
       this.reset();
     });
   </script>
   <script src="script.js"></script>
 </body>
 </html>
-
