@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - BMI Calculator | Get in Touch</title>
   <meta name="description" content="Contact BMI Calculator team for questions, feedback, or support. We're here to help with health information, technical issues, or partnership inquiries.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6647512446024977"
+     crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-6647512446024977">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +20,6 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-    
       "@type": "WebApplication",
       "name": "Harmony BMI Calculator",
       "description": "Free online Body Mass Index calculator with comprehensive health guides and articles",
@@ -54,12 +55,14 @@
         <i class="fas fa-bars"></i>
       </button>
       <ul class="nav-links">
-        <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> Calculator</a></li>
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li>
         <li><a href="index.html#guide"><i class="fas fa-book"></i> BMI Guide</a></li>
+        <li><a href="body-fat-calculator.html"><i class="fas fa-dumbbell"></i> Body Fat</a></li>
+        <li><a href="calorie-counter.html"><i class="fas fa-utensils"></i> Calories</a></li>
         <li><a href="blog.html"><i class="fas fa-newspaper"></i> Articles</a></li>
         <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-        <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -109,24 +112,23 @@
         </form>
       </div>
         
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
-          <div style="background: rgba(90, 103, 216, 0.05); padding: 20px; border-radius: 10px; min-width: 200px;">
-            <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-clock"></i> Response Times</h4>
-            <p style="font-size: 0.9rem;">
-              General Inquiries: 24-48 hours<br>
-              Technical Support: 24 hours<br>
-              Privacy Requests: 72 hours
-            </p>
-          </div>
-          
-          <div style="background: rgba(90, 103, 216, 0.05); padding: 20px; border-radius: 10px; min-width: 200px;">
-            <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-globe"></i> Global Support</h4>
-            <p style="font-size: 0.9rem;">
-              Available in English<br>
-              Multilingual support planned<br>
-              Worldwide accessibility
-            </p>
-          </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px;">
+        <div style="background: rgba(90, 103, 216, 0.05); padding: 20px; border-radius: 10px; min-width: 200px;">
+          <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-clock"></i> Response Times</h4>
+          <p style="font-size: 0.9rem;">
+            General Inquiries: 24-48 hours<br>
+            Technical Support: 24 hours<br>
+            Privacy Requests: 72 hours
+          </p>
+        </div>
+        
+        <div style="background: rgba(90, 103, 216, 0.05); padding: 20px; border-radius: 10px; min-width: 200px;">
+          <h4 style="color: var(--primary); margin-bottom: 10px;"><i class="fas fa-globe"></i> Global Support</h4>
+          <p style="font-size: 0.9rem;">
+            Available in English<br>
+            Multilingual support planned<br>
+            Worldwide accessibility
+          </p>
         </div>
       </div>
 
@@ -151,9 +153,10 @@
         </div>
         <div class="footer-links">
           <h3>Quick Links</h3>
-          <a href="/">Home</a>
-          <a href="index.html#calculator">Calculator</a>
-          <a href="index.html#guide">BMI Guide</a>
+          <a href="index.html">Home</a>
+          <a href="index.html#calculator">BMI Calc</a>
+          <a href="body-fat-calculator.html">Body Fat</a>
+          <a href="calorie-counter.html">Calorie Counter</a>
           <a href="blog.html">Articles</a>
           <a href="about.html">About Us</a>
           <a href="privacy-policy.html">Privacy Policy</a>
@@ -174,12 +177,31 @@
   </footer>
 
   <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
       
-      alert('Thank you for your message! This is a demo form. In a real implementation, this would send your message to our team.');
-      
-      this.reset();
+      if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          alert('Thank you for your message! This is a demo form. In a real implementation, this would send your message to our team.');
+          
+          this.reset();
+        });
+      }
+
+      // Mobile navigation
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+          this.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        });
+      }
     });
   </script>
   <script src="script.js"></script>
