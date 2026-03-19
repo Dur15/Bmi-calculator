@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calorie Counter - Calculate Your Daily Calorie Needs | BMI Calculator</title>
+  <meta name="description" content="Free online calorie counter and calculator. Calculate your Total Daily Energy Expenditure (TDEE) and get personalized calorie recommendations for weight management.">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6647512446024977" crossorigin="anonymous"></script>
+  <meta name="google-adsense-account" content="ca-pub-6647512446024977">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#5A67D8">
+  <meta name="msapplication-TileColor" content="#5A67D8">
+  <style>
+    .macro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .macro-card {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 16px;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .macro-card:hover {
+      transform: translateY(-3px);
+      background: white;
+      box-shadow: var(--shadow-sm);
+    }
+    .macro-card h4 {
+      color: var(--gray);
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+    .macro-value {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin: 5px 0;
+    }
+    .macro-unit {
+      font-size: 0.8rem;
+      color: var(--gray);
+    }
+    .weight-change {
+      font-size: 1.1rem;
+      padding: 15px;
+      border-radius: 12px;
+      margin: 15px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+    .weight-loss {
+      background: rgba(247, 37, 133, 0.1);
+      color: #F72585;
+    }
+    .weight-maintain {
+      background: rgba(67, 97, 238, 0.1);
+      color: #4361EE;
+    }
+    .weight-gain {
+      background: rgba(76, 201, 240, 0.1);
+      color: #4CC9F0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Elements -->
+  <div class="bg-circle circle-1"></div>
+  <div class="bg-circle circle-2"></div>
+  <div class="bg-circle circle-3"></div>
+
+  <!-- Navigation -->
+  <nav class="glass-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-brand">
+        <i class="fas fa-calculator"></i>
+        <span>BMI Calculator</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li>
+        <li><a href="index.html#guide"><i class="fas fa-book"></i> BMI Guide</a></li>
+        <li><a href="body-fat-calculator.html"><i class="fas fa-dumbbell"></i> Body Fat</a></li>
+        <li><a href="calorie-counter.html"><i class="fas fa-utensils"></i> Calories</a></li>
+        <li><a href="blog.html"><i class="fas fa-newspaper"></i> Articles</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="guide-section">
+    <div class="section-container">
+      <h1 class="section-title"><i class="fas fa-utensils"></i> Calorie Counter & TDEE Calculator</h1>
+      <p style="text-align: center; margin-bottom: 40px; font-size: 1.1rem; color: var(--gray);">
+        Calculate your Total Daily Energy Expenditure (TDEE) and get personalized calorie recommendations for weight loss, maintenance, or muscle gain.
+      </p>
+
+      <div class="calculator-container" style="grid-template-columns: 1fr;">
+        <!-- Calculator Card -->
+        <div class="glass-card" style="margin-bottom: 30px;">
+          <div class="card-header">
+            <h2><i class="fas fa-calculator"></i> Calorie Calculator</h2>
+            <div class="theme-switch">
+              <label class="switch">
+                <input type="checkbox" id="calUnitSwitch">
+                <span class="slider"></span>
+              </label>
+              <span class="switch-label" id="calUnitLabel">Metric</span>
+            </div>
+          </div>
+
+          <!-- Formula Selector -->
+          <div class="method-selector" style="margin-bottom: 25px;">
+            <button class="method-btn active" id="methodMifflin">
+              <i class="fas fa-flask"></i> Mifflin-St Jeor
+            </button>
+            <button class="method-btn" id="methodHarris">
+              <i class="fas fa-history"></i> Harris-Benedict
+            </button>
+            <button class="method-btn" id="methodKatch">
+              <i class="fas fa-dumbbell"></i> Katch-McArdle
+            </button>
+          </div>
+
+          <form id="calorieForm">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+              <!-- Gender -->
+              <div class="input-group">
+                <label><i class="fas fa-venus-mars"></i> Gender</label>
+                <select id="calGender" style="width: 100%; padding: 12px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                </select>
+              </div>
+
+              <!-- Age -->
+              <div class="input-group">
+                <label><i class="fas fa-user"></i> Age</label>
+                <input type="number" id="calAge" placeholder="Years" min="15" max="100" required style="width: 100%; padding: 12px; border: 1px solid var(--light-gray); border-radius: 8px;">
+              </div>
+
+              <!-- Height -->
+              <div class="input-group">
+                <label><i class="fas fa-ruler-vertical"></i> Height</label>
+                <div class="input-wrapper">
+                  <input type="number" id="calHeight" placeholder="Height" step="0.1" required>
+                  <span class="input-unit" id="calHeightUnit">cm</span>
+                </div>
+              </div>
+
+              <!-- Weight -->
+              <div class="input-group">
+                <label><i class="fas fa-weight"></i> Weight</label>
+                <div class="input-wrapper">
+                  <input type="number" id="calWeight" placeholder="Weight" step="0.1" required>
+                  <span class="input-unit" id="calWeightUnit">kg</span>
+                </div>
+              </div>
+
+              <!-- Body Fat (for Katch-McArdle) -->
+              <div class="input-group" id="bodyFatGroup" style="display: none;">
+                <label><i class="fas fa-percentage"></i> Body Fat %</label>
+                <input type="number" id="bodyFat" placeholder="Body fat percentage" step="0.1" min="5" max="50">
+              </div>
+            </div>
+
+            <!-- Activity Level -->
+            <div class="activity-level">
+              <h3 style="margin-bottom: 15px;"><i class="fas fa-running"></i> Activity Level</h3>
+              
+              <div class="activity-option">
+                <input type="radio" name="activity" id="sedentary" value="1.2" checked>
+                <label for="sedentary">
+                  <strong>Sedentary</strong>
+                  <div class="activity-desc">Little or no exercise, desk job</div>
+                </label>
+              </div>
+              
+              <div class="activity-option">
+                <input type="radio" name="activity" id="light" value="1.375">
+                <label for="light">
+                  <strong>Lightly Active</strong>
+                  <div class="activity-desc">Light exercise 1-3 days/week</div>
+                </label>
+              </div>
+              
+              <div class="activity-option">
+                <input type="radio" name="activity" id="moderate" value="1.55">
+                <label for="moderate">
+                  <strong>Moderately Active</strong>
+                  <div class="activity-desc">Moderate exercise 3-5 days/week</div>
+                </label>
+              </div>
+              
+              <div class="activity-option">
+                <input type="radio" name="activity" id="active" value="1.725">
+                <label for="active">
+                  <strong>Very Active</strong>
+                  <div class="activity-desc">Hard exercise 6-7 days/week</div>
+                </label>
+              </div>
+              
+              <div class="activity-option">
+                <input type="radio" name="activity" id="extra" value="1.9">
+                <label for="extra">
+                  <strong>Extra Active</strong>
+                  <div class="activity-desc">Physical job + hard exercise</div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Weight Goals -->
+            <div style="margin: 25px 0;">
+              <h3 style="margin-bottom: 15px;"><i class="fas fa-bullseye"></i> Weight Goal</h3>
+              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                <span class="goal-badge active" data-goal="lose">Lose Weight</span>
+                <span class="goal-badge" data-goal="maintain">Maintain Weight</span>
+                <span class="goal-badge" data-goal="gain">Gain Weight</span>
+              </div>
+              
+              <div id="goalRate" style="margin-top: 15px; display: none;">
+                <label>Rate per week:</label>
+                <select id="weightRate" style="width: 100%; padding: 10px; margin-top: 8px; border: 1px solid var(--light-gray); border-radius: 8px;">
+                  <option value="0.25">Slow (0.25 kg/week)</option>
+                  <option value="0.5" selected>Moderate (0.5 kg/week)</option>
+                  <option value="1">Fast (1 kg/week)</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="calculate-btn">
+              <i class="fas fa-calculator"></i> Calculate Calories
+            </button>
+          </form>
+        </div>
+
+        <!-- Results Card -->
+        <div class="glass-card" id="calResultCard">
+          <div id="calResult" class="result-placeholder">
+            <div class="placeholder-icon">
+              <i class="fas fa-fire"></i>
+            </div>
+            <h3>Your Daily Calorie Needs</h3>
+            <p>Enter your details to calculate your TDEE and personalized calorie recommendations</p>
+          </div>
+
+          <div id="calVisualization" style="display: none;">
+            <!-- Calorie Meter -->
+            <div style="margin: 20px 0;">
+              <h3 style="text-align: center; margin-bottom: 15px;">Daily Calorie Target</h3>
+              <div style="font-size: 3rem; text-align: center; color: var(--primary); font-weight: 700;" id="tdeeDisplay">0</div>
+              <div style="text-align: center; color: var(--gray); margin-bottom: 15px;">calories per day</div>
+              
+              <div class="calorie-meter">
+                <div class="calorie-fill" id="calorieFill" style="width: 50%;"></div>
+              </div>
+            </div>
+
+            <!-- Weight Change Indicator -->
+            <div id="weightChange" class="weight-change weight-maintain" style="text-align: center; font-weight: 600;">
+              Maintain current weight
+            </div>
+
+            <!-- BMR and TDEE -->
+            <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+              <div style="text-align: center;">
+                <div style="color: var(--gray); font-size: 0.9rem;">BMR</div>
+                <div style="font-size: 1.5rem; font-weight: 600;" id="bmrDisplay">0</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="color: var(--gray); font-size: 0.9rem;">TDEE</div>
+                <div style="font-size: 1.5rem; font-weight: 600;" id="tdeeSmall">0</div>
+              </div>
+              <div style="text-align: center;">
+                <div style="color: var(--gray); font-size: 0.9rem;">Activity</div>
+                <div style="font-size: 1.5rem; font-weight: 600;" id="activityFactor">1.55</div>
+              </div>
+            </div>
+
+            <!-- Macronutrient Breakdown -->
+            <h3 style="margin: 25px 0 15px;">Recommended Macronutrients</h3>
+            <div class="macro-grid">
+              <div class="macro-card">
+                <h4>Protein</h4>
+                <div class="macro-value" id="proteinGrams">0g</div>
+                <div class="macro-unit" id="proteinCal">0 cal</div>
+              </div>
+              <div class="macro-card">
+                <h4>Carbs</h4>
+                <div class="macro-value" id="carbsGrams">0g</div>
+                <div class="macro-unit" id="carbsCal">0 cal</div>
+              </div>
+              <div class="macro-card">
+                <h4>Fats</h4>
+                <div class="macro-value" id="fatsGrams">0g</div>
+                <div class="macro-unit" id="fatsCal">0 cal</div>
+              </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="health-recommendation">
+              <div class="tips-header">
+                <i class="fas fa-lightbulb"></i>
+                <h3>Personalized Recommendations</h3>
+              </div>
+              <p id="calAdvice" style="color: var(--gray); line-height: 1.6;">
+                Focus on whole foods, adequate protein, and consistent meal timing for best results.
+              </p>
+              <ul style="margin-top: 15px; color: var(--gray);">
+                <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Spread protein intake throughout the day</li>
+                <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Include fiber-rich carbohydrates</li>
+                <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Choose healthy fats from whole foods</li>
+                <li><i class="fas fa-check-circle" style="color: var(--success);"></i> Stay hydrated (aim for 2-3L water daily)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Information Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px;">
+          <div class="guide-card">
+            <h3><i class="fas fa-info-circle"></i> What is TDEE?</h3>
+            <p>Total Daily Energy Expenditure (TDEE) is the total number of calories your body burns in a day, including:</p>
+            <ul>
+              <li><strong>BMR:</strong> Basal Metabolic Rate (60-75%)</li>
+              <li><strong>TEF:</strong> Thermic Effect of Food (10%)</li>
+              <li><strong>PA:</strong> Physical Activity (15-30%)</li>
+              <li><strong>NEAT:</strong> Non-Exercise Activity</li>
+            </ul>
+          </div>
+          
+          <div class="guide-card">
+            <h3><i class="fas fa-apple-alt"></i> Calorie Sources</h3>
+            <ul>
+              <li><strong>Protein:</strong> 4 calories per gram</li>
+              <li><strong>Carbohydrates:</strong> 4 calories per gram</li>
+              <li><strong>Fats:</strong> 9 calories per gram</li>
+              <li><strong>Alcohol:</strong> 7 calories per gram</li>
+            </ul>
+          </div>
+          
+          <div class="guide-card">
+            <h3><i class="fas fa-tips"></i> Success Tips</h3>
+            <ul>
+              <li>Track food consistently</li>
+              <li>Use a food scale for accuracy</li>
+              <li>Adjust based on progress</li>
+              <li>Prioritize protein intake</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer">
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <i class="fas fa-calculator"></i>
+          <span>BMI Calculator</span>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <a href="index.html">Home</a>
+          <a href="index.html#calculator">BMI Calc</a>
+          <a href="body-fat-calculator.html">Body Fat</a>
+          <a href="calorie-counter.html">Calorie Counter</a>
+          <a href="blog.html">Articles</a>
+          <a href="about.html">About Us</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="contact.html" style="color: #a0aec0;">Contact Us</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // DOM Elements
+      const methodMifflin = document.getElementById('methodMifflin');
+      const methodHarris = document.getElementById('methodHarris');
+      const methodKatch = document.getElementById('methodKatch');
+      const bodyFatGroup = document.getElementById('bodyFatGroup');
+      const unitSwitch = document.getElementById('calUnitSwitch');
+      const unitLabel = document.getElementById('calUnitLabel');
+      const calHeightUnit = document.getElementById('calHeightUnit');
+      const calWeightUnit = document.getElementById('calWeightUnit');
+      
+      // Goal badges
+      const goalBadges = document.querySelectorAll('.goal-badge');
+      const goalRate = document.getElementById('goalRate');
+      
+      let currentGoal = 'lose';
+
+      // Method switching
+      if (methodMifflin && methodHarris && methodKatch) {
+        methodMifflin.addEventListener('click', function() {
+          methodMifflin.classList.add('active');
+          methodHarris.classList.remove('active');
+          methodKatch.classList.remove('active');
+          if (bodyFatGroup) bodyFatGroup.style.display = 'none';
+        });
+
+        methodHarris.addEventListener('click', function() {
+          methodHarris.classList.add('active');
+          methodMifflin.classList.remove('active');
+          methodKatch.classList.remove('active');
+          if (bodyFatGroup) bodyFatGroup.style.display = 'none';
+        });
+
+        methodKatch.addEventListener('click', function() {
+          methodKatch.classList.add('active');
+          methodMifflin.classList.remove('active');
+          methodHarris.classList.remove('active');
+          if (bodyFatGroup) bodyFatGroup.style.display = 'block';
+        });
+      }
+
+      // Goal selection
+      goalBadges.forEach(badge => {
+        badge.addEventListener('click', function() {
+          goalBadges.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          currentGoal = this.dataset.goal;
+          
+          if (goalRate) {
+            if (currentGoal !== 'maintain') {
+              goalRate.style.display = 'block';
+            } else {
+              goalRate.style.display = 'none';
+            }
+          }
+        });
+      });
+
+      // Unit switching
+      function updateCalUnits() {
+        if (unitSwitch && unitLabel && calHeightUnit && calWeightUnit) {
+          if (unitSwitch.checked) {
+            unitLabel.textContent = 'Imperial';
+            calHeightUnit.textContent = 'in';
+            calWeightUnit.textContent = 'lbs';
+          } else {
+            unitLabel.textContent = 'Metric';
+            calHeightUnit.textContent = 'cm';
+            calWeightUnit.textContent = 'kg';
+          }
+        }
+      }
+
+      if (unitSwitch) {
+        unitSwitch.addEventListener('change', updateCalUnits);
+      }
+
+      // Form submission
+      const calorieForm = document.getElementById('calorieForm');
+      if (calorieForm) {
+        calorieForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const gender = document.getElementById('calGender')?.value || 'male';
+          const age = parseFloat(document.getElementById('calAge')?.value);
+          let height = parseFloat(document.getElementById('calHeight')?.value);
+          let weight = parseFloat(document.getElementById('calWeight')?.value);
+          const bodyFat = parseFloat(document.getElementById('bodyFat')?.value);
+          const activity = parseFloat(document.querySelector('input[name="activity"]:checked')?.value || 1.2);
+          const rate = parseFloat(document.getElementById('weightRate')?.value || 0.5);
+
+          // Validate inputs
+          if (!age || age < 15 || age > 100) {
+            showCalError('Please enter a valid age between 15 and 100');
+            return;
+          }
+          
+          if (!height || height <= 0) {
+            showCalError('Please enter a valid height greater than 0');
+            return;
+          }
+          
+          if (!weight || weight <= 0) {
+            showCalError('Please enter a valid weight greater than 0');
+            return;
+          }
+
+          // Convert to metric if imperial
+          if (unitSwitch && unitSwitch.checked) {
+            height *= 2.54;  // inches to cm
+            weight *= 0.453592; // lbs to kg
+          }
+
+          // Calculate BMR based on selected method
+          let bmr;
+          
+          if (methodKatch && methodKatch.classList.contains('active') && bodyFat) {
+            // Katch-McArdle formula (uses lean body mass)
+            const leanMass = weight * (1 - bodyFat / 100);
+            bmr = 370 + (21.6 * leanMass);
+          } else if (methodHarris && methodHarris.classList.contains('active')) {
+            // Harris-Benedict formula
+            if (gender === 'male') {
+              bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else {
+              bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+          } else {
+            // Mifflin-St Jeor formula (default)
+            if (gender === 'male') {
+              bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+              bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+            }
+          }
+
+          // Calculate TDEE
+          const tdee = bmr * activity;
+          
+          // Adjust based on goal
+          let targetCalories = tdee;
+          let weightChangeText = 'Maintain current weight';
+          let weightChangeClass = 'weight-maintain';
+          
+          if (currentGoal === 'lose') {
+            const deficit = rate * 1100; // ~1100 calories per kg of fat
+            targetCalories = Math.max(1200, tdee - deficit);
+            weightChangeText = `Lose ${rate} kg per week`;
+            weightChangeClass = 'weight-loss';
+          } else if (currentGoal === 'gain') {
+            const surplus = rate * 1100; // ~1100 calories per kg of muscle/fat gain
+            targetCalories = tdee + surplus;
+            weightChangeText = `Gain ${rate} kg per week`;
+            weightChangeClass = 'weight-gain';
+          }
+
+          // Calculate macros (using standard ratios)
+          const proteinGrams = weight * 2.2; // 2.2g per kg bodyweight
+          const proteinCal = proteinGrams * 4;
+          
+          const fatGrams = weight * 1; // 1g per kg bodyweight
+          const fatCal = fatGrams * 9;
+          
+          const carbsCal = targetCalories - proteinCal - fatCal;
+          const carbsGrams = carbsCal / 4;
+
+          // Display results
+          displayCalResults({
+            bmr: Math.round(bmr),
+            tdee: Math.round(tdee),
+            target: Math.round(targetCalories),
+            protein: Math.round(proteinGrams),
+            proteinCal: Math.round(proteinCal),
+            carbs: Math.round(carbsGrams),
+            carbsCal: Math.round(carbsCal),
+            fats: Math.round(fatGrams),
+            fatsCal: Math.round(fatCal),
+            activity: activity,
+            weightChange: weightChangeText,
+            weightChangeClass: weightChangeClass,
+            goal: currentGoal
+          });
+        });
+      }
+
+      function displayCalResults(data) {
+        const calResult = document.getElementById('calResult');
+        const calVisualization = document.getElementById('calVisualization');
+        
+        if (calResult && calVisualization) {
+          calResult.style.display = 'none';
+          calVisualization.style.display = 'block';
+        }
+        
+        // Update displays
+        const tdeeDisplay = document.getElementById('tdeeDisplay');
+        const bmrDisplay = document.getElementById('bmrDisplay');
+        const tdeeSmall = document.getElementById('tdeeSmall');
+        const activityFactor = document.getElementById('activityFactor');
+        
+        if (tdeeDisplay) tdeeDisplay.textContent = data.target;
+        if (bmrDisplay) bmrDisplay.textContent = data.bmr;
+        if (tdeeSmall) tdeeSmall.textContent = data.tdee;
+        if (activityFactor) activityFactor.textContent = data.activity;
+        
+        // Weight change indicator
+        const weightChange = document.getElementById('weightChange');
+        if (weightChange) {
+          weightChange.textContent = data.weightChange;
+          weightChange.className = `weight-change ${data.weightChangeClass}`;
+        }
+        
+        // Calorie fill (relative to max 4000 calories)
+        const calorieFill = document.getElementById('calorieFill');
+        if (calorieFill) {
+          const fillPercent = Math.min(100, (data.target / 4000) * 100);
+          calorieFill.style.width = fillPercent + '%';
+        }
+        
+        // Macros
+        const proteinGrams = document.getElementById('proteinGrams');
+        const proteinCal = document.getElementById('proteinCal');
+        const carbsGrams = document.getElementById('carbsGrams');
+        const carbsCal = document.getElementById('carbsCal');
+        const fatsGrams = document.getElementById('fatsGrams');
+        const fatsCal = document.getElementById('fatsCal');
+        
+        if (proteinGrams) proteinGrams.textContent = data.protein + 'g';
+        if (proteinCal) proteinCal.textContent = data.proteinCal + ' cal';
+        if (carbsGrams) carbsGrams.textContent = data.carbs + 'g';
+        if (carbsCal) carbsCal.textContent = data.carbsCal + ' cal';
+        if (fatsGrams) fatsGrams.textContent = data.fats + 'g';
+        if (fatsCal) fatsCal.textContent = data.fatsCal + ' cal';
+        
+        // Advice
+        const calAdvice = document.getElementById('calAdvice');
+        if (calAdvice) {
+          if (data.goal === 'lose') {
+            calAdvice.textContent = 'Focus on protein-rich foods to preserve muscle while losing fat. Create sustainable habits rather than extreme restriction.';
+          } else if (data.goal === 'gain') {
+            calAdvice.textContent = 'Prioritize strength training and adequate protein. Focus on nutrient-dense calories rather than empty calories.';
+          } else {
+            calAdvice.textContent = 'Maintain your current habits with balanced nutrition. Adjust calories based on activity level and hunger signals.';
+          }
+        }
+      }
+
+      function showCalError(message) {
+        const calResult = document.getElementById('calResult');
+        const calVisualization = document.getElementById('calVisualization');
+        
+        if (calResult && calVisualization) {
+          calResult.style.display = 'flex';
+          calVisualization.style.display = 'none';
+          
+          calResult.innerHTML = `
+            <div class="result-error">
+              <i class="fas fa-exclamation-triangle"></i>
+              <h3>Input Error</h3>
+              <p>${message}</p>
+            </div>
+          `;
+        }
+      }
+
+      // Mobile navigation
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+          navLinks.classList.toggle('active');
+          this.innerHTML = navLinks.classList.contains('active') 
+            ? '<i class="fas fa-times"></i>' 
+            : '<i class="fas fa-bars"></i>';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
