@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Health Articles - BMI Calculator | Evidence-Based Resources</title>
-  <meta name="description" content="Curated health articles from reputable sources including WHO, Mayo Clinic, CDC, and Harvard Health. Evidence-based information about BMI, nutrition, and wellness.">
+  <title>Health Articles - BMI Calculator | Evidence-Based Wellness Blog</title>
+  <meta name="description" content="In-depth health articles on BMI, nutrition, fitness, and mental wellness. Written by health writers with links to trusted medical sources like CDC, WHO, and Mayo Clinic.">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6647512446024977" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-6647512446024977">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -14,165 +14,185 @@
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#5A67D8">
-  <meta name="msapplication-TileColor" content="#5A67D8">
   <style>
-    .article-source {
-      display: inline-flex;
+    .blog-detail-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      background: var(--light);
-      border-radius: 20px;
-      font-size: 0.8rem;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .blog-detail-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .blog-detail-card {
+      background: white;
+      max-width: 850px;
+      width: 90%;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 28px;
+      padding: 35px;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
+      animation: modalSlideUp 0.4s ease;
+    }
+    .blog-detail-card h2 {
+      font-size: 1.9rem;
+      margin-bottom: 15px;
+      color: var(--dark);
+    }
+    .blog-detail-meta {
+      display: flex;
+      gap: 18px;
+      margin: 15px 0;
       color: var(--gray);
-      margin-right: 10px;
+      font-size: 0.85rem;
+      flex-wrap: wrap;
     }
-    .article-source i {
+    .blog-detail-content {
+      line-height: 1.75;
+      color: #2d3e50;
+      font-size: 1.02rem;
+    }
+    .blog-detail-content p {
+      margin-bottom: 1.2rem;
+    }
+    .blog-detail-content h3 {
+      margin: 1.8rem 0 0.8rem;
       color: var(--primary);
-      font-size: 0.7rem;
+      font-weight: 600;
     }
-    .external-link {
+    .blog-detail-content ul, .blog-detail-content ol {
+      margin: 1rem 0 1rem 1.5rem;
+    }
+    .blog-detail-content li {
+      margin-bottom: 0.5rem;
+    }
+    .external-link-box {
+      background: #f0f4fe;
+      border-left: 4px solid var(--primary);
+      padding: 18px 20px;
+      border-radius: 16px;
+      margin: 25px 0;
+    }
+    .external-link-box h4 {
+      margin-bottom: 12px;
+      color: var(--primary-dark);
+    }
+    .external-link-box a {
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      margin-right: 20px;
+      margin-bottom: 8px;
       color: var(--primary);
       text-decoration: none;
       font-weight: 500;
-      transition: var(--transition);
-      padding: 8px 16px;
-      border-radius: 30px;
-      background: rgba(107, 124, 255, 0.1);
     }
-    .external-link:hover {
-      background: var(--primary);
+    .external-link-box a:hover {
+      text-decoration: underline;
+    }
+    .close-detail {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: var(--light);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      z-index: 10;
+    }
+    .close-detail:hover {
+      background: var(--danger);
       color: white;
-      transform: translateX(5px);
-    }
-    .external-link i {
-      font-size: 0.8rem;
-    }
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin: 40px 0;
+      transform: rotate(90deg);
     }
     .blog-card {
-      background: white;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      border: 1px solid rgba(0,0,0,0.02);
-      display: flex;
-      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
     .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.15);
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(35px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .blog-tag {
+      background: #eef2ff;
+      padding: 5px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      display: inline-block;
+      color: var(--primary-dark);
+    }
+    .category-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 45px;
+    }
+    .filter-btn {
+      padding: 10px 24px;
+      border-radius: 40px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
     }
     .blog-image {
       width: 100%;
       height: 200px;
       object-fit: cover;
-      border-bottom: 1px solid var(--light-gray);
+      border-radius: 20px 20px 0 0;
     }
     .blog-content {
-      padding: 25px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      padding: 22px;
     }
-    .blog-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 15px;
-    }
-    .blog-title {
-      font-size: 1.3rem;
-      margin-bottom: 15px;
-      color: var(--dark);
-      line-height: 1.4;
-    }
-    .blog-excerpt {
-      color: var(--gray);
-      margin-bottom: 20px;
-      line-height: 1.6;
-      flex: 1;
-    }
-    .blog-footer {
-      display: flex;
-      justify-content: space-between;
+    .read-more-btn {
+      color: var(--primary);
+      font-weight: 600;
+      display: inline-flex;
       align-items: center;
-      margin-top: auto;
-      padding-top: 15px;
-      border-top: 1px solid var(--light-gray);
-    }
-    .source-badge {
-      background: var(--light);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 500;
-      color: var(--primary);
-    }
-    .category-filter {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 40px;
-    }
-    .filter-btn {
-      padding: 8px 20px;
-      border-radius: 30px;
-      background: white;
-      border: 1px solid var(--light-gray);
-      color: var(--gray);
-      cursor: pointer;
-      transition: var(--transition);
-      font-size: 0.9rem;
-    }
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--primary);
-      color: white;
-      border-color: var(--primary);
-    }
-    .featured-article {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: white;
-      padding: 40px;
-      border-radius: 24px;
-      margin-bottom: 40px;
-    }
-    .featured-article .external-link {
-      background: white;
-      color: var(--primary);
-    }
-    .featured-article .external-link:hover {
-      background: var(--dark);
-      color: white;
+      gap: 6px;
+      margin-top: 12px;
     }
   </style>
 </head>
 <body>
-  <!-- Background Elements -->
   <div class="bg-circle circle-1"></div>
   <div class="bg-circle circle-2"></div>
   <div class="bg-circle circle-3"></div>
 
-  <!-- Navigation -->
   <nav class="glass-nav">
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">
-        <i class="fas fa-calculator"></i>
-        <span>BMI Calculator</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="index.html" class="nav-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <ul class="nav-links">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li>
@@ -188,344 +208,31 @@
 
   <section class="guide-section">
     <div class="section-container">
-      <h1 class="section-title"><i class="fas fa-newspaper"></i> Health & Wellness Articles</h1>
+      <h1 class="section-title"><i class="fas fa-feather-alt"></i> Wellness & Health Library</h1>
       <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem; color: var(--gray);">
-        Curated from leading health organizations and medical institutions. 
-        All articles are regularly reviewed for accuracy.
+        Original, in-depth articles to help you understand BMI, nutrition, fitness, and holistic wellness.  
+        Each post includes links to trusted medical resources for further reading.
       </p>
 
-      <!-- Category Filter -->
-      <div class="category-filter">
+      <div class="category-filter" id="filterContainer">
         <button class="filter-btn active" data-filter="all">All Articles</button>
         <button class="filter-btn" data-filter="bmi">BMI & Weight</button>
         <button class="filter-btn" data-filter="nutrition">Nutrition</button>
         <button class="filter-btn" data-filter="fitness">Fitness</button>
-        <button class="filter-btn" data-filter="mental">Mental Health</button>
-        <button class="filter-btn" data-filter="research">Research</button>
+        <button class="filter-btn" data-filter="mental">Mental Wellness</button>
       </div>
 
-      <!-- Featured Article -->
-      <div class="featured-article">
-        <span class="source-badge" style="background: rgba(255,255,255,0.2); color: white; margin-bottom: 15px; display: inline-block;">
-          <i class="fas fa-star"></i> Featured Article
-        </span>
-        <h2 style="color: white; font-size: 2rem; margin-bottom: 15px;">About Adult BMI</h2>
-        <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: 25px; max-width: 800px;">
-          Official guidelines from the Centers for Disease Control and Prevention (CDC) 
-          on how BMI is calculated, interpreted, and used for adults.
-        </p>
-        <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="external-link">
-          <i class="fas fa-external-link-alt"></i> Read on CDC.gov
-        </a>
-      </div>
+      <div class="blog-grid" id="articlesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 30px;"></div>
 
-      <!-- Articles Grid -->
-      <div class="blog-grid" id="articlesGrid">
-        <!-- Article 1 - CDC -->
-        <div class="blog-card" data-category="bmi">
-          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="BMI Measurement" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-building"></i> CDC</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">About Adult BMI</h3>
-            <p class="blog-excerpt">
-              Comprehensive guide from the Centers for Disease Control and Prevention on 
-              how BMI is calculated, interpreted categories, and its limitations as a screening tool.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Official Source
-              </span>
-              <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 2 - Mayo Clinic -->
-        <div class="blog-card" data-category="bmi">
-          <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="Mayo Clinic" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-hospital"></i> Mayo Clinic</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">BMI Calculator: What the Numbers Mean</h3>
-            <p class="blog-excerpt">
-              Mayo Clinic explains how BMI is calculated, what the results mean, and 
-              why it's just one measure of health. Includes information on BMI for children and teens.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Peer-Reviewed
-              </span>
-              <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/bmi-calculator/itt-20434791" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 3 - WHO -->
-        <div class="blog-card" data-category="bmi research">
-          <img src="https://images.unsplash.com/photo-1584036561584-b03c19da874c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="World Health Organization" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-globe"></i> WHO</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">Obesity and Overweight Facts</h3>
-            <p class="blog-excerpt">
-              World Health Organization's official fact sheet on global obesity statistics, 
-              health consequences, and evidence-based prevention strategies.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Official Source
-              </span>
-              <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 4 - Harvard Health -->
-        <div class="blog-card" data-category="nutrition">
-          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="Healthy Eating" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-university"></i> Harvard Health</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">The Truth About Fad Diets</h3>
-            <p class="blog-excerpt">
-              Harvard Medical School experts analyze popular diet trends and provide 
-              evidence-based nutrition advice for sustainable weight management.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-flask"></i> Research-Based
-              </span>
-              <a href="https://www.health.harvard.edu/staying-healthy/the-truth-about-fad-diets" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 5 - NHS -->
-        <div class="blog-card" data-category="bmi">
-          <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="NHS BMI Tool" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-ambulance"></i> NHS UK</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">BMI Healthy Weight Calculator</h3>
-            <p class="blog-excerpt">
-              UK National Health Service's comprehensive guide to BMI, including 
-              special considerations for different ethnic groups and age ranges.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Official Source
-              </span>
-              <a href="https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 6 - American Heart Association -->
-        <div class="blog-card" data-category="fitness">
-          <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="Exercise" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-heart"></i> American Heart Assoc</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">Physical Activity Recommendations for Adults</h3>
-            <p class="blog-excerpt">
-              AHA's official guidelines for physical activity to maintain cardiovascular health, 
-              including specific recommendations for different age groups.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Clinical Guidelines
-              </span>
-              <a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/aha-recs-for-physical-activity-in-adults" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 7 - Johns Hopkins -->
-        <div class="blog-card" data-category="mental">
-          <img src="https://images.unsplash.com/photo-1541199249251-f713e6145474?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="Mental Health" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-brain"></i> Johns Hopkins</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">The Gut-Brain Connection</h3>
-            <p class="blog-excerpt">
-              Johns Hopkins Medicine explores how mental health affects eating habits 
-              and weight management, and strategies for holistic wellness.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-flask"></i> Research-Based
-              </span>
-              <a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 8 - Cleveland Clinic -->
-        <div class="blog-card" data-category="nutrition">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="Nutrition" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-clinic-medical"></i> Cleveland Clinic</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">Understanding Macronutrients</h3>
-            <p class="blog-excerpt">
-              Complete guide to proteins, carbohydrates, and fats - how they work, 
-              recommended intake, and the best food sources for each.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Clinical Source
-              </span>
-              <a href="https://my.clevelandclinic.org/health/articles/24054-macronutrients" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Article 9 - NIH -->
-        <div class="blog-card" data-category="research">
-          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-               alt="Research" 
-               class="blog-image"
-               loading="lazy">
-          <div class="blog-content">
-            <div class="blog-meta">
-              <span class="source-badge"><i class="fas fa-microscope"></i> NIH</span>
-              <span class="source-badge"><i class="fas fa-calendar"></i> 2024</span>
-            </div>
-            <h3 class="blog-title">Assessing Your Weight and Health Risk</h3>
-            <p class="blog-excerpt">
-              National Institutes of Health guidelines on using BMI alongside other measures 
-              like waist circumference to assess health risks.
-            </p>
-            <div class="blog-footer">
-              <span class="article-source">
-                <i class="fas fa-check-circle" style="color: var(--success);"></i> Official Source
-              </span>
-              <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm" 
-                 target="_blank" 
-                 rel="noopener noreferrer" 
-                 class="external-link">
-                Read Article <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Newsletter Signup -->
-      <div class="glass-card" style="text-align: center; margin-top: 50px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
-        <h2 style="color: white;"><i class="fas fa-newspaper"></i> Stay Updated with Health Science</h2>
-        <p style="margin-bottom: 25px; font-size: 1.1rem;">
-          Get the latest evidence-based health articles and research updates from trusted medical sources.
-        </p>
-        <form style="max-width: 500px; margin: 0 auto;" onsubmit="event.preventDefault(); showNotification('Thank you for subscribing!', 'success');">
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <input type="email" placeholder="Your email address" required style="flex: 1; min-width: 200px; padding: 12px; border-radius: 8px; border: none;">
-            <button type="submit" class="hero-button" style="background: white; color: var(--primary);">
-              <i class="fas fa-paper-plane"></i> Subscribe
-            </button>
-          </div>
-          <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">
-            We respect your privacy. Unsubscribe at any time. No spam.
-          </p>
-        </form>
-      </div>
-
-      <!-- Trusted Sources -->
-      <div style="margin-top: 50px; text-align: center;">
-        <h3 style="margin-bottom: 20px;"><i class="fas fa-shield-alt"></i> Our Sources</h3>
+      <!-- External resources summary -->
+      <div class="glass-card" style="margin-top: 55px; text-align: center; background: #fafbff;">
+        <h3><i class="fas fa-external-link-alt"></i> Trusted Health Resources</h3>
+        <p style="margin-bottom: 20px;">Explore official guidelines from leading health organizations:</p>
         <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">CDC</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">Mayo Clinic</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">WHO</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">Harvard Health</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">NHS</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">American Heart Assoc</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">Johns Hopkins</span>
-          <span style="padding: 8px 16px; background: var(--light); border-radius: 30px;">NIH</span>
+          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/index.html" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">CDC – BMI</a>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">WHO – Obesity</a>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/bmi-calculator/itt-20434791" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">Mayo Clinic – BMI</a>
+          <a href="https://www.nutrition.gov/topics/basic-nutrition" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">Nutrition.gov</a>
         </div>
       </div>
     </div>
@@ -534,99 +241,287 @@
   <footer class="main-footer">
     <div class="footer-container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <i class="fas fa-calculator"></i>
-          <span>BMI Calculator</span>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <a href="index.html">Home</a>
-          <a href="index.html#calculator">BMI Calc</a>
-          <a href="body-fat-calculator.html">Body Fat</a>
-          <a href="calorie-counter.html">Calorie Counter</a>
-          <a href="blog.html">Articles</a>
-          <a href="about.html">About Us</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
+        <div class="footer-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></div>
+        <div class="footer-links"><h3>Quick Links</h3><a href="index.html">Home</a><a href="index.html#calculator">BMI Calc</a><a href="body-fat-calculator.html">Body Fat</a><a href="calorie-counter.html">Calorie Counter</a><a href="blog.html">Articles</a><a href="about.html">About Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms</a><a href="contact.html">Contact</a></div>
+        <div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div>
       </div>
-      
-      <div class="footer-copyright">
-        <p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="contact.html">Contact Us</a></p>
-      </div>
+      <div class="footer-copyright"><p>&copy; 2025 BMI Calculator. All rights reserved. | Empowering healthier choices</p></div>
     </div>
   </footer>
 
+  <div id="blogDetailModal" class="blog-detail-overlay">
+    <div class="blog-detail-card">
+      <div class="close-detail" onclick="closeBlogDetail()"><i class="fas fa-times"></i></div>
+      <div id="detailContent"></div>
+    </div>
+  </div>
+
   <script>
-    // Category filtering
-    document.addEventListener('DOMContentLoaded', function() {
-      const filterBtns = document.querySelectorAll('.filter-btn');
-      const articles = document.querySelectorAll('.blog-card');
+    // ---------- ORIGINAL LONG-FORM BLOG POSTS (real content, helpful tone) ----------
+    const blogPosts = {
+      bmiDeep: {
+        id: "bmiDeep",
+        title: "Beyond the Number: What Your BMI Really Reveals About Health",
+        category: "bmi",
+        date: "March 25, 2025",
+        readTime: "7 min read",
+        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        excerpt: "BMI is a useful screening tool but has real limitations. Understand how to interpret your result in the context of overall wellness.",
+        content: `
+          <p>Body Mass Index (BMI) has been used for decades as a quick, non-invasive way to categorize weight relative to height. But if you've ever felt frustrated by a BMI number that doesn't seem to match your fitness level, you're not alone. Let's explore what BMI actually measures, where it falls short, and how to use it wisely as part of a bigger health picture.</p>
+          
+          <h3>How BMI Is Calculated – and What It's Meant For</h3>
+          <p>The formula is simple: weight (kg) divided by height (m) squared. The resulting number places you into categories defined by the World Health Organization: underweight (<18.5), normal (18.5–24.9), overweight (25–29.9), and obese (≥30). At a population level, BMI correlates well with body fat and health risks like heart disease and type 2 diabetes.</p>
+          <p>But here’s the nuance: BMI does not distinguish between muscle and fat. A bodybuilder with low body fat may fall into the "overweight" category, while a person with normal BMI could have high visceral fat and poor metabolic health.</p>
+          
+          <h3>The Limitations You Should Know</h3>
+          <p>Research shows that about 30% of people with a "normal" BMI actually have metabolic abnormalities, and conversely, some with an "obese" BMI are metabolically healthy. Factors like age, sex, ethnicity, and muscle mass all influence how BMI relates to true body composition. For example, people of Asian descent often face higher health risks at lower BMI thresholds.</p>
+          <p>Moreover, BMI says nothing about fat distribution. Abdominal fat (visceral fat) is more dangerous than fat stored in hips and thighs. That's why waist circumference is a valuable companion measurement.</p>
+          
+          <h3>A Better Approach: Combine Metrics</h3>
+          <p>Instead of obsessing over a single number, consider these alongside your BMI:</p>
+          <ul><li>Waist-to-hip ratio</li><li>Body fat percentage (use our <a href="body-fat-calculator.html">Body Fat Calculator</a>)</li><li>Blood pressure, cholesterol, and blood sugar levels</li><li>Physical activity levels and diet quality</li></ul>
+          <p>If your BMI falls outside the "normal" range, focus on sustainable lifestyle habits: regular exercise, whole foods, stress management, and quality sleep. Small, consistent changes lead to meaningful improvements in metabolic health, regardless of BMI shifts.</p>
+          
+          <div class="external-link-box">
+            <h4><i class="fas fa-link"></i> Trusted External Resources</h4>
+            <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html" target="_blank" rel="noopener">CDC: About Adult BMI →</a>
+            <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener">WHO: Obesity and overweight →</a>
+            <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm" target="_blank" rel="noopener">NIH: Assessing Your Weight and Health Risk →</a>
+          </div>
+        `
+      },
+      nutritionEssentials: {
+        id: "nutritionEssentials",
+        title: "Macronutrients Demystified: How to Build a Balanced Plate",
+        category: "nutrition",
+        date: "March 18, 2025",
+        readTime: "9 min read",
+        image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        excerpt: "Protein, carbs, and fats each play unique roles. Learn how to optimize your intake for energy, muscle, and long-term health.",
+        content: `
+          <p>Walk into any grocery store and you're bombarded with labels: "high protein," "low carb," "keto-friendly." It's easy to lose sight of the basics. Macronutrients—protein, carbohydrates, and fats—are the foundation of every diet. Understanding them helps you make choices that fuel your body, not confuse it.</p>
+          
+          <h3>Protein: The Builder</h3>
+          <p>Protein provides amino acids that repair tissues, build enzymes, and support immune function. For most adults, aim for 1.2–2.0 grams per kilogram of body weight, especially if you're active. Quality matters: lean poultry, fish, eggs, legumes, tofu, and Greek yogurt are excellent sources. Spreading protein across meals improves muscle protein synthesis.</p>
+          
+          <h3>Carbohydrates: The Energy Source</h3>
+          <p>Carbs often get a bad rap, but they're your body's preferred fuel. The key is choosing complex carbs: whole grains, vegetables, fruits, beans. These provide fiber, which stabilizes blood sugar and feeds healthy gut bacteria. Limit added sugars and refined grains that spike insulin and lead to energy crashes.</p>
+          
+          <h3>Fats: The Essential Regulator</h3>
+          <p>Healthy fats support hormone production, brain health, and vitamin absorption. Focus on unsaturated fats: olive oil, avocados, nuts, seeds, and fatty fish like salmon. Avoid trans fats and limit saturated fats. About 20–35% of your daily calories should come from fat.</p>
+          
+          <h3>Putting It All Together</h3>
+          <p>Try the plate method: fill half your plate with non-starchy vegetables, one-quarter with lean protein, one-quarter with complex carbs. Add a thumb-sized portion of healthy fats. This simple visual keeps portions balanced without obsessive counting.</p>
+          <p>Remember: consistency beats perfection. Even small shifts—like adding a serving of vegetables to dinner or swapping sugary drinks for water—add up over time.</p>
+          
+          <div class="external-link-box">
+            <h4><i class="fas fa-leaf"></i> Science-Backed Nutrition Guides</h4>
+            <a href="https://www.hsph.harvard.edu/nutritionsource/what-should-you-eat/" target="_blank">Harvard Nutrition Source →</a>
+            <a href="https://www.myplate.gov/" target="_blank">MyPlate (USDA) →</a>
+            <a href="https://www.eatright.org/food/nutrition" target="_blank">Academy of Nutrition and Dietetics →</a>
+          </div>
+        `
+      },
+      strengthLongevity: {
+        id: "strengthLongevity",
+        title: "Strength Training for Life: Why Muscles Matter After 40",
+        category: "fitness",
+        date: "March 12, 2025",
+        readTime: "8 min read",
+        image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        excerpt: "Preserving muscle mass is one of the most powerful things you can do for metabolic health, bone density, and independence as you age.",
+        content: `
+          <p>After age 30, adults lose 3–5% of muscle mass per decade—a process called sarcopenia. But this decline isn't inevitable. Strength training (resistance exercise) not only builds muscle but also improves insulin sensitivity, strengthens bones, boosts metabolism, and enhances mental resilience.</p>
+          
+          <h3>Why Strength Training Is Non-Negotiable</h3>
+          <p>Muscle tissue is metabolically active. More muscle means a higher resting metabolic rate, making weight management easier. Strength training also increases bone mineral density, reducing fracture risk. Plus, it improves balance and functional mobility, helping you stay independent longer.</p>
+          
+          <h3>Getting Started Safely</h3>
+          <p>If you're new to resistance training, begin with bodyweight exercises: squats, lunges, push-ups, planks. Aim for 2–3 sessions per week. As you progress, add resistance bands or dumbbells. Focus on compound movements (exercises that work multiple joints) like deadlifts, rows, and presses for efficiency.</p>
+          <p>Proper form is more important than weight. Consider working with a certified trainer initially to learn technique. And don't forget to warm up with dynamic stretches and cool down with static stretching.</p>
+          
+          <h3>Nutrition to Support Strength</h3>
+          <p>Pair your training with adequate protein (aim for 20–30g post-workout) and stay hydrated. Quality sleep is when muscle repair happens most effectively.</p>
+          <p>Whether you're 25 or 65, starting strength training yields benefits within weeks. It's never too late to build a stronger, more resilient body.</p>
+          
+          <div class="external-link-box">
+            <h4><i class="fas fa-dumbbell"></i> Expert Fitness Resources</h4>
+            <a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/strength-and-resistance-training" target="_blank">American Heart Association: Strength Training →</a>
+            <a href="https://www.acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines" target="_blank">ACSM Physical Activity Guidelines →</a>
+          </div>
+        `
+      },
+      gutBrain: {
+        id: "gutBrain",
+        title: "The Gut-Brain Axis: How Your Microbiome Shapes Mood & Weight",
+        category: "mental",
+        date: "March 5, 2025",
+        readTime: "10 min read",
+        image: "https://images.unsplash.com/photo-1541199249251-f713e6145474?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        excerpt: "Emerging science reveals the deep connection between digestive health and mental wellbeing. Learn how to nourish your microbiome.",
+        content: `
+          <p>Have you ever felt "butterflies" in your stomach when anxious? That’s the gut-brain axis in action. Your digestive tract contains millions of neurons and trillions of bacteria that communicate constantly with your central nervous system. This connection influences everything from appetite and stress levels to immune function.</p>
+          
+          <h3>How Gut Bacteria Affect Mental Health</h3>
+          <p>Gut microbes produce neurotransmitters like serotonin (about 90% of your body's serotonin is made in the gut) and dopamine. Imbalances in gut flora have been linked to anxiety, depression, and even cognitive decline. Additionally, a healthy microbiome helps regulate inflammation, which is a root factor in many chronic diseases.</p>
+          
+          <h3>Foods for a Thriving Microbiome</h3>
+          <ul><li><strong>Prebiotics:</strong> Fiber-rich foods that feed good bacteria: garlic, onions, leeks, asparagus, oats, bananas.</li><li><strong>Probiotics:</strong> Fermented foods containing live beneficial bacteria: yogurt, kefir, kimchi, sauerkraut, miso.</li><li><strong>Polyphenols:</strong> Plant compounds that support microbial diversity: berries, dark chocolate, green tea, olive oil.</li></ul>
+          <p>Aim to include a variety of these foods regularly. Diversity in your diet leads to diversity in your gut microbiome—a hallmark of good health.</p>
+          
+          <h3>Stress Management & Sleep</h3>
+          <p>Chronic stress alters gut permeability ("leaky gut") and reduces microbial diversity. Prioritizing sleep (7–9 hours) and stress-reduction practices like meditation or gentle exercise can directly improve gut health.</p>
+          
+          <div class="external-link-box">
+            <h4><i class="fas fa-brain"></i> Further Reading on Gut-Brain Health</h4>
+            <a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection" target="_blank">Johns Hopkins: The Brain-Gut Connection →</a>
+            <a href="https://www.health.harvard.edu/diseases-and-conditions/the-gut-brain-connection" target="_blank">Harvard Health: Gut-Brain Connection →</a>
+          </div>
+        `
+      },
+      hydrationWellness: {
+        id: "hydrationWellness",
+        title: "Hydration: More Than Just Water – Electrolytes & Performance",
+        category: "nutrition",
+        date: "February 28, 2025",
+        readTime: "6 min read",
+        image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        excerpt: "Proper hydration supports energy, focus, and metabolism. Learn how to meet your fluid and electrolyte needs for daily life and exercise.",
+        content: `
+          <p>Water is essential for temperature regulation, nutrient transport, and joint lubrication. Even 1–2% dehydration can impair concentration, mood, and physical performance. But hydration isn't just about water—electrolytes (sodium, potassium, magnesium) play a critical role in fluid balance.</p>
+          
+          <h3>How Much Do You Need?</h3>
+          <p>The "8 glasses a day" is a reasonable starting point, but needs vary. The National Academies recommend about 3.7 liters (125 oz) for men and 2.7 liters (91 oz) for women from all beverages and foods. Active individuals, those in hot climates, and pregnant women require more.</p>
+          <p>Watch for signs of dehydration: dark urine, dry mouth, fatigue, dizziness. A simple rule: drink enough so your urine is pale yellow.</p>
+          
+          <h3>Electrolytes Matter</h3>
+          <p>If you sweat heavily during exercise, you lose sodium and potassium. Coconut water, electrolyte powders, or simply adding a pinch of salt to meals can help. Magnesium-rich foods (spinach, nuts, seeds) support muscle function.</p>
+          <p>Hydrating foods like watermelon, cucumber, oranges, and soups also contribute significantly to your fluid intake.</p>
+          
+          <div class="external-link-box">
+            <h4><i class="fas fa-tint"></i> Official Hydration Guidelines</h4>
+            <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256" target="_blank">Mayo Clinic: Water & Nutrition →</a>
+            <a href="https://www.cdc.gov/drinking-water/?CDC_AAref_Val=https://www.cdc.gov/healthywater/drinking/nutrition/index.html" target="_blank">CDC: Water & Nutrition →</a>
+          </div>
+        `
+      },
+      sleepRecovery: {
+        id: "sleepRecovery",
+        title: "Sleep: The Ultimate Recovery Tool for Weight & Mental Health",
+        category: "mental",
+        date: "February 20, 2025",
+        readTime: "8 min read",
+        image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        excerpt: "Poor sleep disrupts hunger hormones, increases cravings, and impairs mood. Discover science-backed sleep hygiene practices.",
+        content: `
+          <p>Sleep is not passive rest—it's an active state of repair. During deep sleep, the body releases growth hormone, consolidates memory, and clears metabolic waste from the brain. Chronic sleep deprivation is linked to weight gain, insulin resistance, anxiety, and weakened immunity.</p>
+          
+          <h3>How Sleep Affects Weight</h3>
+          <p>Lack of sleep increases ghrelin (hunger hormone) and decreases leptin (fullness hormone), leading to increased appetite, especially for high-calorie foods. It also elevates cortisol, which promotes abdominal fat storage. Aim for 7–9 hours of quality sleep consistently.</p>
+          
+          <h3>Practical Sleep Hygiene Tips</h3>
+          <ul><li>Keep a consistent sleep schedule (even on weekends).</li><li>Create a dark, cool, quiet bedroom (65–68°F ideal).</li><li>Avoid caffeine after 2 PM and limit alcohol before bed.</li><li>Reduce screen exposure 60 minutes before sleep (blue light suppresses melatonin).</li><li>Develop a wind-down ritual: reading, gentle stretching, or meditation.</li></ul>
+          <p>If sleep issues persist, consider consulting a healthcare provider to rule out sleep disorders like apnea.</p>
+          
+          <div class="external-link-box">
+            <h4><i class="fas fa-bed"></i> Trusted Sleep Resources</h4>
+            <a href="https://www.sleepfoundation.org/" target="_blank">Sleep Foundation →</a>
+            <a href="https://www.cdc.gov/sleep/about/?CDC_AAref_Val=https://www.cdc.gov/sleep/about_sleep/index.html" target="_blank">CDC: Sleep & Health →</a>
+          </div>
+        `
+      }
+    };
 
-      filterBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-          // Update active button
-          filterBtns.forEach(b => b.classList.remove('active'));
-          this.classList.add('active');
+    const articlesList = Object.values(blogPosts);
 
-          const filter = this.dataset.filter;
+    function renderBlogs(filter = "all") {
+      const container = document.getElementById("articlesGrid");
+      if (!container) return;
+      const filtered = filter === "all" ? articlesList : articlesList.filter(post => post.category === filter);
+      container.innerHTML = filtered.map(post => `
+        <div class="blog-card glass-card" data-category="${post.category}" onclick="openBlogDetail('${post.id}')">
+          <img src="${post.image}" alt="${post.title}" class="blog-image" loading="lazy">
+          <div class="blog-content">
+            <div style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;">
+              <span class="blog-tag"><i class="fas fa-tag"></i> ${post.category === 'bmi' ? 'BMI & Weight' : post.category === 'nutrition' ? 'Nutrition' : post.category === 'fitness' ? 'Fitness' : 'Mental Wellness'}</span>
+              <span class="blog-tag"><i class="far fa-calendar"></i> ${post.date}</span>
+              <span class="blog-tag"><i class="far fa-clock"></i> ${post.readTime}</span>
+            </div>
+            <h3 style="font-size: 1.4rem; margin-bottom: 12px;">${post.title}</h3>
+            <p style="color: #4a5568; margin-bottom: 18px;">${post.excerpt}</p>
+            <div class="read-more-btn">Read full article <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+      `).join("");
+    }
 
-          // Filter articles
-          articles.forEach(article => {
-            if (filter === 'all' || article.dataset.category.includes(filter)) {
-              article.style.display = 'flex';
-            } else {
-              article.style.display = 'none';
-            }
-          });
+    function openBlogDetail(id) {
+      const post = blogPosts[id];
+      if (!post) return;
+      const modal = document.getElementById("blogDetailModal");
+      const detailDiv = document.getElementById("detailContent");
+      detailDiv.innerHTML = `
+        <h2>${post.title}</h2>
+        <div class="blog-detail-meta">
+          <span><i class="far fa-calendar"></i> ${post.date}</span>
+          <span><i class="far fa-clock"></i> ${post.readTime}</span>
+          <span class="blog-tag">${post.category.toUpperCase()}</span>
+        </div>
+        <img src="${post.image}" alt="${post.title}" style="width:100%; border-radius: 20px; margin: 15px 0; max-height: 280px; object-fit: cover;">
+        <div class="blog-detail-content">${post.content}</div>
+        <div style="margin-top: 30px; text-align: center;">
+          <button class="hero-button" style="background: var(--light); color: var(--primary);" onclick="closeBlogDetail()"><i class="fas fa-times"></i> Close</button>
+          <a href="index.html#calculator" class="hero-button" style="margin-left: 12px;"><i class="fas fa-calculator"></i> Try BMI Calculator</a>
+        </div>
+      `;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBlogDetail() {
+      const modal = document.getElementById("blogDetailModal");
+      if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    }
+
+    // Filter + nav
+    function initFilters() {
+      const btns = document.querySelectorAll(".filter-btn");
+      btns.forEach(btn => {
+        btn.addEventListener("click", function() {
+          btns.forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
+          renderBlogs(this.dataset.filter);
         });
       });
+    }
 
-      // Mobile navigation
-      const navToggle = document.querySelector('.nav-toggle');
-      const navLinks = document.querySelector('.nav-links');
-
-      if (navToggle && navLinks) {
-        navToggle.addEventListener('click', function() {
-          navLinks.classList.toggle('active');
-          this.innerHTML = navLinks.classList.contains('active') 
-            ? '<i class="fas fa-times"></i>' 
-            : '<i class="fas fa-bars"></i>';
+    function initMobileNav() {
+      const toggle = document.querySelector('.nav-toggle');
+      const links = document.querySelector('.nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          links.classList.toggle('active');
+          toggle.innerHTML = links.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
       }
+    }
 
-      // Set active nav
-      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.addEventListener("DOMContentLoaded", () => {
+      renderBlogs("all");
+      initFilters();
+      initMobileNav();
+      const currentPage = window.location.pathname.split('/').pop() || 'blog.html';
       document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-          link.classList.add('active');
-        }
+        if (link.getAttribute('href') === currentPage) link.classList.add('active');
       });
     });
 
-    // Notification function
-    function showNotification(message, type) {
-      const notification = document.createElement('div');
-      notification.className = `notification ${type}`;
-      notification.innerHTML = `
-        <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}"></i>
-        <span>${message}</span>
-      `;
-      
-      document.body.appendChild(notification);
-      
-      setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease';
-        setTimeout(() => notification.remove(), 300);
-      }, 3000);
-    }
+    window.openBlogDetail = openBlogDetail;
+    window.closeBlogDetail = closeBlogDetail;
   </script>
-  <script src="script.js"></script>
 </body>
 </html>
