@@ -9,13 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <meta name="theme-color" content="#6B7CFF">
   <link rel="manifest" href="manifest.json">
   <meta name="msapplication-TileColor" content="#5A67D8">
-  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,21 +36,14 @@
   </script>
 </head>
 <body>
-  <!-- Background Elements -->
   <div class="bg-circle circle-1"></div>
   <div class="bg-circle circle-2"></div>
   <div class="bg-circle circle-3"></div>
 
-  <!-- Navigation -->
   <nav class="glass-nav">
     <div class="nav-container">
-      <a href="/" class="nav-brand">
-        <i class="fas fa-calculator"></i>
-        <span>BMI Calculator</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="/" class="nav-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <ul class="nav-links">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li>
@@ -65,32 +56,19 @@
     </div>
   </nav>
 
-  <!-- Medical Disclaimer Banner -->
   <div class="medical-disclaimer glass-card">
-    <div class="disclaimer-icon">
-      <i class="fas fa-shield-alt"></i>
-    </div>
+    <div class="disclaimer-icon"><i class="fas fa-shield-alt"></i></div>
     <div class="disclaimer-content">
       <h4>Medical Disclaimer</h4>
       <p>This tool provides general health information based on WHO BMI guidelines. It is not a substitute for professional medical advice, diagnosis, or treatment.</p>
     </div>
   </div>
 
-  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">
-        <span class="title-line">Understand Your</span>
-        <span class="title-line accent">Body Mass Index</span>
-      </h1>
-      <p class="hero-subtitle">
-        BMI is a simple screening tool to estimate healthy weight ranges. 
-        Use our calculator to check your BMI and learn how it impacts your health.
-      </p>
-      <a href="#calculator" class="hero-button">
-        <i class="fas fa-calculator"></i>
-        Calculate Now
-      </a>
+      <h1 class="hero-title"><span class="title-line">Understand Your</span><span class="title-line accent">Body Mass Index</span></h1>
+      <p class="hero-subtitle">BMI is a simple screening tool to estimate healthy weight ranges. Use our calculator to check your BMI and learn how it impacts your health.</p>
+      <a href="#calculator" class="hero-button"><i class="fas fa-calculator"></i> Calculate Now</a>
     </div>
     <div class="hero-illustration">
       <div class="illustration-circle"></div>
@@ -98,57 +76,39 @@
     </div>
   </section>
 
-  <!-- Calculator Section -->
   <section id="calculator" class="calculator-section">
     <div class="calculator-container">
       <div class="glass-card calculator-card">
         <div class="card-header">
           <h2><i class="fas fa-calculator"></i> BMI Calculator</h2>
           <div class="theme-switch">
-            <label class="switch">
-              <input type="checkbox" id="unitSwitch">
-              <span class="slider"></span>
-            </label>
+            <label class="switch"><input type="checkbox" id="unitSwitch"><span class="slider"></span></label>
             <span class="switch-label">Imperial Units</span>
           </div>
         </div>
         <form id="bmiForm" class="calculator-form">
           <div class="input-group">
             <label for="age"><i class="fas fa-user"></i> Age (2-120 years)</label>
-            <div class="input-wrapper">
-              <input type="number" id="age" placeholder="Age in years" min="2" max="120" required>
-            </div>
+            <div class="input-wrapper"><input type="number" id="age" placeholder="Age in years" min="2" max="120" required></div>
           </div>
           <div class="input-group">
             <label for="height"><i class="fas fa-ruler-vertical"></i> Height</label>
-            <div class="input-wrapper">
-              <input type="number" id="height" placeholder="Height in centimeters" step="0.1" required>
-              <span class="input-unit" id="heightUnit">cm</span>
-            </div>
+            <div class="input-wrapper"><input type="number" id="height" placeholder="Height in centimeters" step="0.1" required><span class="input-unit" id="heightUnit">cm</span></div>
           </div>
           <div class="input-group">
             <label for="weight"><i class="fas fa-weight"></i> Weight</label>
-            <div class="input-wrapper">
-              <input type="number" id="weight" placeholder="Weight in kilograms" step="0.1" required>
-              <span class="input-unit" id="weightUnit">kg</span>
-            </div>
+            <div class="input-wrapper"><input type="number" id="weight" placeholder="Weight in kilograms" step="0.1" required><span class="input-unit" id="weightUnit">kg</span></div>
           </div>
-          <button type="submit" class="calculate-btn">
-            <i class="fas fa-calculator"></i> Calculate BMI
-          </button>
+          <button type="submit" class="calculate-btn"><i class="fas fa-calculator"></i> Calculate BMI</button>
         </form>
       </div>
 
-      <!-- Enhanced BMI Result Section -->
       <div class="glass-card result-card" id="resultCard">
         <div id="result" class="result-placeholder">
-          <div class="placeholder-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
+          <div class="placeholder-icon"><i class="fas fa-chart-line"></i></div>
           <h3>Your BMI Result</h3>
           <p>Enter your details to calculate your Body Mass Index</p>
         </div>
-        
         <div class="result-visualization" id="resultVisualization" style="display: none;">
           <div class="bmi-scale">
             <div class="scale-container">
@@ -159,25 +119,13 @@
                 <div class="scale-segment obese"></div>
               </div>
               <div class="scale-marker" id="scaleMarker"></div>
-              <div class="scale-labels">
-                <span>Underweight</span>
-                <span>Healthy</span>
-                <span>Overweight</span>
-                <span>Obese</span>
-              </div>
+              <div class="scale-labels"><span>Underweight</span><span>Healthy</span><span>Overweight</span><span>Obese</span></div>
             </div>
           </div>
-          
           <div class="health-recommendation">
             <div id="tips" class="tips-content">
-              <div class="tips-header">
-                <i class="fas fa-lightbulb"></i>
-                <h3>Health Recommendations</h3>
-              </div>
-              <p class="tips-text">
-                BMI is a screening tool that estimates body fat based on height and weight. 
-                While useful for population studies, it has limitations.
-              </p>
+              <div class="tips-header"><i class="fas fa-lightbulb"></i><h3>Health Recommendations</h3></div>
+              <p class="tips-text">BMI is a screening tool that estimates body fat based on height and weight. While useful for population studies, it has limitations.</p>
             </div>
           </div>
         </div>
@@ -185,305 +133,66 @@
     </div>
   </section>
 
-  <!-- Guide Section -->
   <section id="guide" class="guide-section">
     <div class="section-container">
-      <h2 class="section-title">
-        <i class="fas fa-book-open"></i> BMI Guide
-      </h2>
-
+      <h2 class="section-title"><i class="fas fa-book-open"></i> BMI Guide</h2>
       <div class="guide-grid">
-        <div class="guide-card">
-          <div class="guide-icon">
-            <i class="fas fa-info-circle"></i>
-          </div>
-          <h3>What is BMI?</h3>
-          <p>
-            Body Mass Index (BMI) is a value derived from mass (weight) and height. 
-            It's used to categorize weight ranges that may lead to health problems.
-          </p>
-          <ul>
-            <li><i class="fas fa-check-circle"></i> Underweight: BMI &lt; 18.5</li>
-            <li><i class="fas fa-check-circle"></i> Normal weight: 18.5–24.9</li>
-            <li><i class="fas fa-check-circle"></i> Overweight: 25–29.9</li>
-            <li><i class="fas fa-check-circle"></i> Obese: BMI ≥ 30</li>
-          </ul>
-        </div>
-        <div class="guide-card">
-          <div class="guide-icon">
-            <i class="fas fa-calculator"></i>
-          </div>
-          <h3>How to Calculate</h3>
-          <p>
-            The formula is:
-            <code>BMI = weight (kg) / (height (m))²</code>
-            For imperial units:
-            <code>BMI = [weight (lbs) / (height (in))²] × 703</code>
-          </p>
-        </div>
-        <div class="guide-card">
-          <div class="guide-icon">
-            <i class="fas fa-heartbeat"></i>
-          </div>
-          <h3>Health Implications</h3>
-          <p>
-            BMI correlates with body fat and health risks:
-          </p>
-          <ul>
-            <li><i class="fas fa-arrow-up"></i> High BMI → Increased risk of heart disease, diabetes</li>
-            <li><i class="fas fa-arrow-down"></i> Low BMI → Nutritional deficiencies, osteoporosis</li>
-          </ul>
-        </div>
+        <div class="guide-card"><div class="guide-icon"><i class="fas fa-info-circle"></i></div><h3>What is BMI?</h3><p>Body Mass Index (BMI) is a value derived from mass (weight) and height. It's used to categorize weight ranges that may lead to health problems.</p><ul><li><i class="fas fa-check-circle"></i> Underweight: BMI &lt; 18.5</li><li><i class="fas fa-check-circle"></i> Normal weight: 18.5–24.9</li><li><i class="fas fa-check-circle"></i> Overweight: 25–29.9</li><li><i class="fas fa-check-circle"></i> Obese: BMI ≥ 30</li></ul></div>
+        <div class="guide-card"><div class="guide-icon"><i class="fas fa-calculator"></i></div><h3>How to Calculate</h3><p>The formula is: <code>BMI = weight (kg) / (height (m))²</code> For imperial units: <code>BMI = [weight (lbs) / (height (in))²] × 703</code></p></div>
+        <div class="guide-card"><div class="guide-icon"><i class="fas fa-heartbeat"></i></div><h3>Health Implications</h3><p>BMI correlates with body fat and health risks:</p><ul><li><i class="fas fa-arrow-up"></i> High BMI → Increased risk of heart disease, diabetes</li><li><i class="fas fa-arrow-down"></i> Low BMI → Nutritional deficiencies, osteoporosis</li></ul></div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section id="faq" class="guide-section">
     <div class="section-container">
-      <h2 class="section-title">
-        <i class="fas fa-question-circle"></i> Frequently Asked Questions
-      </h2>
-      
+      <h2 class="section-title"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
       <div class="faq-container">
-        <!-- BMI Questions -->
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-calculator" style="color: var(--primary); margin-right: 10px;"></i> How accurate is your BMI calculator?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Our BMI calculator uses the standard WHO formula and is accurate to within 0.1 BMI points. All calculations are performed locally in your browser - we never store or transmit your personal data. The calculator supports both metric (cm/kg) and imperial (inches/lbs) units.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-dumbbell" style="color: var(--primary); margin-right: 10px;"></i> What's the difference between BMI and Body Fat calculator?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong>BMI Calculator:</strong> Uses only height and weight to estimate body fat. Quick and easy but doesn't distinguish between muscle and fat.</p>
-            <p><strong>Body Fat Calculator:</strong> Uses the U.S. Navy Method with neck, waist, and hip measurements to provide a more accurate body composition estimate. This is better for athletes and fitness enthusiasts.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-utensils" style="color: var(--primary); margin-right: 10px;"></i> How does your Calorie Counter work?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Our calorie calculator uses three scientifically validated formulas:</p>
-            <ul>
-              <li><strong>Mifflin-St Jeor:</strong> Most accurate for general population</li>
-              <li><strong>Harris-Benedict:</strong> Traditional formula, good for reference</li>
-              <li><strong>Katch-McArdle:</strong> Most accurate if you know your body fat %</li>
-            </ul>
-            <p>It calculates your BMR (Basal Metabolic Rate) and TDEE (Total Daily Energy Expenditure) based on your activity level and goals.</p>
-          </div>
-        </div>
-
-        <!-- Privacy & Data Questions -->
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 10px;"></i> Do you store my health data?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong>No, never!</strong> We take your privacy seriously:</p>
-            <ul>
-              <li>All calculations happen in your browser - we never see your data</li>
-              <li>No accounts required to use calculators</li>
-              <li>We don't track or store your height, weight, or age</li>
-              <li>Cookie usage is only for site functionality and anonymous analytics</li>
-            </ul>
-            <p>Read our <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> for details.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-cookie-bite" style="color: var(--primary); margin-right: 10px;"></i> What cookies do you use?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>We use minimal cookies:</p>
-            <ul>
-              <li><strong>Essential:</strong> Remember your unit preference (metric/imperial)</li>
-              <li><strong>Analytics:</strong> Anonymous usage data to improve the site</li>
-              <li><strong>Advertising:</strong> For showing relevant offers from our ad partners</li>
-            </ul>
-            <p>You can disable cookies in your browser settings, though some features may not work properly.</p>
-          </div>
-        </div>
-
-        <!-- Tools Questions -->
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-mobile-alt" style="color: var(--primary); margin-right: 10px;"></i> Can I use this on my phone?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Absolutely! Our site is fully responsive and works great on all devices. You can also install it as a PWA (Progressive Web App):</p>
-            <ul>
-              <li><strong>iPhone:</strong> Share menu → "Add to Home Screen"</li>
-              <li><strong>Android:</strong> Menu → "Install App"</li>
-              <li><strong>Desktop:</strong> Install button in browser address bar</li>
-            </ul>
-            <p>Once installed, it works offline and feels like a native app!</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-newspaper" style="color: var(--primary); margin-right: 10px;"></i> Are your health articles reliable?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Yes! Our <a href="blog.html" style="color: var(--primary);">Articles section</a> links directly to:</p>
-            <ul>
-              <li>CDC (Centers for Disease Control)</li>
-              <li>Mayo Clinic</li>
-              <li>World Health Organization (WHO)</li>
-              <li>Harvard Health</li>
-              <li>NHS UK</li>
-              <li>American Heart Association</li>
-              <li>Johns Hopkins Medicine</li>
-              <li>National Institutes of Health (NIH)</li>
-            </ul>
-            <p>We don't write our own articles - we curate the best content from trusted medical institutions.</p>
-          </div>
-        </div>
-
-        <!-- Technical Questions -->
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-ad" style="color: var(--primary); margin-right: 10px;"></i> Why do you show ads?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Ads help us keep all our calculators free for everyone. We work with trusted advertising partners that:</p>
-            <ul>
-              <li>Show relevant, non-intrusive offers</li>
-              <li>Respect your privacy (no personal data shared)</li>
-              <li>Allow you to control your ad experience</li>
-            </ul>
-            <p>You can learn more about how our advertising partners use data in our <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a>.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-sync-alt" style="color: var(--primary); margin-right: 10px;"></i> How often are calculators updated?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Our calculators are updated regularly:</p>
-            <ul>
-              <li><strong>Formulas:</strong> Based on latest medical research (WHO guidelines)</li>
-              <li><strong>Code:</strong> Continuous improvements for accuracy</li>
-              <li><strong>Content:</strong> Articles curated monthly for freshness</li>
-              <li><strong>Last major update:</strong> January 2025</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> How can I get support?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>We're here to help! You can reach us:</p>
-            <ul>
-              <li><strong>📧 Email:</strong> supportbmicalculator@gmail.com</li>
-              <li><strong>🐛 Report Issues:</strong> Found a bug? Let us know via email!</li>
-            </ul>
-            <p>Response times: Typically within 24-48 hours on business days.</p>
-          </div>
-        </div>
-
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-file-contract" style="color: var(--primary); margin-right: 10px;"></i> What are your Terms of Service?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p>Key points from our <a href="terms-of-service.html" style="color: var(--primary);">Terms of Service</a>:</p>
-            <ul>
-              <li>Free to use for everyone</li>
-              <li>Tools are for informational purposes only</li>
-              <li>Not a substitute for professional medical advice</li>
-              <li>We're not liable for health decisions based on our tools</li>
-              <li>You must be 13+ to use this site</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Bonus Question -->
-        <div class="faq-card">
-          <div class="faq-question">
-            <h3><i class="fas fa-heart" style="color: var(--primary); margin-right: 10px;"></i> Is BMI the only measure of health?</h3>
-            <i class="fas fa-chevron-down"></i>
-          </div>
-          <div class="faq-answer">
-            <p><strong>No!</strong> BMI is just one screening tool. For a complete health picture, consider:</p>
-            <ul>
-              <li><strong>Our Body Fat Calculator:</strong> More accurate body composition</li>
-              <li><strong>Waist circumference:</strong> Measures abdominal fat</li>
-              <li><strong>Blood tests:</strong> Cholesterol, blood sugar, etc.</li>
-              <li><strong>Fitness level:</strong> Strength, endurance, flexibility</li>
-              <li><strong>Mental wellbeing:</strong> Stress, sleep, mood</li>
-            </ul>
-            <p>Always consult healthcare providers for personalized advice.</p>
-          </div>
-        </div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-calculator" style="color: var(--primary); margin-right: 10px;"></i> How accurate is your BMI calculator?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Our BMI calculator uses the standard WHO formula and is accurate to within 0.1 BMI points. All calculations are performed locally in your browser - we never store or transmit your personal data. The calculator supports both metric (cm/kg) and imperial (inches/lbs) units.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-dumbbell" style="color: var(--primary); margin-right: 10px;"></i> What's the difference between BMI and Body Fat calculator?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p><strong>BMI Calculator:</strong> Uses only height and weight to estimate body fat. Quick and easy but doesn't distinguish between muscle and fat.</p><p><strong>Body Fat Calculator:</strong> Uses the U.S. Navy Method with neck, waist, and hip measurements to provide a more accurate body composition estimate. This is better for athletes and fitness enthusiasts.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-utensils" style="color: var(--primary); margin-right: 10px;"></i> How does your Calorie Counter work?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Our calorie calculator uses three scientifically validated formulas:</p><ul><li><strong>Mifflin-St Jeor:</strong> Most accurate for general population</li><li><strong>Harris-Benedict:</strong> Traditional formula, good for reference</li><li><strong>Katch-McArdle:</strong> Most accurate if you know your body fat %</li></ul><p>It calculates your BMR (Basal Metabolic Rate) and TDEE (Total Daily Energy Expenditure) based on your activity level and goals.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-shield-alt" style="color: var(--primary); margin-right: 10px;"></i> Do you store my health data?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p><strong>No, never!</strong> We take your privacy seriously:</p><ul><li>All calculations happen in your browser - we never see your data</li><li>No accounts required to use calculators</li><li>We don't track or store your height, weight, or age</li><li>Cookie usage is only for site functionality and anonymous analytics</li></ul><p>Read our <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> for details.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-cookie-bite" style="color: var(--primary); margin-right: 10px;"></i> What cookies do you use?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>We use minimal cookies:</p><ul><li><strong>Essential:</strong> Remember your unit preference (metric/imperial)</li><li><strong>Analytics:</strong> Anonymous usage data to improve the site</li><li><strong>Advertising:</strong> For showing relevant offers from our ad partners</li></ul><p>You can disable cookies in your browser settings, though some features may not work properly.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-mobile-alt" style="color: var(--primary); margin-right: 10px;"></i> Can I use this on my phone?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Absolutely! Our site is fully responsive and works great on all devices. You can also install it as a PWA (Progressive Web App):</p><ul><li><strong>iPhone:</strong> Share menu → "Add to Home Screen"</li><li><strong>Android:</strong> Menu → "Install App"</li><li><strong>Desktop:</strong> Install button in browser address bar</li></ul><p>Once installed, it works offline and feels like a native app!</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-newspaper" style="color: var(--primary); margin-right: 10px;"></i> Are your health articles reliable?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Yes! Our <a href="blog.html" style="color: var(--primary);">Articles section</a> links directly to:</p><ul><li>CDC (Centers for Disease Control)</li><li>Mayo Clinic</li><li>World Health Organization (WHO)</li><li>Harvard Health</li><li>NHS UK</li><li>American Heart Association</li><li>Johns Hopkins Medicine</li><li>National Institutes of Health (NIH)</li></ul><p>We don't write our own articles - we curate the best content from trusted medical institutions.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-ad" style="color: var(--primary); margin-right: 10px;"></i> Why do you show ads?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Ads help us keep all our calculators free for everyone. We work with trusted advertising partners that:</p><ul><li>Show relevant, non-intrusive offers</li><li>Respect your privacy (no personal data shared)</li><li>Allow you to control your ad experience</li></ul><p>You can learn more about how our advertising partners use data in our <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a>.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-sync-alt" style="color: var(--primary); margin-right: 10px;"></i> How often are calculators updated?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Our calculators are updated regularly:</p><ul><li><strong>Formulas:</strong> Based on latest medical research (WHO guidelines)</li><li><strong>Code:</strong> Continuous improvements for accuracy</li><li><strong>Content:</strong> Articles curated monthly for freshness</li><li><strong>Last major update:</strong> January 2025</li></ul></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> How can I get support?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>We're here to help! You can reach us:</p><ul><li><strong>📧 Email:</strong> supportbmicalculator@gmail.com</li><li><strong>🐛 Report Issues:</strong> Found a bug? Let us know via email!</li></ul><p>Response times: Typically within 24-48 hours on business days.</p></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-file-contract" style="color: var(--primary); margin-right: 10px;"></i> What are your Terms of Service?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p>Key points from our <a href="terms-of-service.html" style="color: var(--primary);">Terms of Service</a>:</p><ul><li>Free to use for everyone</li><li>Tools are for informational purposes only</li><li>Not a substitute for professional medical advice</li><li>We're not liable for health decisions based on our tools</li><li>You must be 13+ to use this site</li></ul></div></div>
+        <div class="faq-card"><div class="faq-question"><h3><i class="fas fa-heart" style="color: var(--primary); margin-right: 10px;"></i> Is BMI the only measure of health?</h3><i class="fas fa-chevron-down"></i></div><div class="faq-answer"><p><strong>No!</strong> BMI is just one screening tool. For a complete health picture, consider:</p><ul><li><strong>Our Body Fat Calculator:</strong> More accurate body composition</li><li><strong>Waist circumference:</strong> Measures abdominal fat</li><li><strong>Blood tests:</strong> Cholesterol, blood sugar, etc.</li><li><strong>Fitness level:</strong> Strength, endurance, flexibility</li><li><strong>Mental wellbeing:</strong> Stress, sleep, mood</li></ul><p>Always consult healthcare providers for personalized advice.</p></div></div>
       </div>
-
-      <!-- Still have questions? -->
       <div class="glass-card" style="text-align: center; margin-top: 40px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
         <h3 style="color: white; margin-bottom: 15px;"><i class="fas fa-question-circle"></i> Still have questions?</h3>
         <p style="margin-bottom: 20px;">Can't find what you're looking for? We're happy to help!</p>
-        <a href="mailto:supportbmicalculator@gmail.com" class="hero-button" style="background: white; color: var(--primary);">
-          <i class="fas fa-envelope"></i> Email Support
-        </a>
+        <a href="mailto:supportbmicalculator@gmail.com" class="hero-button" style="background: white; color: var(--primary);"><i class="fas fa-envelope"></i> Email Support</a>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="main-footer">
     <div class="footer-container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <i class="fas fa-calculator"></i>
-          <span>BMI Calculator</span>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <a href="index.html">Home</a>
-          <a href="index.html#calculator">BMI Calc</a>
-          <a href="body-fat-calculator.html">Body Fat</a>
-          <a href="calorie-counter.html">Calorie Counter</a>
-          <a href="blog.html">Articles</a>
-          <a href="about.html">About Us</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms</a>
-        </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
+        <div class="footer-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></div>
+        <div class="footer-links"><h3>Quick Links</h3><a href="index.html">Home</a><a href="index.html#calculator">BMI Calc</a><a href="body-fat-calculator.html">Body Fat</a><a href="calorie-counter.html">Calorie Counter</a><a href="blog.html">Articles</a><a href="about.html">About Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms</a></div>
+        <div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div>
       </div>
-      
-      <div class="footer-copyright">
-        <p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="mailto:supportbmicalculator@gmail.com" style="color: #a0aec0;">supportbmicalculator@gmail.com</a></p>
-      </div>
+      <div class="footer-copyright"><p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="mailto:supportbmicalculator@gmail.com" style="color: #a0aec0;">supportbmicalculator@gmail.com</a></p></div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <!-- Ad script -->
+  <script>
+  (function(kbpv){
+    var d = document,
+        s = d.createElement('script'),
+        l = d.scripts[d.scripts.length - 1];
+    s.settings = kbpv || {};
+    s.src = "//shameful-farm.com/b/XnVDs.dfGhlf0SYmW/cX/cecmW9/ulZ/UIlgkyPrT/cmw/NtTuErymMeD-Eqt/NVzZAy1YMBT/IrwFNkQC";
+    s.async = true;
+    s.referrerPolicy = 'no-referrer-when-downgrade';
+    l.parentNode.insertBefore(s, l);
+  })({})
+  </script>
 </body>
 </html>
