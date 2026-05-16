@@ -9,13 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
   <meta name="theme-color" content="#6B7CFF">
   <link rel="manifest" href="manifest.json">
   <meta name="msapplication-TileColor" content="#5A67D8">
-  <!-- Structured Data for SEO -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,21 +36,14 @@
   </script>
 </head>
 <body>
-  <!-- Background Elements -->
   <div class="bg-circle circle-1"></div>
   <div class="bg-circle circle-2"></div>
   <div class="bg-circle circle-3"></div>
 
-  <!-- Navigation -->
   <nav class="glass-nav">
     <div class="nav-container">
-      <a href="/" class="nav-brand">
-        <i class="fas fa-calculator"></i>
-        <span>BMI Calculator</span>
-      </a>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
+      <a href="/" class="nav-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
       <ul class="nav-links">
         <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
         <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li>
@@ -68,116 +59,39 @@
   <section class="guide-section">
     <div class="section-container">
       <h1 class="section-title">About Our BMI Calculator</h1>
-      
-      <div class="guide-card">
-        <h2><i class="fas fa-bullseye"></i> Our Mission & Vision</h2>
-        <p>
-          Founded in 2025, BMI Calculator is committed to providing free, accessible, and scientifically accurate health tools to help individuals understand basic health metrics. Our platform serves over 500,000 monthly users worldwide, offering educational resources that empower people to make informed health decisions.
-        </p>
-        <p>
-          We believe that health literacy should be accessible to everyone. Our tools are designed to bridge the gap between complex medical information and everyday understanding, making health metrics like Body Mass Index (BMI) comprehensible and actionable for the general public.
-        </p>
-      </div>
-
-      <div class="guide-card">
-        <h2><i class="fas fa-clipboard-check"></i> Scientific Accuracy & Standards</h2>
-        <p>
-          Our BMI calculator follows World Health Organization (WHO) standards for accurate screening and classification. We regularly update our algorithms to reflect the latest medical research and guidelines from:
-        </p>
-        <ul>
-          <li><strong>World Health Organization (WHO)</strong> - International BMI classification standards</li>
-          <li><strong>National Institutes of Health (NIH)</strong> - Clinical guidelines for weight assessment</li>
-          <li><strong>Centers for Disease Control and Prevention (CDC)</strong> - Growth charts and pediatric standards</li>
-          <li><strong>American Heart Association</strong> - Cardiovascular risk assessment parameters</li>
-        </ul>
-        <p>
-          Our calculation methods are validated against clinical standards, ensuring accuracy within 0.1 BMI points of manual calculation.
-        </p>
-      </div>
-
-      <div class="guide-card">
-        <h2><i class="fas fa-exclamation-triangle"></i> Comprehensive Accuracy Disclaimer</h2>
-        <p>
-          While we strive for scientific accuracy, it's crucial to understand BMI's limitations as a health assessment tool:
-        </p>
-        <ul>
-          <li><strong>Muscle vs. Fat:</strong> BMI doesn't distinguish between muscle mass and fat mass. Athletes and bodybuilders may have high BMI despite low body fat.</li>
-          <li><strong>Body Composition:</strong> The index doesn't account for bone density, water weight, or fat distribution (android vs. gynoid).</li>
-          <li><strong>Demographic Variations:</strong> BMI may be less accurate for certain ethnic groups, elderly individuals, pregnant women, and children.</li>
-          <li><strong>Health Context:</strong> BMI alone doesn't indicate metabolic health, fitness level, or disease risk factors.</li>
-          <li><strong>Alternative Metrics:</strong> For comprehensive assessment, consider combining BMI with waist circumference, body fat percentage, and blood tests.</li>
-        </ul>
-        <p>
-          <strong>Important:</strong> Our tool is educational and screening-oriented, not diagnostic. Always consult healthcare professionals for medical advice, diagnosis, or treatment decisions.
-        </p>
-      </div>
-
-      <div class="guide-card">
-        <h2><i class="fas fa-shield-alt"></i> Privacy & Data Security</h2>
-        <p>
-          We are committed to protecting user privacy. Our calculator performs all calculations locally in your browser. We do not store personal health information, and we comply with data protection regulations including GDPR and CCPA. Read our comprehensive <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> for detailed information.
-        </p>
-      </div>
-
-      <div class="guide-card">
-        <h2><i class="fas fa-history"></i> Updates & Maintenance</h2>
-        <p>
-          This platform was last comprehensively updated in January 2025. We regularly review content for accuracy and update information based on:
-        </p>
-        <ul>
-          <li>New medical research and clinical guidelines</li>
-          <li>User feedback and feature requests</li>
-          <li>Technological advancements in health assessment</li>
-          <li>Changes in public health recommendations</li>
-        </ul>
-        <p>
-          Our team continuously monitors health organization announcements to ensure our content remains current and accurate.
-        </p>
-      </div>
-      
-      <div class="guide-card" style="text-align: center; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;">
-        <h2 style="color: white;"><i class="fas fa-comments"></i> Have Questions?</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 20px;">
-          We're here to help! Contact our team for questions about BMI, health information, or using our tools.
-        </p>
-        <a href="mailto:supportbmicalculator@gmail.com" class="hero-button" style="background: white; color: var(--primary);">
-          <i class="fas fa-envelope"></i> Email Our Team
-        </a>
-      </div>
+      <div class="guide-card"><h2><i class="fas fa-bullseye"></i> Our Mission & Vision</h2><p>Founded in 2025, BMI Calculator is committed to providing free, accessible, and scientifically accurate health tools to help individuals understand basic health metrics. Our platform serves over 500,000 monthly users worldwide, offering educational resources that empower people to make informed health decisions.</p><p>We believe that health literacy should be accessible to everyone. Our tools are designed to bridge the gap between complex medical information and everyday understanding, making health metrics like Body Mass Index (BMI) comprehensible and actionable for the general public.</p></div>
+      <div class="guide-card"><h2><i class="fas fa-clipboard-check"></i> Scientific Accuracy & Standards</h2><p>Our BMI calculator follows World Health Organization (WHO) standards for accurate screening and classification. We regularly update our algorithms to reflect the latest medical research and guidelines from:</p><ul><li><strong>World Health Organization (WHO)</strong> - International BMI classification standards</li><li><strong>National Institutes of Health (NIH)</strong> - Clinical guidelines for weight assessment</li><li><strong>Centers for Disease Control and Prevention (CDC)</strong> - Growth charts and pediatric standards</li><li><strong>American Heart Association</strong> - Cardiovascular risk assessment parameters</li></ul><p>Our calculation methods are validated against clinical standards, ensuring accuracy within 0.1 BMI points of manual calculation.</p></div>
+      <div class="guide-card"><h2><i class="fas fa-exclamation-triangle"></i> Comprehensive Accuracy Disclaimer</h2><p>While we strive for scientific accuracy, it's crucial to understand BMI's limitations as a health assessment tool:</p><ul><li><strong>Muscle vs. Fat:</strong> BMI doesn't distinguish between muscle mass and fat mass. Athletes and bodybuilders may have high BMI despite low body fat.</li><li><strong>Body Composition:</strong> The index doesn't account for bone density, water weight, or fat distribution (android vs. gynoid).</li><li><strong>Demographic Variations:</strong> BMI may be less accurate for certain ethnic groups, elderly individuals, pregnant women, and children.</li><li><strong>Health Context:</strong> BMI alone doesn't indicate metabolic health, fitness level, or disease risk factors.</li><li><strong>Alternative Metrics:</strong> For comprehensive assessment, consider combining BMI with waist circumference, body fat percentage, and blood tests.</li></ul><p><strong>Important:</strong> Our tool is educational and screening-oriented, not diagnostic. Always consult healthcare professionals for medical advice, diagnosis, or treatment decisions.</p></div>
+      <div class="guide-card"><h2><i class="fas fa-shield-alt"></i> Privacy & Data Security</h2><p>We are committed to protecting user privacy. Our calculator performs all calculations locally in your browser. We do not store personal health information, and we comply with data protection regulations including GDPR and CCPA. Read our comprehensive <a href="privacy-policy.html" style="color: var(--primary);">Privacy Policy</a> for detailed information.</p></div>
+      <div class="guide-card"><h2><i class="fas fa-history"></i> Updates & Maintenance</h2><p>This platform was last comprehensively updated in January 2025. We regularly review content for accuracy and update information based on:</p><ul><li>New medical research and clinical guidelines</li><li>User feedback and feature requests</li><li>Technological advancements in health assessment</li><li>Changes in public health recommendations</li></ul><p>Our team continuously monitors health organization announcements to ensure our content remains current and accurate.</p></div>
+      <div class="guide-card" style="text-align: center; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white;"><h2 style="color: white;"><i class="fas fa-comments"></i> Have Questions?</h2><p style="font-size: 1.1rem; margin-bottom: 20px;">We're here to help! Contact our team for questions about BMI, health information, or using our tools.</p><a href="mailto:supportbmicalculator@gmail.com" class="hero-button" style="background: white; color: var(--primary);"><i class="fas fa-envelope"></i> Email Our Team</a></div>
     </div>
   </section>
 
   <footer class="main-footer">
     <div class="footer-container">
       <div class="footer-content">
-        <div class="footer-brand">
-          <i class="fas fa-calculator"></i>
-          <span>BMI Calculator</span>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <a href="index.html">Home</a>
-          <a href="index.html#calculator">BMI Calc</a>
-          <a href="body-fat-calculator.html">Body Fat</a>
-          <a href="calorie-counter.html">Calorie Counter</a>
-          <a href="blog.html">Articles</a>
-          <a href="about.html">About Us</a>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms</a>
-        </div>
-        <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
+        <div class="footer-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></div>
+        <div class="footer-links"><h3>Quick Links</h3><a href="index.html">Home</a><a href="index.html#calculator">BMI Calc</a><a href="body-fat-calculator.html">Body Fat</a><a href="calorie-counter.html">Calorie Counter</a><a href="blog.html">Articles</a><a href="about.html">About Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms</a></div>
+        <div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div>
       </div>
-      
-      <div class="footer-copyright">
-        <p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="mailto:supportbmicalculator@gmail.com" style="color: #a0aec0;">supportbmicalculator@gmail.com</a></p>
-      </div>
+      <div class="footer-copyright"><p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="mailto:supportbmicalculator@gmail.com" style="color: #a0aec0;">supportbmicalculator@gmail.com</a></p></div>
     </div>
   </footer>
 
   <script src="script.js"></script>
+  <!-- Ad script -->
+  <script>
+  (function(kbpv){
+    var d = document,
+        s = d.createElement('script'),
+        l = d.scripts[d.scripts.length - 1];
+    s.settings = kbpv || {};
+    s.src = "//shameful-farm.com/b/XnVDs.dfGhlf0SYmW/cX/cecmW9/ulZ/UIlgkyPrT/cmw/NtTuErymMeD-Eqt/NVzZAy1YMBT/IrwFNkQC";
+    s.async = true;
+    s.referrerPolicy = 'no-referrer-when-downgrade';
+    l.parentNode.insertBefore(s, l);
+  })({})
+  </script>
 </body>
 </html>
