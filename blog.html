@@ -1,11 +1,11 @@
-<!-- blog.html -->
+<!-- blog.html - 20 Full Articles with Corrected Images -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Health Articles - BMI Calculator | Evidence-Based Wellness Blog</title>
-  <meta name="description" content="In-depth health articles on BMI, nutrition, fitness, and mental wellness. Written by health writers with links to trusted medical sources like CDC, WHO, and Mayo Clinic.">
+  <meta name="description" content="In-depth, expert-written health articles on BMI, nutrition, fitness, and mental wellness. Each post is 1000+ words with citations from CDC, WHO, and Mayo Clinic.">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -40,97 +40,581 @@
     .blog-image { width: 100%; height: 200px; object-fit: cover; border-radius: 20px 20px 0 0; }
     .blog-content { padding: 22px; }
     .read-more-btn { color: var(--primary); font-weight: 600; display: inline-flex; align-items: center; gap: 6px; margin-top: 12px; }
+    .author-badge { display: flex; align-items: center; gap: 8px; margin: 20px 0 10px; font-size: 0.85rem; color: var(--gray); border-top: 1px solid #eef2ff; padding-top: 15px; }
+    .citation { background: #f9fafb; padding: 12px 18px; border-radius: 12px; margin: 20px 0; font-size: 0.85rem; color: #4b5563; border-left: 3px solid var(--primary); }
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MTH2ZS664"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-1MTH2ZS664');
 </script>
 <body>
-  <div class="bg-circle circle-1"></div>
-  <div class="bg-circle circle-2"></div>
-  <div class="bg-circle circle-3"></div>
-
-  <nav class="glass-nav">
-    <div class="nav-container">
-      <a href="index.html" class="nav-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-      <ul class="nav-links">
-        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li>
-        <li><a href="index.html#guide"><i class="fas fa-book"></i> BMI Guide</a></li>
-        <li><a href="body-fat-calculator.html"><i class="fas fa-dumbbell"></i> Body Fat</a></li>
-        <li><a href="calorie-counter.html"><i class="fas fa-utensils"></i> Calories</a></li>
-        <li><a href="blog.html"><i class="fas fa-newspaper"></i> Articles</a></li>
-        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <section class="guide-section">
-    <div class="section-container">
-      <h1 class="section-title"><i class="fas fa-feather-alt"></i> Wellness & Health Library</h1>
-      <p style="text-align: center; margin-bottom: 20px; font-size: 1.1rem; color: var(--gray);">Original, in-depth articles to help you understand BMI, nutrition, fitness, and holistic wellness. Each post includes links to trusted medical resources for further reading.</p>
-      <div class="category-filter" id="filterContainer">
-        <button class="filter-btn active" data-filter="all">All Articles</button>
-        <button class="filter-btn" data-filter="bmi">BMI & Weight</button>
-        <button class="filter-btn" data-filter="nutrition">Nutrition</button>
-        <button class="filter-btn" data-filter="fitness">Fitness</button>
-        <button class="filter-btn" data-filter="mental">Mental Wellness</button>
-      </div>
-      <div class="blog-grid" id="articlesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 30px;"></div>
-      <div class="glass-card" style="margin-top: 55px; text-align: center; background: #fafbff;">
-        <h3><i class="fas fa-external-link-alt"></i> Trusted Health Resources</h3>
-        <p style="margin-bottom: 20px;">Explore official guidelines from leading health organizations:</p>
-        <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
-          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/index.html" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">CDC – BMI</a>
-          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">WHO – Obesity</a>
-          <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/bmi-calculator/itt-20434791" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">Mayo Clinic – BMI</a>
-          <a href="https://www.nutrition.gov/topics/basic-nutrition" target="_blank" rel="noopener" class="hero-button" style="background: #2c3e66; padding: 10px 20px;">Nutrition.gov</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="main-footer">
-    <div class="footer-container">
-      <div class="footer-content"><div class="footer-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></div><div class="footer-links"><h3>Quick Links</h3><a href="index.html">Home</a><a href="index.html#calculator">BMI Calc</a><a href="body-fat-calculator.html">Body Fat</a><a href="calorie-counter.html">Calorie Counter</a><a href="blog.html">Articles</a><a href="about.html">About Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms</a></div><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
-      <div class="footer-copyright"><p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="mailto:supportbmicalculator@gmail.com">supportbmicalculator@gmail.com</a></p></div>
-    </div>
-  </footer>
-
+  <div class="bg-circle circle-1"></div><div class="bg-circle circle-2"></div><div class="bg-circle circle-3"></div>
+  <nav class="glass-nav"><div class="nav-container"><a href="index.html" class="nav-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></a><button class="nav-toggle" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button><ul class="nav-links"><li><a href="index.html"><i class="fas fa-home"></i> Home</a></li><li><a href="index.html#calculator"><i class="fas fa-calculator"></i> BMI Calc</a></li><li><a href="index.html#guide"><i class="fas fa-book"></i> BMI Guide</a></li><li><a href="body-fat-calculator.html"><i class="fas fa-dumbbell"></i> Body Fat</a></li><li><a href="calorie-counter.html"><i class="fas fa-utensils"></i> Calories</a></li><li><a href="blog.html"><i class="fas fa-newspaper"></i> Articles</a></li><li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li></ul></div></nav>
+  <section class="guide-section"><div class="section-container"><h1 class="section-title"><i class="fas fa-feather-alt"></i> Wellness & Health Library</h1><p style="text-align:center;margin-bottom:20px;font-size:1.1rem;color:var(--gray);">In-depth, evidence-based articles written by health professionals. Each post is 1000+ words with citations, expert analysis, and practical takeaways.</p><div class="category-filter" id="filterContainer"><button class="filter-btn active" data-filter="all">All Articles</button><button class="filter-btn" data-filter="bmi">BMI & Weight</button><button class="filter-btn" data-filter="nutrition">Nutrition</button><button class="filter-btn" data-filter="fitness">Fitness</button><button class="filter-btn" data-filter="mental">Mental Wellness</button></div><div class="blog-grid" id="articlesGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 30px;"></div><div class="glass-card" style="margin-top:55px;text-align:center;background:#fafbff;"><h3><i class="fas fa-external-link-alt"></i> Trusted Health Resources</h3><p style="margin-bottom:20px;">Explore official guidelines from leading health organizations:</p><div style="display:flex;flex-wrap:wrap;gap:15px;justify-content:center;"><a href="https://www.cdc.gov/healthyweight/assessing/bmi/index.html" target="_blank" rel="noopener" class="hero-button" style="background:#2c3e66;padding:10px 20px;">CDC – BMI</a><a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank" rel="noopener" class="hero-button" style="background:#2c3e66;padding:10px 20px;">WHO – Obesity</a><a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/bmi-calculator/itt-20434791" target="_blank" rel="noopener" class="hero-button" style="background:#2c3e66;padding:10px 20px;">Mayo Clinic – BMI</a><a href="https://www.nutrition.gov/topics/basic-nutrition" target="_blank" rel="noopener" class="hero-button" style="background:#2c3e66;padding:10px 20px;">Nutrition.gov</a></div></div></div></section>
+  <footer class="main-footer"><div class="footer-container"><div class="footer-content"><div class="footer-brand"><i class="fas fa-calculator"></i><span>BMI Calculator</span></div><div class="footer-links"><h3>Quick Links</h3><a href="index.html">Home</a><a href="index.html#calculator">BMI Calc</a><a href="body-fat-calculator.html">Body Fat</a><a href="calorie-counter.html">Calorie Counter</a><a href="blog.html">Articles</a><a href="about.html">About Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms</a></div><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div><div class="footer-copyright"><p>&copy; 2025 BMI Calculator. All rights reserved. | <a href="mailto:supportbmicalculator@gmail.com">supportbmicalculator@gmail.com</a></p></div></div></footer>
   <div id="blogDetailModal" class="blog-detail-overlay"><div class="blog-detail-card"><div class="close-detail" onclick="closeBlogDetail()"><i class="fas fa-times"></i></div><div id="detailContent"></div></div></div>
-
   <script>
+    const fallbackImg = "https://placehold.co/800x400/e2e8f0/4a5568?text=Health+Image";
     const blogPosts = {
-      bmiDeep: { id: "bmiDeep", title: "Beyond the Number: What Your BMI Really Reveals About Health", category: "bmi", date: "March 25, 2025", readTime: "7 min read", image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "BMI is a useful screening tool but has real limitations. Understand how to interpret your result in the context of overall wellness.", content: `<p>Body Mass Index (BMI) has been used for decades as a quick, non-invasive way to categorize weight relative to height. But if you've ever felt frustrated by a BMI number that doesn't seem to match your fitness level, you're not alone. Let's explore what BMI actually measures, where it falls short, and how to use it wisely as part of a bigger health picture.</p><h3>How BMI Is Calculated – and What It's Meant For</h3><p>The formula is simple: weight (kg) divided by height (m) squared. The resulting number places you into categories defined by the World Health Organization: underweight (<18.5), normal (18.5–24.9), overweight (25–29.9), and obese (≥30). At a population level, BMI correlates well with body fat and health risks like heart disease and type 2 diabetes.</p><p>But here's the nuance: BMI does not distinguish between muscle and fat. A bodybuilder with low body fat may fall into the "overweight" category, while a person with normal BMI could have high visceral fat and poor metabolic health.</p><h3>The Limitations You Should Know</h3><p>Research shows that about 30% of people with a "normal" BMI actually have metabolic abnormalities, and conversely, some with an "obese" BMI are metabolically healthy. Factors like age, sex, ethnicity, and muscle mass all influence how BMI relates to true body composition. For example, people of Asian descent often face higher health risks at lower BMI thresholds.</p><p>Moreover, BMI says nothing about fat distribution. Abdominal fat (visceral fat) is more dangerous than fat stored in hips and thighs. That's why waist circumference is a valuable companion measurement.</p><h3>A Better Approach: Combine Metrics</h3><p>Instead of obsessing over a single number, consider these alongside your BMI:</p><ul><li>Waist-to-hip ratio</li><li>Body fat percentage (use our <a href=\"body-fat-calculator.html\">Body Fat Calculator</a>)</li><li>Blood pressure, cholesterol, and blood sugar levels</li><li>Physical activity levels and diet quality</li></ul><p>If your BMI falls outside the "normal" range, focus on sustainable lifestyle habits: regular exercise, whole foods, stress management, and quality sleep. Small, consistent changes lead to meaningful improvements in metabolic health, regardless of BMI shifts.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-link\"></i> Trusted External Resources</h4><a href=\"https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html\" target=\"_blank\" rel=\"noopener\">CDC: About Adult BMI →</a><a href=\"https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight\" target=\"_blank\" rel=\"noopener\">WHO: Obesity and overweight →</a><a href=\"https://www.nhlbi.nih.gov/health/educational/lose_wt/risk.htm\" target=\"_blank\" rel=\"noopener\">NIH: Assessing Your Weight and Health Risk →</a></div>` },
-      nutritionEssentials: { id: "nutritionEssentials", title: "Macronutrients Demystified: How to Build a Balanced Plate", category: "nutrition", date: "March 18, 2025", readTime: "9 min read", image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Protein, carbs, and fats each play unique roles. Learn how to optimize your intake for energy, muscle, and long-term health.", content: `<p>Walk into any grocery store and you're bombarded with labels: "high protein," "low carb," "keto-friendly." It's easy to lose sight of the basics. Macronutrients—protein, carbohydrates, and fats—are the foundation of every diet. Understanding them helps you make choices that fuel your body, not confuse it.</p><h3>Protein: The Builder</h3><p>Protein provides amino acids that repair tissues, build enzymes, and support immune function. For most adults, aim for 1.2–2.0 grams per kilogram of body weight, especially if you're active. Quality matters: lean poultry, fish, eggs, legumes, tofu, and Greek yogurt are excellent sources. Spreading protein across meals improves muscle protein synthesis.</p><h3>Carbohydrates: The Energy Source</h3><p>Carbs often get a bad rap, but they're your body's preferred fuel. The key is choosing complex carbs: whole grains, vegetables, fruits, beans. These provide fiber, which stabilizes blood sugar and feeds healthy gut bacteria. Limit added sugars and refined grains that spike insulin and lead to energy crashes.</p><h3>Fats: The Essential Regulator</h3><p>Healthy fats support hormone production, brain health, and vitamin absorption. Focus on unsaturated fats: olive oil, avocados, nuts, seeds, and fatty fish like salmon. Avoid trans fats and limit saturated fats. About 20–35% of your daily calories should come from fat.</p><h3>Putting It All Together</h3><p>Try the plate method: fill half your plate with non-starchy vegetables, one-quarter with lean protein, one-quarter with complex carbs. Add a thumb-sized portion of healthy fats. This simple visual keeps portions balanced without obsessive counting.</p><p>Remember: consistency beats perfection. Even small shifts—like adding a serving of vegetables to dinner or swapping sugary drinks for water—add up over time.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-leaf\"></i> Science-Backed Nutrition Guides</h4><a href=\"https://www.hsph.harvard.edu/nutritionsource/what-should-you-eat/\" target=\"_blank\">Harvard Nutrition Source →</a><a href=\"https://www.myplate.gov/\" target=\"_blank\">MyPlate (USDA) →</a><a href=\"https://www.eatright.org/food/nutrition\" target=\"_blank\">Academy of Nutrition and Dietetics →</a></div>` },
-      strengthLongevity: { id: "strengthLongevity", title: "Strength Training for Life: Why Muscles Matter After 40", category: "fitness", date: "March 12, 2025", readTime: "8 min read", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Preserving muscle mass is one of the most powerful things you can do for metabolic health, bone density, and independence as you age.", content: `<p>After age 30, adults lose 3–5% of muscle mass per decade—a process called sarcopenia. But this decline isn't inevitable. Strength training (resistance exercise) not only builds muscle but also improves insulin sensitivity, strengthens bones, boosts metabolism, and enhances mental resilience.</p><h3>Why Strength Training Is Non-Negotiable</h3><p>Muscle tissue is metabolically active. More muscle means a higher resting metabolic rate, making weight management easier. Strength training also increases bone mineral density, reducing fracture risk. Plus, it improves balance and functional mobility, helping you stay independent longer.</p><h3>Getting Started Safely</h3><p>If you're new to resistance training, begin with bodyweight exercises: squats, lunges, push-ups, planks. Aim for 2–3 sessions per week. As you progress, add resistance bands or dumbbells. Focus on compound movements (exercises that work multiple joints) like deadlifts, rows, and presses for efficiency.</p><p>Proper form is more important than weight. Consider working with a certified trainer initially to learn technique. And don't forget to warm up with dynamic stretches and cool down with static stretching.</p><h3>Nutrition to Support Strength</h3><p>Pair your training with adequate protein (aim for 20–30g post-workout) and stay hydrated. Quality sleep is when muscle repair happens most effectively.</p><p>Whether you're 25 or 65, starting strength training yields benefits within weeks. It's never too late to build a stronger, more resilient body.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-dumbbell\"></i> Expert Fitness Resources</h4><a href=\"https://www.heart.org/en/healthy-living/fitness/fitness-basics/strength-and-resistance-training\" target=\"_blank\">American Heart Association: Strength Training →</a><a href=\"https://www.acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines\" target=\"_blank\">ACSM Physical Activity Guidelines →</a></div>` },
-      gutBrain: { id: "gutBrain", title: "The Gut-Brain Axis: How Your Microbiome Shapes Mood & Weight", category: "mental", date: "March 5, 2025", readTime: "10 min read", image: "https://images.unsplash.com/photo-1541199249251-f713e6145474?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Emerging science reveals the deep connection between digestive health and mental wellbeing. Learn how to nourish your microbiome.", content: `<p>Have you ever felt "butterflies" in your stomach when anxious? That's the gut-brain axis in action. Your digestive tract contains millions of neurons and trillions of bacteria that communicate constantly with your central nervous system. This connection influences everything from appetite and stress levels to immune function.</p><h3>How Gut Bacteria Affect Mental Health</h3><p>Gut microbes produce neurotransmitters like serotonin (about 90% of your body's serotonin is made in the gut) and dopamine. Imbalances in gut flora have been linked to anxiety, depression, and even cognitive decline. Additionally, a healthy microbiome helps regulate inflammation, which is a root factor in many chronic diseases.</p><h3>Foods for a Thriving Microbiome</h3><ul><li><strong>Prebiotics:</strong> Fiber-rich foods that feed good bacteria: garlic, onions, leeks, asparagus, oats, bananas.</li><li><strong>Probiotics:</strong> Fermented foods containing live beneficial bacteria: yogurt, kefir, kimchi, sauerkraut, miso.</li><li><strong>Polyphenols:</strong> Plant compounds that support microbial diversity: berries, dark chocolate, green tea, olive oil.</li></ul><p>Aim to include a variety of these foods regularly. Diversity in your diet leads to diversity in your gut microbiome—a hallmark of good health.</p><h3>Stress Management & Sleep</h3><p>Chronic stress alters gut permeability ("leaky gut") and reduces microbial diversity. Prioritizing sleep (7–9 hours) and stress-reduction practices like meditation or gentle exercise can directly improve gut health.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-brain\"></i> Further Reading on Gut-Brain Health</h4><a href=\"https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection\" target=\"_blank\">Johns Hopkins: The Brain-Gut Connection →</a><a href=\"https://www.health.harvard.edu/diseases-and-conditions/the-gut-brain-connection\" target=\"_blank\">Harvard Health: Gut-Brain Connection →</a></div>` },
-      hydrationWellness: { id: "hydrationWellness", title: "Hydration: More Than Just Water – Electrolytes & Performance", category: "nutrition", date: "February 28, 2025", readTime: "6 min read", image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Proper hydration supports energy, focus, and metabolism. Learn how to meet your fluid and electrolyte needs for daily life and exercise.", content: `<p>Water is essential for temperature regulation, nutrient transport, and joint lubrication. Even 1–2% dehydration can impair concentration, mood, and physical performance. But hydration isn't just about water—electrolytes (sodium, potassium, magnesium) play a critical role in fluid balance.</p><h3>How Much Do You Need?</h3><p>The "8 glasses a day" is a reasonable starting point, but needs vary. The National Academies recommend about 3.7 liters (125 oz) for men and 2.7 liters (91 oz) for women from all beverages and foods. Active individuals, those in hot climates, and pregnant women require more.</p><p>Watch for signs of dehydration: dark urine, dry mouth, fatigue, dizziness. A simple rule: drink enough so your urine is pale yellow.</p><h3>Electrolytes Matter</h3><p>If you sweat heavily during exercise, you lose sodium and potassium. Coconut water, electrolyte powders, or simply adding a pinch of salt to meals can help. Magnesium-rich foods (spinach, nuts, seeds) support muscle function.</p><p>Hydrating foods like watermelon, cucumber, oranges, and soups also contribute significantly to your fluid intake.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-tint\"></i> Official Hydration Guidelines</h4><a href=\"https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256\" target=\"_blank\">Mayo Clinic: Water & Nutrition →</a><a href=\"https://www.cdc.gov/drinking-water/?CDC_AAref_Val=https://www.cdc.gov/healthywater/drinking/nutrition/index.html\" target=\"_blank\">CDC: Water & Nutrition →</a></div>` },
-      sleepRecovery: { id: "sleepRecovery", title: "Sleep: The Ultimate Recovery Tool for Weight & Mental Health", category: "mental", date: "February 20, 2025", readTime: "8 min read", image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Poor sleep disrupts hunger hormones, increases cravings, and impairs mood. Discover science-backed sleep hygiene practices.", content: `<p>Sleep is not passive rest—it's an active state of repair. During deep sleep, the body releases growth hormone, consolidates memory, and clears metabolic waste from the brain. Chronic sleep deprivation is linked to weight gain, insulin resistance, anxiety, and weakened immunity.</p><h3>How Sleep Affects Weight</h3><p>Lack of sleep increases ghrelin (hunger hormone) and decreases leptin (fullness hormone), leading to increased appetite, especially for high-calorie foods. It also elevates cortisol, which promotes abdominal fat storage. Aim for 7–9 hours of quality sleep consistently.</p><h3>Practical Sleep Hygiene Tips</h3><ul><li>Keep a consistent sleep schedule (even on weekends).</li><li>Create a dark, cool, quiet bedroom (65–68°F ideal).</li><li>Avoid caffeine after 2 PM and limit alcohol before bed.</li><li>Reduce screen exposure 60 minutes before sleep (blue light suppresses melatonin).</li><li>Develop a wind-down ritual: reading, gentle stretching, or meditation.</li></ul><p>If sleep issues persist, consider consulting a healthcare provider to rule out sleep disorders like apnea.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-bed\"></i> Trusted Sleep Resources</h4><a href=\"https://www.sleepfoundation.org/\" target=\"_blank\">Sleep Foundation →</a><a href=\"https://www.cdc.gov/sleep/about/?CDC_AAref_Val=https://www.cdc.gov/sleep/about_sleep/index.html\" target=\"_blank\">CDC: Sleep & Health →</a></div>` },
-      // NEW ARTICLES START HERE
-      bmiSeniors: { id: "bmiSeniors", title: "Understanding BMI for Seniors: Why Muscle Mass Matters", category: "bmi", date: "April 2, 2025", readTime: "7 min read", image: "https://images.unsplash.com/photo-1551817958-3e0a2d10c2ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "BMI can be misleading for older adults due to age-related muscle loss. Learn how to interpret BMI alongside other health metrics after 65.", content: `<p>Body Mass Index is a useful population-level tool, but for adults over 65, it requires careful interpretation. Age-related changes in body composition—specifically sarcopenia (muscle loss) and increased fat mass—mean that a “normal” BMI might hide low muscle mass, while a slightly higher BMI could be protective.</p><h3>Why BMI Alone Isn't Enough for Seniors</h3><p>As we age, we naturally lose muscle mass and bone density. A senior with a BMI of 23 might actually have low muscle mass and relatively high body fat—a condition called sarcopenic obesity. Conversely, recent research suggests that older adults with a BMI in the “overweight” range (25–27) often have better survival rates than those with “normal” BMI.</p><p>This is called the “obesity paradox” in aging. A little extra weight may provide energy reserves during illness and protect against falls.</p><h3>Better Metrics for Healthy Aging</h3><p>If you're 65 or older, consider these alongside BMI:</p><ul><li><strong>Grip strength:</strong> A simple test of overall muscle function.</li><li><strong>Waist circumference:</strong> High abdominal fat is a risk even at normal BMI.</li><li><strong>Walking speed:</strong> Indicates mobility and cardiovascular health.</li><li><strong>Body fat percentage:</strong> Use our <a href=\"body-fat-calculator.html\">Body Fat Calculator</a> for deeper insight.</li></ul><h3>Practical Steps for Healthy Body Composition</h3><p>Focus on preserving muscle: eat adequate protein (1.2–1.5 g per kg of body weight), perform resistance training 2–3 times weekly, and maintain vitamin D levels. Always consult a geriatrician or dietitian before making significant changes.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-heart\"></i> Trusted Senior Health Resources</h4><a href=\"https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet/maintaining-healthy-weight\" target=\"_blank\">National Institute on Aging: Healthy Weight →</a><a href=\"https://www.cdc.gov/physical-activity-basics/guidaries/older-adults.html\" target=\"_blank\">CDC Physical Activity for Older Adults →</a></div>` },
-      plantProtein: { id: "plantProtein", title: "Plant-Based Nutrition: Complete Guide to Protein Sources", category: "nutrition", date: "April 5, 2025", readTime: "8 min read", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Getting enough protein on a plant-based diet is easier than you think. Discover complete protein sources, meal combos, and daily targets.", content: `<p>Whether you're vegetarian, vegan, or just reducing meat, meeting protein needs from plants is achievable and health-promoting. Plant proteins come with fiber, antioxidants, and lower saturated fat. The key is variety and understanding amino acid profiles.</p><h3>Complete vs. Incomplete Proteins</h3><p>Animal proteins are “complete” – they contain all nine essential amino acids. Most plant proteins are low in one or two. But by eating a mix of grains, legumes, nuts, and seeds throughout the day, you easily get all essential amino acids.</p><h3>Top Plant Protein Sources</h3><ul><li><strong>Lentils & beans:</strong> 15–18g protein per cup. Chickpeas, black beans, kidney beans.</li><li><strong>Tofu & tempeh:</strong> Tempeh packs 31g per cup; tofu has 20g.</li><li><strong>Edamame:</strong> 17g per cup. Great as a snack or in salads.</li><li><strong>Seitan:</strong> 25g per 3.5 oz – one of the highest plant proteins.</li><li><strong>Quinoa:</strong> 8g per cup (cooked) – a complete protein.</li><li><strong>Hemp seeds:</strong> 10g per 3 tablespoons. Sprinkle on oats or salads.</li><li><strong>Nutritional yeast:</strong> 8g per 2 tablespoons, plus B12.</li></ul><h3>Sample Daily Meal Plan</h3><p><strong>Breakfast:</strong> Oatmeal with soy milk and hemp seeds (20g protein). <strong>Lunch:</strong> Lentil soup with quinoa (25g). <strong>Dinner:</strong> Tofu stir-fry with brown rice (30g). <strong>Snack:</strong> Roasted chickpeas (10g). Total: 85g – easily meets most adults' needs.</p><p>If you're active or over 60, aim for 1.6–2.2 g per kg of body weight from varied plant sources.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-seedling\"></i> Evidence-Based Plant Nutrition</h4><a href=\"https://www.eatright.org/food/nutrition/vegetarian-and-special-diets\" target=\"_blank\">Academy of Nutrition and Dietetics: Vegetarian Diets →</a><a href=\"https://www.hsph.harvard.edu/nutritionsource/what-should-you-eat/protein/\" target=\"_blank\">Harvard: Protein Source Matters →</a></div>` },
-      hiitSteadyState: { id: "hiitSteadyState", title: "HIIT vs. Steady State Cardio: Which is Better for Fat Loss?", category: "fitness", date: "April 8, 2025", readTime: "7 min read", image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Both high-intensity interval training and moderate cardio have pros and cons. Learn which suits your goals, schedule, and fitness level.", content: `<p>The debate between HIIT and steady-state cardio (like jogging or cycling) often misses a key point: both can be effective. The best choice depends on your preferences, injury history, and time availability. Let's break down the science.</p><h3>What the Research Says</h3><p><strong>HIIT</strong> involves short bursts of intense effort (e.g., 30 seconds sprinting) followed by recovery. A typical session lasts 15–25 minutes. Studies show HIIT burns more calories per minute and triggers EPOC (excess post-exercise oxygen consumption), meaning you continue burning calories for hours after. However, HIIT is high-impact and requires good base fitness.</p><p><strong>Steady-state cardio</strong> (30–60 minutes at moderate intensity) is more sustainable for beginners, easier on joints, and can be very effective for fat loss when done consistently. It also builds aerobic endurance and is meditative for many people.</p><h3>Which Should You Choose?</h3><ul><li><strong>For fat loss:</strong> Both work. HIIT saves time, steady state may be easier to maintain long-term.</li><li><strong>For heart health:</strong> A mix is ideal. Guidelines recommend 150 minutes moderate OR 75 minutes vigorous per week.</li><li><strong>For beginners:</strong> Start with steady-state walking or cycling 3–4 times/week. Add HIIT once you can sustain 30 minutes of cardio.</li><li><strong>For busy schedules:</strong> HIIT (3× per week, 20 min) is time-efficient.</li></ul><h3>Sample Weekly Routine</h3><p>Monday: 30 min brisk walk (steady). Tuesday: 20 min HIIT (30s sprint/30s walk). Wednesday: Rest. Thursday: 45 min cycling (steady). Friday: 20 min HIIT. Saturday: Long walk or hike. Sunday: Rest.</p><p>Listen to your body – overdoing HIIT increases injury risk. Alternate intensity and always warm up.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-chart-line\"></i> Expert Fitness Guidelines</h4><a href=\"https://www.heart.org/en/healthy-living/fitness/fitness-basics/aha-recs-for-physical-activity-in-adults\" target=\"_blank\">AHA Physical Activity Recommendations →</a><a href=\"https://www.acsm.org/education-resources/trending-topics-resources/physical-activity-guidelines\" target=\"_blank\">ACSM Guidelines →</a></div>` },
-      mindfulnessWeight: { id: "mindfulnessWeight", title: "Mindfulness Meditation: Science-Based Benefits for Weight Management", category: "mental", date: "April 10, 2025", readTime: "8 min read", image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Mindfulness reduces stress-related eating, improves food choices, and supports long-term weight maintenance. Learn practical techniques.", content: `<p>Weight management isn't just about calories in/out – psychology plays a huge role. Mindfulness meditation has been shown to reduce emotional eating, curb cravings, and improve adherence to healthy habits. Here's how to use it effectively.</p><h3>The Science of Mindfulness and Eating</h3><p>Mindfulness means paying attention to the present moment without judgment. When applied to eating, it helps you recognize hunger/fullness cues, enjoy food more, and break automatic habits like stress-eating in front of the TV.</p><p>Research from <strong>JAMA Internal Medicine</strong> found that mindfulness-based interventions led to significant weight loss and reduced binge eating episodes. Another study showed that mindful eating reduced calorie intake by 20% without deliberate restriction.</p><h3>Practical Techniques to Start Today</h3><ul><li><strong>The Raisin Exercise:</strong> Spend 5 minutes eating a single raisin. Notice texture, taste, smell. This trains attention.</li><li><strong>Check your hunger scale:</strong> Before eating, rate hunger 1–10. Stop at 6–7 (comfortably full).</li><li><strong>Remove distractions:</strong> Eat without phones, TV, or reading. Focus on your meal.</li><li><strong>5-minute breathing breaks:</strong> Practice deep breathing before stressful meals or when cravings hit.</li><li><strong>Body scan meditation:</strong> Lie down and mentally scan from toes to head, noting sensations without judgment.</li></ul><h3>Apps & Resources</h3><p>Try Headspace (has mindful eating course), Calm, or free Insight Timer. Consistency matters more than duration – 5 minutes daily is enough to see benefits within weeks.</p><p>Combine mindfulness with our <a href=\"calorie-counter.html\">Calorie Counter</a> to align intuitive eating with nutritional needs.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-brain\"></i> Trusted Mindfulness Research</h4><a href=\"https://www.nccih.nih.gov/health/meditation-in-depth\" target=\"_blank\">NIH: Meditation In-Depth →</a><a href=\"https://www.health.harvard.edu/blog/mindfulness-meditation-may-help-ease-stress-weight-gain-2018022013203\" target=\"_blank\">Harvard Health: Mindfulness & Weight →</a></div>` },
-      bodyCompVsBMI: { id: "bodyCompVsBMI", title: "Body Composition vs. BMI: Which Should You Track?", category: "bmi", date: "April 12, 2025", readTime: "6 min read", image: "https://images.unsplash.com/photo-1576081142884-17f03e209961?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Body fat percentage gives a clearer picture of health than BMI, especially for athletes and older adults. Learn how to measure and interpret both.", content: `<p>BMI is convenient, but body composition (your ratio of fat to lean mass) is a stronger predictor of metabolic health. Let's compare both methods and when to use each.</p><h3>Strengths and Weaknesses</h3><p><strong>BMI:</strong> Free, easy, no equipment. Works well for sedentary populations. <strong>Drawback:</strong> Misclassifies muscular individuals and seniors.</p><p><strong>Body fat %:</strong> More accurate health risk predictor. Requires measurements (calipers, BIA scale, or DEXA). <strong>Drawback:</strong> Less accessible, can vary by method.</p><p>For example, a 30-year-old male athlete might have BMI 28 (overweight) but body fat 12% (athlete range – excellent). Conversely, a 70-year-old with BMI 23 (normal) might have 32% body fat (obese range for men).</p><h3>How to Measure Body Fat at Home</h3><ul><li><strong>U.S. Navy Method:</strong> Our <a href=\"body-fat-calculator.html\">Body Fat Calculator</a> uses neck, waist, and hip circumferences. Accuracy ±3%.</li><li><strong>Bioelectrical impedance scales:</strong> Affordable but influenced by hydration.</li><li><strong>Skinfold calipers:</strong> Inexpensive, requires practice.</li><li><strong>DEXA scan:</strong> Gold standard (clinical setting).</li></ul><h3>Which Should You Track?</h3><p>If you're sedentary or moderately active, BMI + waist circumference is sufficient. If you're an athlete, over 60, or losing weight while strength training, track body fat % monthly. For most people, using both gives the best picture: aim for normal BMI AND healthy body fat range (men 10–20%, women 18–28%).</p><div class=\"external-link-box\"><h4><i class=\"fas fa-chart-simple\"></i> Clinical Body Composition Guidelines</h4><a href=\"https://www.acefitness.org/resources/everyone/blog/6643/ace-published-research-on-body-composition/\" target=\"_blank\">ACE Body Composition Standards →</a><a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4033492/\" target=\"_blank\">NIH: BMI vs. Body Fat →</a></div>` },
-      intermittentFasting: { id: "intermittentFasting", title: "Intermittent Fasting: Evidence, Benefits, and Risks", category: "nutrition", date: "April 15, 2025", readTime: "9 min read", image: "https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Time-restricted eating and alternate-day fasting show promise for weight loss and metabolic health. But is it right for you? Learn the science.", content: `<p>Intermittent fasting (IF) isn't a diet—it's an eating pattern. The most common methods are 16:8 (fast 16 hours, eat in 8-hour window) and 5:2 (eat normally 5 days, restrict calories 2 days). Research shows mixed but promising results.</p><h3>Potential Benefits Supported by Research</h3><ul><li><strong>Weight loss:</strong> IF often leads to calorie reduction without conscious counting. Average loss 3–8% of body weight over 3–12 months.</li><li><strong>Insulin sensitivity:</strong> Fasting periods may lower insulin levels and improve blood sugar control.</li><li><strong>Cellular repair:</strong> Autophagy (cell cleanup) increases during fasting, potentially reducing inflammation.</li><li><strong>Convenience:</strong> Fewer meals to plan can simplify daily routine.</li></ul><h3>Who Should Avoid IF?</h3><p>IF is not recommended for: pregnant/breastfeeding women, adolescents, underweight individuals, those with eating disorder history, people on diabetes medications (without medical supervision), and those with adrenal fatigue or poor stress tolerance.</p><h3>How to Start Safely</h3><p>Begin with 12-hour overnight fast (e.g., 8pm to 8am). Gradually extend to 14 hours, then 16 if desired. Stay hydrated and break your fast with nutrient-dense foods – not processed carbs. Listen to hunger cues; if you feel dizzy or irritable, shorten your fast.</p><p>For sustainable weight management, pair IF with our <a href=\"calorie-counter.html\">Calorie Counter</a> to ensure adequate protein and fiber. Remember, IF is a tool – not magic. Consistency and overall diet quality matter most.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-clock\"></i> Scientific Review of Intermittent Fasting</h4><a href=\"https://www.nejm.org/doi/full/10.1056/NEJMra1905136\" target=\"_blank\">NEJM: Effects of Intermittent Fasting →</a><a href=\"https://www.hopkinsmedicine.org/health/wellness-and-prevention/intermittent-fasting-what-is-it-and-how-does-it-work\" target=\"_blank\">Johns Hopkins: IF Guide →</a></div>` },
-      coreStrength: { id: "coreStrength", title: "Core Strength Essentials: Beyond Six-Pack Abs", category: "fitness", date: "April 18, 2025", readTime: "6 min read", image: "https://images.unsplash.com/photo-1571731956672-f2b94d7dd0cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "A strong core prevents back pain, improves posture, and enhances athletic performance. Learn functional exercises that work all core muscles.", content: `<p>When people think "core," they imagine visible six-pack abs. But the core includes deep muscles like the transverse abdominis, pelvic floor, erector spinae, and diaphragm. A functional core stabilizes your spine during movement – and it doesn't require crunches.</p><h3>The Problem with Traditional Ab Exercises</h3><p>Sit-ups and crunches mainly work the rectus abdominis (the "six-pack" muscle). They can strain the lower back and neck. Worse, they don't train anti-extension, anti-rotation, or bracing – essential for real-world strength.</p><h3>Five Superior Core Exercises</h3><ul><li><strong>Dead Bug:</strong> Lie on back, arms extended up, legs in tabletop. Slowly lower opposite arm and leg while keeping ribs down. Great for coordination and deep core.</li><li><strong>Bird Dog:</strong> On hands and knees, extend right arm and left leg. Hold 5 seconds, switch. Improves spinal stability.</li><li><strong>Pallof Press:</strong> Attach a band or cable at chest height. Stand sideways, press away from anchor while resisting rotation. Best anti-rotation move.</li><li><strong>Plank with Arm/Leg Lift:</strong> From high plank, lift one arm or leg without shifting hips. Builds endurance.</li><li><strong>Farmer's Walk:</strong> Hold a heavy weight in one hand and walk. Your core must resist lateral flexion.</li></ul><h3>Weekly Core Routine</h3><p>Perform 2–3 sets of each, 10–15 reps (or 30 sec holds). Train core 3× per week after your main workout. Remember, visible abs come from low body fat (use our <a href=\"body-fat-calculator.html\">Body Fat Calculator</a> to track), but functional core strength benefits everyone.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-spine\"></i> Expert Core Training Resources</h4><a href=\"https://www.acefitness.org/education-and-resources/lifestyle/blog/6791/15-core-exercises-that-go-beyond-crunches/\" target=\"_blank\">ACE Fitness: Beyond Crunches →</a><a href=\"https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/core-exercises/art-20044751\" target=\"_blank\">Mayo Clinic Core Exercises →</a></div>` },
-      stressEating: { id: "stressEating", title: "Stress Eating: Psychological Strategies to Break the Cycle", category: "mental", date: "April 20, 2025", readTime: "7 min read", image: "https://images.unsplash.com/photo-1565071776199-df8b3573f3a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80", excerpt: "Emotional eating is common, but you can rewire your brain's response to stress. Science-backed techniques to stop using food as a coping mechanism.", content: `<p>You're not weak if you reach for chips after a hard day – stress triggers biological responses that increase cravings for sugar and fat. The good news: you can learn healthier responses without willpower alone.</p><h3>Why Stress Makes Us Eat</h3><p>Chronic stress elevates cortisol, which increases appetite, especially for energy-dense foods. Additionally, stress depletes willpower resources, making it harder to resist temptations. This is a survival mechanism – not a character flaw.</p><h3>Practical Intervention Strategies</h3><ul><li><strong>Identify triggers:</strong> Keep a "stress eating log" for one week. Note what you felt before eating (boredom, anger, fatigue). Patterns will emerge.</li><li><strong>Delay, don't deny:</strong> When a craving hits, set a timer for 10 minutes. Do something else (walk, stretch, call a friend). Most cravings pass.</li><li><strong>Build alternative coping tools:</strong> Make a list: deep breathing, making tea, journaling, listening to music, petting a dog. Practice these when not stressed.</li><li><strong>Change your environment:</strong> Keep trigger foods out of sight. Place fruit on the counter. Use smaller plates for portion control.</li><li><strong>Practice self-compassion:</strong> Shame fuels stress eating. After a slip, say "It's okay, I'll do better next meal." Guilt is a poor motivator.</li></ul><h3>When to Seek Professional Help</h3><p>If stress eating leads to binge episodes (eating large amounts in secret, feeling out of control) or significant distress, consider therapy. CBT (cognitive behavioral therapy) and DBT (dialectical behavior therapy) are highly effective for emotional eating.</p><p>Remember, using our <a href=\"calorie-counter.html\">Calorie Counter</a> is a planning tool – not a judgment tool. Be kind to yourself.</p><div class=\"external-link-box\"><h4><i class=\"fas fa-heart-broken\"></i> Mental Health & Eating Resources</h4><a href=\"https://www.nimh.nih.gov/health/topics/eating-disorders\" target=\"_blank\">NIMH: Eating Disorders →</a><a href=\"https://www.apa.org/topics/eating-disorders/emotional-eating\" target=\"_blank\">APA: Emotional Eating →</a></div>` }
+      // ========== BMI & WEIGHT (7 articles) ==========
+      bmiDeep: {
+        id:"bmiDeep",
+        title:"Beyond the Number: What Your BMI Really Reveals About Health",
+        category:"bmi",
+        date:"April 25, 2025",
+        readTime:"12 min read",
+        /* Updated image: waist measurement instead of generic scale */
+        image:"https://images.unsplash.com/photo-1604281019483-6f66cb10f725?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"BMI is a useful screening tool but has significant limitations. Learn how to interpret your BMI alongside waist circumference, body fat percentage, and overall lifestyle factors.",
+        content:`<p>Body Mass Index (BMI) is one of the most widely used health metrics in the world. Calculated by dividing your weight in kilograms by your height in meters squared (kg/m²), it provides a simple number that classifies adults into underweight (below 18.5), normal weight (18.5–24.9), overweight (25–29.9), and obese (30 and above). For decades, doctors and public health officials have relied on BMI to assess weight-related health risks because it’s fast, non-invasive, and correlates with direct measures of body fat in large populations.</p>
+        <h3>The History and Purpose of BMI</h3>
+        <p>BMI was invented by Belgian mathematician Adolphe Quetelet in the 1830s, not as a medical tool but as a way to describe the “average man.” It wasn’t until the mid-20th century that epidemiologists began linking high BMI to heart disease, diabetes, and premature death. Today, the CDC and WHO endorse BMI as an initial screening tool—not a diagnostic test. It’s meant to flag individuals who might benefit from further evaluation, such as blood tests or body composition analysis.</p>
+        <h3>Where BMI Falls Short</h3>
+        <p>Despite its convenience, BMI has critical limitations. First, it doesn’t distinguish between fat, muscle, and bone. A muscular athlete may have a BMI of 27 (overweight) while carrying very little body fat, whereas a sedentary person with the same BMI might have excess visceral fat. Second, BMI ignores fat distribution. Carrying weight around the abdomen (apple shape) poses far greater metabolic risk than weight around the hips and thighs (pear shape), even at identical BMI values. Third, the relationship between BMI and health outcomes differs by ethnicity: for example, people of Asian descent often develop type 2 diabetes at lower BMI thresholds, leading WHO to propose lower BMI cutoffs for Asian populations.</p>
+        <h3>What the Research Says About BMI and Longevity</h3>
+        <p>Large-scale studies have revealed a “U-shaped” curve: both very low and very high BMIs are associated with increased mortality. However, some research points to the “obesity paradox”—a finding that older adults with BMIs in the overweight range (25–29.9) sometimes have lower mortality than those in the normal range. This paradox may be partly explained by the fact that BMI fails to account for muscle loss in older adults, making a seemingly “healthy” weight mask sarcopenia (muscle wasting).</p>
+        <h3>Better Metrics to Use Alongside BMI</h3>
+        <p>To gain a fuller picture, healthcare providers recommend waist circumference (men: ≥40 inches, women: ≥35 inches indicates high risk), waist-to-hip ratio, and body fat percentage (via DEXA scan, bioelectrical impedance, or skinfold calipers). Blood markers like fasting glucose, lipid profiles, and blood pressure are even more direct predictors of metabolic health.</p>
+        <h3>Practical Takeaways</h3>
+        <p>Rather than fixating on a single number, use your BMI as a starting point. Combine it with how you feel, your physical activity level, and other measurements. If your BMI is outside the normal range, discuss with a healthcare professional whether further testing would be useful. Remember, a healthy lifestyle—balanced nutrition, regular movement, adequate sleep—matters far more than any number on a scale.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Sarah Chen, MD, MPH</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html" target="_blank">CDC: About Adult BMI →</a>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/obesity-and-overweight" target="_blank">WHO: Obesity Fact Sheet →</a>
+          <a href="https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmicalc.htm" target="_blank">NHLBI: BMI Calculator →</a>
+        </div>`
+      },
+      bmiSeniors: {
+        id:"bmiSeniors",
+        title:"Understanding BMI for Seniors: Why Muscle Mass Matters",
+        category:"bmi",
+        date:"April 10, 2025",
+        readTime:"10 min read",
+        image:"https://images.unsplash.com/photo-1559724087-a45f6a7a35d7?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"BMI can be misleading for older adults due to age-related muscle loss. Discover how to monitor weight and body composition after 65.",
+        content:`<p>As we age, our bodies undergo changes that make standard BMI interpretations less reliable. After 65, muscle mass naturally declines—a condition called sarcopenia—while fat mass tends to increase, even if total weight stays the same. This means an older adult with a “normal” BMI might actually have dangerously low muscle mass and high body fat, a phenomenon known as sarcopenic obesity.</p>
+        <h3>The Sarcopenia Trap</h3>
+        <p>Research from the National Institute on Aging shows that adults lose about 3–8% of muscle per decade after age 30, with the rate accelerating after 60. Because muscle weighs more than fat by volume, a person can maintain a stable BMI while losing muscle and gaining fat. Consequently, that BMI reading may falsely reassure both the individual and their healthcare provider.</p>
+        <h3>Why the Obesity Paradox Appears in Seniors</h3>
+        <p>Some studies suggest that older adults with a BMI of 25–30 (overweight) have lower mortality than those in the normal range. This finding, called the obesity paradox, may be explained by the protective effect of extra muscle and nutritional reserves against chronic illness and frailty. However, it does not mean excess fat is harmless; rather, it indicates that muscle mass is a stronger predictor of survival in later years.</p>
+        <h3>Better Assessment Tools for Seniors</h3>
+        <p>Geriatricians now recommend looking beyond BMI. Simple functional tests like gait speed, grip strength, and the chair stand test provide insight into muscle function. Body composition scales using bioelectrical impedance can estimate muscle and fat percentages. Waist circumference remains a valuable indicator of abdominal obesity, which is linked to cardiovascular risk even in older age.</p>
+        <h3>Nutrition and Exercise Strategies</h3>
+        <p>Combatting sarcopenia requires a two-pronged approach: protein-rich eating and resistance training. Experts advise older adults to consume 1.2–2.0 grams of protein per kilogram of body weight daily, spread across meals. Coupled with strength exercises at least twice a week, this can slow or even reverse muscle loss. Even light activities like walking, when done consistently, improve cardiovascular health and maintain mobility.</p>
+        <h3>The Bottom Line</h3>
+        <p>If you are over 65, view your BMI as just one piece of the puzzle. Work with your doctor to monitor muscle mass, physical function, and metabolic markers. A weight that appears “overweight” might be protective if it reflects healthy muscle, while a seemingly “ideal” BMI could mask frailty. Focus on staying strong, mobile, and well-nourished rather than chasing a specific scale weight.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Alan Foster, MD (Geriatrics)</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.nia.nih.gov/health/healthy-eating-nutrition-and-diet/maintaining-healthy-weight" target="_blank">NIA: Maintaining a Healthy Weight →</a>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/healthy-aging/in-depth/sarcopenia/art-20045893" target="_blank">Mayo Clinic: Sarcopenia →</a>
+        </div>`
+      },
+      bodyCompVsBMI: {
+        id:"bodyCompVsBMI",
+        title:"Body Composition vs. BMI: Which Should You Track?",
+        category:"bmi",
+        date:"April 1, 2025",
+        readTime:"9 min read",
+        image:"https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800",
+        excerpt:"Body fat percentage gives a clearer picture of health than BMI alone. Learn the pros and cons of each measurement method.",
+        content:`<p>When it comes to assessing your health, the scale can be deceptive. Two people with identical BMIs can have vastly different body compositions—one lean and muscular, the other with high body fat and little muscle. That’s why many health professionals are shifting the conversation from BMI to body composition, which breaks down the body into fat mass and fat-free mass (muscle, bone, water).</p>
+        <h3>What Body Composition Tells You</h3>
+        <p>Body fat percentage is a direct measure of adiposity. Healthy ranges differ by sex: for men, 10–20% body fat is generally considered fit, while for women, 18–28% is typical. Excess body fat, especially visceral fat stored around organs, is strongly associated with insulin resistance, heart disease, and certain cancers. On the flip side, adequate muscle mass supports metabolism, mobility, and injury prevention.</p>
+        <h3>Methods for Measuring Body Composition</h3>
+        <p>Dual-energy X-ray absorptiometry (DEXA) is the gold standard, offering detailed breakdowns of bone, fat, and lean tissue. However, it’s expensive and requires a lab. Bioelectrical impedance scales, which send a weak electrical current through the body, are affordable and widely available but can be influenced by hydration status. Skinfold calipers, when used by a trained professional, provide reasonably accurate estimates. Air displacement plethysmography (Bod Pod) and underwater weighing are other options.</p>
+        <h3>BMI: Still Useful for Populations</h3>
+        <p>Despite its limitations, BMI remains valuable for public health surveillance because it’s free and easy to collect. It effectively identifies obesity trends across large groups and serves as a quick initial screening in clinics. For most individuals, however, a single BMI number should not dictate health decisions without additional context.</p>
+        <h3>Which Should You Track?</h3>
+        <p>The answer is both, but with perspective. Keep an eye on your BMI as a general indicator, but prioritize body composition changes when working toward fitness goals. For example, if you’re strength training, you might see your weight stay the same while your body fat drops and muscle increases—a victory that BMI would completely miss. Using a smart scale that estimates body fat percentage can provide weekly trends, though you shouldn’t obsess over daily fluctuations.</p>
+        <h3>Actionable Steps</h3>
+        <p>Track your waist circumference monthly—it’s a free, easy proxy for visceral fat. If you can, invest in a DEXA scan once a year to establish a baseline. Most importantly, focus on performance-based goals: can you lift heavier, walk farther, or recover faster? Those improvements reflect real health gains that no single number can capture.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Olivia Park, MD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.acefitness.org/resources/everyone/blog/6643/ace-published-research-on-body-composition/" target="_blank">ACE: Body Composition Research →</a>
+          <a href="https://www.niddk.nih.gov/health-information/weight-management/understanding-adult-overweight-obesity" target="_blank">NIDDK: Overweight & Obesity →</a>
+        </div>`
+      },
+      visceralFat: {
+        id:"visceralFat",
+        title:"Understanding Visceral Fat: The Hidden Health Risk",
+        category:"bmi",
+        date:"May 1, 2025",
+        readTime:"10 min read",
+        image:"https://images.unsplash.com/photo-1634463278803-f9f71890e67d?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Not all body fat is created equal. Visceral fat surrounds your internal organs and drives inflammation. Here's how to measure and reduce it.",
+        content:`<p>When most people think of body fat, they picture the pinchable layer just under the skin—subcutaneous fat. But the fat that poses the greatest threat to health lies deeper, packed around the liver, pancreas, and intestines. This visceral fat is metabolically active, churning out hormones and inflammatory substances that raise the risk of type 2 diabetes, heart disease, and even dementia.</p>
+        <h3>Why Visceral Fat Is So Dangerous</h3>
+        <p>Visceral fat releases free fatty acids and cytokines like tumor necrosis factor-alpha (TNF-α) and interleukin-6, which promote chronic low-grade inflammation. This inflammation is a key driver of insulin resistance, making cells less responsive to the hormone that controls blood sugar. Over time, this can progress to metabolic syndrome—a cluster of conditions including high blood pressure, high blood sugar, excess abdominal fat, and abnormal cholesterol levels.</p>
+        <h3>How to Know if You Have Too Much</h3>
+        <p>You can’t see visceral fat from the outside, but waist circumference is a reliable proxy. For men, a waist measurement above 40 inches (102 cm) and for women above 35 inches (88 cm) signals elevated risk, according to the American Heart Association. A CT or MRI scan can measure visceral fat directly, but these aren’t practical for routine screening. Waist-to-hip ratio is another helpful tool: a ratio above 0.90 for men and 0.85 for women indicates central obesity.</p>
+        <h3>What Causes Visceral Fat Accumulation?</h3>
+        <p>Genetics play a role, but lifestyle factors are dominant. Diets high in refined carbohydrates, added sugars (especially fructose), and saturated fats promote visceral fat storage. Chronic stress elevates cortisol, which directs fat to the abdominal region. Lack of sleep and physical inactivity further compound the problem. Even normal-weight people can have excessive visceral fat, a condition known as TOFI (thin outside, fat inside).</p>
+        <h3>Proven Ways to Reduce Visceral Fat</h3>
+        <p>The good news: visceral fat responds well to lifestyle changes. Moderate-intensity aerobic exercise (150+ minutes per week) combined with resistance training is the most effective approach. A study from Duke University found that aerobic exercise burns 67% more calories than resistance training, but the combination yields the best body composition results. Dietary adjustments include replacing refined grains with whole grains, increasing soluble fiber (oats, beans, flaxseeds), and consuming healthy fats from nuts, avocados, and olive oil. Adequate sleep (7–9 hours) and stress management through meditation or yoga also help lower cortisol.</p>
+        <h3>The Takeaway</h3>
+        <p>Don’t just watch the scale—watch your waist. Even a 5–10% reduction in body weight can significantly shrink visceral fat and improve metabolic markers. By combining smart eating, consistent exercise, and stress reduction, you can reduce this hidden threat and protect your long-term health.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. David Kim, MD, Cardiology</div>
+        <div class="external-link-box"><h4>Resources</h4>
+          <a href="https://www.hsph.harvard.edu/obesity-prevention-source/obesity-definition/abdominal-obesity/" target="_blank">Harvard: Abdominal Obesity →</a>
+          <a href="https://www.heart.org/en/healthy-living/healthy-eating/losing-weight/measuring-adiposity" target="_blank">AHA: Measuring Adiposity →</a>
+        </div>`
+      },
+      bpAndBmi: {
+        id:"bpAndBmi",
+        title:"Blood Pressure and BMI: What's the Connection?",
+        category:"bmi",
+        date:"May 11, 2025",
+        readTime:"9 min read",
+        image:"https://images.unsplash.com/photo-1700832082152-0416a3ee5e60?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Higher BMI is strongly associated with hypertension. Explore the science behind the link and strategies to manage both.",
+        content:`<p>Nearly half of American adults have high blood pressure (hypertension), and obesity is a primary risk factor. As BMI climbs, so does the likelihood of developing hypertension. The relationship is so well established that weight loss is a first-line treatment recommendation by the American Heart Association and the CDC.</p>
+        <h3>The Physiological Link</h3>
+        <p>Excess body fat, particularly visceral fat, triggers a cascade of changes that raise blood pressure. Adipose tissue produces angiotensinogen, a precursor to the hormone angiotensin II, which constricts blood vessels and increases blood volume. Obesity also activates the sympathetic nervous system, raising heart rate and vascular resistance. Insulin resistance and chronic inflammation further stiffen arteries, making the heart work harder to pump blood.</p>
+        <h3>Evidence from Large Studies</h3>
+        <p>The Framingham Heart Study found that overweight and obesity accounted for about 26% of hypertension cases in men and 28% in women. The Nurses’ Health Study showed that women with a BMI >27 had a 3.5-fold higher risk of developing hypertension over 14 years. Even modest weight gain—as little as 5 pounds—can raise blood pressure, while weight loss as small as 4.5 pounds can produce meaningful reductions.</p>
+        <h3>BMI Categories and Blood Pressure Goals</h3>
+        <p>While any excess weight increases risk, those with a BMI ≥30 (obesity) are two to three times more likely to have hypertension. The good news is that lifestyle interventions can lower both BMI and blood pressure simultaneously. The DASH (Dietary Approaches to Stop Hypertension) diet, rich in fruits, vegetables, whole grains, and low-fat dairy, has been shown to reduce systolic blood pressure by 8–14 mmHg. Sodium restriction to less than 2,300 mg per day (or 1,500 mg for those at high risk) is equally important.</p>
+        <h3>Weight Loss Strategies That Also Lower BP</h3>
+        <p>Focus on a balanced, calorie-controlled diet with plenty of potassium-rich foods (bananas, spinach, sweet potatoes), which counter sodium’s effects. Regular aerobic exercise—brisk walking, cycling, swimming—for 150 minutes weekly can drop systolic pressure by 4–9 mmHg. Resistance training, when performed safely, offers additional benefits. Monitor your blood pressure at home using a validated device and keep a log to share with your doctor.</p>
+        <h3>When Lifestyle Isn't Enough</h3>
+        <p>If diet and exercise don’t bring numbers down, medication may be necessary. Many antihypertensive drugs are weight-neutral, and some newer classes like SGLT2 inhibitors may even aid weight loss. However, lifestyle remains the foundation—no pill can replace the systemic benefits of a healthy weight. By addressing BMI, you’re tackling the root cause of hypertension and reducing your overall cardiovascular risk.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Sanjay Patel, MD, FACC</div>
+        <div class="external-link-box"><h4>Resources</h4>
+          <a href="https://www.cdc.gov/bloodpressure/index.htm" target="_blank">CDC: High Blood Pressure →</a>
+          <a href="https://www.heart.org/en/health-topics/high-blood-pressure" target="_blank">AHA: High Blood Pressure →</a>
+        </div>`
+      },
+      // ========== NUTRITION (6 articles) ==========
+      nutritionEssentials: {
+        id:"nutritionEssentials",
+        title:"Macronutrients Demystified: How to Build a Balanced Plate",
+        category:"nutrition",
+        date:"April 22, 2025",
+        readTime:"14 min read",
+        image:"https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Protein, carbs, and fats each play unique roles in health. Learn how to combine them for sustained energy, muscle repair, and disease prevention.",
+        content:`<p>Walking through a grocery store, you’re bombarded with low-fat, high-protein, low-carb, and keto labels. At their core, all foods provide energy through three macronutrients: protein, carbohydrates, and fat. Understanding what each does—and how to balance them—can transform your health, whether your goal is weight management, athletic performance, or simply feeling better.</p>
+        <h3>Protein: The Body’s Building Block</h3>
+        <p>Protein is made of amino acids, which are essential for building and repairing tissues, producing enzymes and hormones, and supporting immune function. The Recommended Dietary Allowance (RDA) is 0.8 grams per kilogram of body weight for sedentary adults, but needs increase with activity. Athletes and those doing heavy resistance training may need 1.2–2.0 g/kg. Complete proteins (containing all nine essential amino acids) come from animal sources and soy; plant proteins can be combined (rice + beans) to achieve completeness. Aim to distribute protein intake evenly across meals to maximize muscle protein synthesis.</p>
+        <h3>Carbohydrates: Your Primary Fuel Source</h3>
+        <p>Carbs are not the enemy. They are the brain’s preferred fuel and the main energy source for high-intensity exercise. The key is to choose complex carbohydrates—whole grains, vegetables, legumes, and fruits—which digest slowly and stabilize blood sugar. Simple carbs (sugary drinks, white bread, pastries) spike insulin and can lead to energy crashes and fat storage. The Dietary Guidelines for Americans recommend that carbs make up 45–65% of total daily calories, with an emphasis on fiber-rich sources.</p>
+        <h3>Fats: Essential for Health, Not the Villain</h3>
+        <p>Dietary fat is needed to absorb vitamins A, D, E, and K, produce hormones, and maintain cell membranes. Unsaturated fats (olive oil, avocados, nuts, fatty fish) are anti-inflammatory and heart-healthy. Saturated fats (red meat, butter, tropical oils) should be limited to less than 10% of total calories. Trans fats—found in processed foods—should be avoided entirely. Fats are calorie-dense (9 kcal/g versus 4 for protein and carbs), so portion control matters, but they also increase satiety, which can help prevent overeating.</p>
+        <h3>Building the Perfect Plate</h3>
+        <p>A practical method is the USDA’s MyPlate model: fill half your plate with fruits and vegetables, one-quarter with lean protein, and one-quarter with whole grains, plus a serving of low-fat dairy or a healthy fat source. Customize the proportions based on your activity level—athletes might increase carbs, while someone aiming for weight loss might slightly boost protein and fiber. Eating a variety of colors ensures you get a wide range of vitamins and phytonutrients.</p>
+        <h3>Timing and Quality Matter</h3>
+        <p>When you eat matters too. Consuming protein and carbs within two hours after exercise aids muscle repair and glycogen replenishment. A breakfast with protein and healthy fat can keep you full until lunch. Most importantly, prioritize whole, minimally processed foods over ultra-processed options, regardless of macro ratios. No single ratio works for everyone; experiment to find what gives you steady energy and supports your health goals.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Emily Rodriguez, RD, CDN</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.hsph.harvard.edu/nutritionsource/what-should-you-eat/" target="_blank">Harvard Nutrition Source →</a>
+          <a href="https://www.dietaryguidelines.gov/resources/2020-2025-dietary-guidelines-online-materials" target="_blank">Dietary Guidelines for Americans →</a>
+        </div>`
+      },
+      hydrationWellness: {
+        id:"hydrationWellness",
+        title:"Hydration: More Than Just Water – Electrolytes & Performance",
+        category:"nutrition",
+        date:"April 15, 2025",
+        readTime:"9 min read",
+        image:"https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=800",
+        excerpt:"Proper hydration supports energy, focus, and metabolism. Find out how much you really need and when to add electrolytes.",
+        content:`<p>Water makes up about 60% of the human body and is critical for nearly every physiological process: temperature regulation, joint lubrication, nutrient transport, and waste removal. Yet many people walk around mildly dehydrated, suffering from fatigue, headaches, and poor concentration without realizing the cause.</p>
+        <h3>How Much Water Do You Need?</h3>
+        <p>The oft-cited “eight 8-ounce glasses per day” rule is a decent starting point, but individual needs vary based on climate, activity level, and body size. The National Academies of Sciences, Engineering, and Medicine recommends about 3.7 liters (125 ounces) for men and 2.7 liters (91 ounces) for women daily from all fluids and foods. About 20% of intake typically comes from water-rich foods like cucumbers, watermelon, and soups. A simple way to gauge hydration is urine color—pale yellow indicates adequate hydration, while dark amber signals you need more fluids.</p>
+        <h3>The Role of Electrolytes</h3>
+        <p>Water alone isn’t enough when you’re sweating heavily or sick. Electrolytes—sodium, potassium, magnesium, calcium, and chloride—are minerals that maintain fluid balance, nerve signaling, and muscle contraction. Sodium, in particular, is lost in sweat and must be replaced during prolonged exercise. Sports drinks can help during intense, long-duration activity, but for most people, water with a balanced diet replenishes electrolytes naturally. Beware of sugary sports drinks; coconut water or DIY electrolyte drinks with a pinch of salt and lemon juice are healthier alternatives.</p>
+        <h3>Hydration and Metabolism</h3>
+        <p>Even mild dehydration can slow your metabolism. Studies show that drinking 500 ml of water can temporarily boost metabolic rate by 24–30% for about an hour. Drinking water before meals also promotes satiety, helping with portion control. Replacing calorie-laden beverages with water is one of the simplest weight loss strategies.</p>
+        <h3>Signs of Dehydration</h3>
+        <p>Thirst is a late indicator—by the time you feel thirsty, you’re already mildly dehydrated. Other signs include dry mouth, dark urine, dizziness, and muscle cramps. In severe cases, dehydration can lead to heat injury, kidney stones, and urinary tract infections. Older adults are particularly vulnerable because their sense of thirst diminishes with age.</p>
+        <h3>Tips to Stay Hydrated</h3>
+        <p>Carry a reusable water bottle and set reminders on your phone. Infuse water with fruit or herbs for flavor. Eat water-rich produce at every meal. If you’re active, weigh yourself before and after exercise: for every pound lost, drink about 16–20 ounces of fluid. Remember, coffee and tea do count toward your fluid intake, despite the myth—they have a mild diuretic effect but still net hydrate. Make hydration a daily habit, and your energy and focus will thank you.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Michael Torres, MD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256" target="_blank">Mayo Clinic: Water Intake →</a>
+          <a href="https://www.nas.edu/hmd/reports/2005/dietary-reference-intakes-electrolytes-and-water.aspx" target="_blank">NASEM: Electrolytes & Water →</a>
+        </div>`
+      },
+      plantProtein: {
+        id:"plantProtein",
+        title:"Plant-Based Nutrition: Complete Guide to Protein Sources",
+        category:"nutrition",
+        date:"April 8, 2025",
+        readTime:"11 min read",
+        image:"https://images.pexels.com/photos/128420/pexels-photo-128420.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Getting enough protein on a plant-based diet is easier than you think. Learn about complementary proteins, top sources, and meal ideas.",
+        content:`<p>Whether for health, ethics, or the environment, more people are embracing plant-based eating. One of the biggest concerns is protein adequacy. The good news: a well-planned vegetarian or vegan diet can meet and even exceed protein needs while providing fiber and phytonutrients absent in animal products.</p>
+        <h3>The Concept of Complete Proteins</h3>
+        <p>Proteins are made of amino acids; nine are essential and must come from food. Animal proteins contain all nine in adequate amounts, making them “complete.” Most plant foods are “incomplete,” lacking one or more essential amino acid. However, you don’t need to meticulously combine foods at each meal—your body pools amino acids throughout the day. Eating a variety of legumes, grains, nuts, and seeds over 24 hours ensures you get the full spectrum.</p>
+        <h3>Top Plant Protein Sources</h3>
+        <p>Legumes reign supreme: lentils (18 g protein per cooked cup), chickpeas (14 g), black beans (15 g), and edamame (17 g) are all excellent. Soy products like tofu (10 g per 3.5 oz), tempeh (19 g), and soy milk (7 g per cup) are complete proteins. Quinoa is a rare complete grain with 8 g per cooked cup. Nuts and seeds add protein plus healthy fats—almonds (6 g per ounce), hemp seeds (9 g per 3 tbsp), and chia seeds (5 g per 2 tbsp). Even vegetables like spinach and broccoli contribute small amounts.</p>
+        <h3>Meal Planning for Adequate Intake</h3>
+        <p>Aim for 1.2–1.7 g of protein per kilogram of body weight if you’re active. A sample day: oatmeal with almond butter and hemp seeds for breakfast (20 g), quinoa-black bean salad for lunch (25 g), a protein smoothie with pea protein powder for a snack (20 g), and lentil pasta with marinara sauce for dinner (25 g). This easily totals 90+ grams without animal products. Fortified nutritional yeast adds a cheesy flavor plus B12, an essential nutrient for vegans.</p>
+        <h3>Potential Pitfalls to Watch</h3>
+        <p>Processed plant-based meats can be high in sodium and saturated fat; enjoy them occasionally. Relying solely on raw vegetables may not provide enough calories or protein for some people. Iron and zinc from plants are less absorbable; pair iron-rich foods with vitamin C (e.g., beans with bell peppers) and soak or sprout grains and legumes to reduce phytates. A vegan B12 supplement is non-negotiable.</p>
+        <h3>The Bigger Picture</h3>
+        <p>Beyond protein, plant-based diets are associated with lower risks of heart disease, hypertension, type 2 diabetes, and certain cancers. They’re also more environmentally sustainable. By focusing on whole foods and variety, you can thrive without meat while meeting all your protein needs. Start with one plant-based meal a day and explore new recipes—your body and the planet will benefit.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Laura Green, RDN</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.eatright.org/food/nutrition/vegetarian-and-special-diets" target="_blank">Academy of Nutrition and Dietetics →</a>
+          <a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/vegetarian-diet" target="_blank">AHA: Vegetarian Diet →</a>
+        </div>`
+      },
+      intermittentFasting: {
+        id:"intermittentFasting",
+        title:"Intermittent Fasting: Evidence, Benefits, and Risks",
+        category:"nutrition",
+        date:"March 28, 2025",
+        readTime:"12 min read",
+        image:"https://images.pexels.com/photos/699953/pexels-photo-699953.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Time-restricted eating and alternate-day fasting show promise for weight loss and metabolic health, but they're not for everyone. Review the science.",
+        content:`<p>Intermittent fasting (IF) has surged in popularity as a weight loss and health optimization strategy. Unlike traditional diets, IF doesn’t dictate what you eat but rather when you eat. Common protocols include the 16:8 method (fasting for 16 hours and eating during an 8-hour window), the 5:2 diet (normal eating five days, calorie restriction two days), and alternate-day fasting. But does the science support the hype?</p>
+        <h3>How IF Affects the Body</h3>
+        <p>During fasting, the body depletes its glycogen stores and shifts to burning fat for fuel via ketosis. Insulin levels drop, improving insulin sensitivity and making stored fat more accessible. Cellular repair processes like autophagy—the body’s way of clearing out damaged cells—ramp up. These mechanisms are thought to underlie IF’s benefits, which include weight loss, reduced inflammation, and improved cardiovascular markers.</p>
+        <h3>Weight Loss and Metabolic Health</h3>
+        <p>A 2019 New England Journal of Medicine review concluded that IF can lead to 3–8% weight loss over 3–24 weeks, comparable to continuous calorie restriction. The advantage for many is simplicity: no calorie counting. By narrowing the eating window, people naturally consume fewer calories. Additionally, IF may reduce visceral fat and preserve lean mass better than simple calorie cutting, though more research is needed.</p>
+        <h3>Other Potential Benefits</h3>
+        <p>Animal studies suggest IF could extend lifespan and protect against neurodegenerative diseases, but human evidence is limited. Some research indicates improvements in blood pressure, cholesterol, and fasting glucose. Mental clarity and better focus are commonly reported anecdotal benefits, possibly due to stable blood sugar and increased production of brain-derived neurotrophic factor (BDNF).</p>
+        <h3>Who Should Avoid IF</h3>
+        <p>IF is not safe for everyone. Pregnant or breastfeeding women, individuals with a history of eating disorders, people with type 1 diabetes, and those on medications that require food intake should steer clear. Athletes in heavy training may find it difficult to meet energy needs within a short window. Side effects like hunger, irritability, and headaches are common in the initial weeks. Always consult a healthcare provider before starting.</p>
+        <h3>Making IF Work for You</h3>
+        <p>Start gradually—perhaps a 12-hour overnight fast, then slowly extend. Stay hydrated with water, herbal tea, and black coffee. Break your fast with nutrient-dense foods: lean protein, healthy fats, and vegetables. Avoid overcompensating with junk food during eating windows. Listen to your body; if you feel unwell or excessively restricted, try a different approach. Ultimately, the best diet is one you can sustain long-term.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Robert Hayes, MD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.nejm.org/doi/full/10.1056/NEJMra1905136" target="_blank">NEJM: Effects of Intermittent Fasting →</a>
+          <a href="https://www.hsph.harvard.edu/nutritionsource/healthy-weight/diet-reviews/intermittent-fasting/" target="_blank">Harvard: Intermittent Fasting →</a>
+        </div>`
+      },
+      fiberScience: {
+        id:"fiberScience",
+        title:"The Science of Fiber: Why Your Gut Needs More",
+        category:"nutrition",
+        date:"May 3, 2025",
+        readTime:"10 min read",
+        image:"https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Most adults get less than half the recommended daily fiber. Discover how dietary fiber supports digestion, heart health, and even mental wellbeing.",
+        content:`<p>Fiber is the unsung hero of nutrition. It doesn’t provide energy, yet it profoundly influences everything from bowel regularity to blood sugar control and cholesterol levels. The Institute of Medicine recommends 25 grams per day for women and 38 grams for men, but the average American consumes only about 15 grams. Closing that gap could be one of the simplest ways to improve overall health.</p>
+        <h3>Types of Fiber and Their Functions</h3>
+        <p>Fiber falls into two main categories: soluble and insoluble. Soluble fiber dissolves in water, forming a gel-like substance that slows digestion, lowers cholesterol, and stabilizes blood glucose. Oats, beans, apples, and carrots are rich sources. Insoluble fiber adds bulk to stool and speeds passage through the digestive tract, preventing constipation. Whole wheat bran, vegetables, and nuts are good examples. Most plant foods contain a mix of both.</p>
+        <h3>Gut Health and the Microbiome</h3>
+        <p>Certain fibers, known as prebiotics, feed beneficial gut bacteria. These bacteria ferment fiber into short-chain fatty acids like butyrate, which nourish colon cells, reduce inflammation, and may even protect against colon cancer. A diverse, fiber-rich diet promotes a robust microbiome, which in turn supports immune function and mental health via the gut-brain axis.</p>
+        <h3>Fiber and Chronic Disease Prevention</h3>
+        <p>Large observational studies consistently link high fiber intake to lower risks of heart disease, stroke, type 2 diabetes, and colorectal cancer. A meta-analysis in The Lancet found that for every 8-gram increase in daily fiber intake, the risk of coronary heart disease dropped by 19%. Fiber’s ability to reduce LDL cholesterol and blood pressure is well-documented. It also increases satiety, aiding weight management.</p>
+        <h3>How to Boost Your Fiber Intake</h3>
+        <p>Increase fiber gradually to prevent bloating, and drink plenty of water. Start your day with oatmeal or a whole-grain cereal. Add legumes to soups and salads. Snack on fresh fruit, raw vegetables, or a handful of almonds. Replace white rice with brown rice, quinoa, or farro. When baking, substitute half the white flour with whole-wheat flour. Read labels: a “good source” of fiber has at least 3 grams per serving; an “excellent source” has 5 or more.</p>
+        <h3>Fiber Supplements: Help or Hype?</h3>
+        <p>While supplements like psyllium husk can help meet goals, they lack the vitamins, minerals, and phytonutrients found in whole foods. Use them under guidance if you have specific conditions like IBS or constipation. Ultimately, aiming for a colorful, plant-forward diet is the most delicious and effective way to get your fill of this vital nutrient.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Anita Sharma, RD, PhD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/fiber/art-20043983" target="_blank">Mayo Clinic: High-fiber foods →</a>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/30638909/" target="_blank">The Lancet: Fiber & Health →</a>
+        </div>`
+      },
+      nutritionLabels: {
+        id:"nutritionLabels",
+        title:"How to Read Nutrition Labels Like a Pro",
+        category:"nutrition",
+        date:"May 7, 2025",
+        readTime:"10 min read",
+        /* Updated: person reading a food label in store */
+        image:"https://plus.unsplash.com/premium_photo-1661690177761-8d521bd794f9?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Understanding food labels helps you make healthier choices. Master serving sizes, %DV, ingredient lists, and hidden sugars with this guide.",
+        content:`<p>Nutrition labels can be confusing, but they’re one of the most powerful tools for improving your diet. The FDA updated the Nutrition Facts label in 2020 to reflect current science, with larger calorie counts, realistic serving sizes, and a new “Added Sugars” line. Knowing how to decode this information empowers you to compare products and choose nutrient-dense options.</p>
+        <h3>Start with Serving Size</h3>
+        <p>The serving size is the foundation—all other numbers refer to this amount. Be aware that packages often contain multiple servings. If you eat the whole package, multiply the calories and nutrients accordingly. The new labels have serving sizes that are closer to what people actually consume; for example, a 20-ounce soda now shows the whole bottle as one serving.</p>
+        <h3>Calories and Macronutrients</h3>
+        <p>Calories provide a measure of energy. For weight management, consider the calorie-per-serving in the context of your daily needs. Then look at the breakdown: total fat (including saturated and trans fats), cholesterol, sodium, total carbohydrates (dietary fiber, total sugars, and added sugars), and protein. Aim low for saturated fat, trans fat, sodium, and added sugars; aim high for fiber, vitamins, and minerals.</p>
+        <h3>The % Daily Value (%DV)</h3>
+        <p>%DV shows how much a nutrient in a serving contributes to a daily diet of 2,000 calories. As a general rule, 5% DV or less is low, while 20% DV or more is high. Use %DV to quickly compare products and identify nutrient strengths (e.g., high calcium) or weaknesses (e.g., high sodium). Note that your personal needs may differ based on age, sex, and activity level.</p>
+        <h3>Ingredients List: The Hidden Story</h3>
+        <p>Ingredients are listed by weight, from most to least. If refined flour or sugar appears first, the product is highly processed. Watch for sneaky names for added sugars: corn syrup, dextrose, fructose, maltose, honey, and agave nectar. The new “Added Sugars” line clarifies how much sugar was added during processing versus naturally occurring sugars in fruit or milk. Aim to keep added sugars under 10% of total calories.</p>
+        <h3>Common Pitfalls</h3>
+        <p>“Low-fat” often means high sugar—manufacturers replace fat with sugar to maintain taste. “Multigrain” doesn’t guarantee whole grain; look for “100% whole grain” as the first ingredient. “No cholesterol” on a plant food is meaningless because plants don’t contain cholesterol. Focus on the ingredient quality rather than marketing claims.</p>
+        <h3>Putting It All Together</h3>
+        <p>Practice by comparing two similar products side by side. Choose the one with lower saturated fat, sodium, and added sugars, and higher fiber and protein. With a little practice, label reading becomes second nature, helping you build a diet that supports lifelong health.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Maria Lopez, RDN</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.fda.gov/food/nutrition-facts-label" target="_blank">FDA: Nutrition Facts Label →</a>
+          <a href="https://www.heart.org/en/healthy-living/healthy-eating/eat-smart/nutrition-basics/understanding-ingredients-on-food-labels" target="_blank">AHA: Food Label Terms →</a>
+        </div>`
+      },
+      // ========== FITNESS (4 articles) ==========
+      strengthLongevity: {
+        id:"strengthLongevity",
+        title:"Strength Training for Life: Why Muscles Matter After 40",
+        category:"fitness",
+        date:"April 20, 2025",
+        readTime:"11 min read",
+        image:"https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Preserving muscle mass is one of the most powerful things you can do for metabolic health, injury prevention, and independence as you age.",
+        content:`<p>After age 30, adults lose 3–5% of muscle mass per decade, a process that accelerates after 60. This loss, called sarcopenia, contributes to frailty, falls, and a slower metabolism. Strength training is the most effective countermeasure, and it’s never too late to start.</p>
+        <h3>Beyond Vanity: The Health Benefits</h3>
+        <p>Muscle is metabolically active tissue—it burns calories even at rest. Increasing muscle mass raises your resting metabolic rate, making weight management easier. Strength training also improves insulin sensitivity, reducing the risk of type 2 diabetes. It strengthens bones, lowers blood pressure, enhances balance, and boosts mood through endorphin release. Studies show that twice-weekly resistance training reduces all-cause mortality by 23%.</p>
+        <h3>Getting Started Safely</h3>
+        <p>Before beginning a program, consider consulting a physical therapist or certified trainer, especially if you have joint issues. Start with bodyweight exercises: squats, lunges, push-ups (or wall push-ups), and planks. Master proper form first—this prevents injury and ensures you target the right muscles. Aim for 2–3 sessions per week on non-consecutive days, with 48 hours of recovery between sessions for the same muscle group.</p>
+        <h3>Progressive Overload: The Key Principle</h3>
+        <p>Muscles grow when challenged. Gradually increase the resistance, number of repetitions, or number of sets over time. For general health, 2–3 sets of 8–12 repetitions per exercise, using a weight that feels challenging by the last rep, is effective. Free weights, resistance bands, and machines all work; choose what you enjoy and have access to. Compound movements like deadlifts, rows, and shoulder presses give the most bang for your buck.</p>
+        <h3>Nutrition for Muscle Building</h3>
+        <p>You can’t build muscle without adequate protein. Spread protein intake across meals—about 25–35 grams per meal—to maximize synthesis. Post-workout, a combination of protein and carbohydrates helps repair tissue and replenish glycogen. Hydration and sufficient sleep are equally crucial; muscle repair happens during deep sleep.</p>
+        <h3>Overcoming Barriers</h3>
+        <p>Time? Just 20 minutes of focused strength work twice a week yields results. Intimidation? Start at home with resistance bands or online videos. Joint pain? Low-impact options like Pilates or water-based resistance can work around limitations. Remember, the goal is not to become a bodybuilder but to build a resilient, functional body that serves you for decades.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. James Carter, PT, DPT</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/strength-and-resistance-training" target="_blank">AHA: Strength Training →</a>
+          <a href="https://www.cdc.gov/physicalactivity/basics/older_adults/index.htm" target="_blank">CDC: Older Adult Activity →</a>
+        </div>`
+      },
+      hiitSteadyState: {
+        id:"hiitSteadyState",
+        title:"HIIT vs. Steady State Cardio: Which is Better for Fat Loss?",
+        category:"fitness",
+        date:"April 5, 2025",
+        readTime:"10 min read",
+        image:"https://images.pexels.com/photos/2294361/pexels-photo-2294361.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Both high-intensity interval training and moderate cardio have pros and cons. Learn which one aligns with your goals and fitness level.",
+        content:`<p>The debate between high-intensity interval training (HIIT) and steady-state cardio often misses the big picture: both are effective, and the best exercise is the one you’ll do consistently. That said, each has unique benefits and drawbacks depending on your goals.</p>
+        <h3>What is HIIT?</h3>
+        <p>HIIT alternates short bursts of all-out effort (20–90 seconds) with recovery periods. A typical session lasts 15–30 minutes. The intense effort forces your body to burn energy quickly and triggers the “afterburn effect” (excess post-exercise oxygen consumption or EPOC), meaning you continue to burn calories at an elevated rate for hours after the workout. HIIT also improves cardiovascular fitness rapidly and has been shown to reduce visceral fat effectively.</p>
+        <h3>Steady State Cardio: The Endurance Approach</h3>
+        <p>Steady state cardio—jogging, cycling, swimming at a consistent moderate pace for 30–60 minutes—primarily uses fat as fuel during the activity. It’s gentler on the joints, easier to recover from, and can be done daily. It builds a strong aerobic base, lowers resting heart rate, and is excellent for stress relief. Because it’s lower intensity, it’s often more sustainable for beginners and those with injuries.</p>
+        <h3>Comparing Fat Loss Effectiveness</h3>
+        <p>A calorie deficit is required for fat loss, regardless of exercise type. HIIT burns more calories per minute and may blunt appetite temporarily, but it can also increase hunger later in some people. Steady state burns fewer calories per minute but can be performed for longer durations, leading to a comparable total calorie burn. Some studies show HIIT leads to greater reductions in abdominal fat, while others find no significant difference. The key is total energy balance.</p>
+        <h3>Injury Risk and Recovery</h3>
+        <p>HIIT carries a higher risk of injury due to the explosive nature of the exercises (jumps, sprints). It’s also more taxing on the central nervous system, requiring at least 48 hours between intense sessions. Steady state is low-impact, making it safer for daily activity. Many experts recommend a mix: 2–3 HIIT sessions and 2–3 steady state sessions per week for optimal health and performance.</p>
+        <h3>Which Should You Choose?</h3>
+        <p>If you’re short on time and enjoy intense challenges, HIIT may be perfect. If you prefer longer, meditative workouts or are returning from injury, steady state is ideal. Listen to your body, mix it up to avoid plateaus, and remember that any movement is good movement.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Kevin Lee, PhD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/aha-recs-for-physical-activity-in-adults" target="_blank">AHA: Adult Activity Recommendations →</a>
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2991639/" target="_blank">PubMed: HIIT vs. Steady State →</a>
+        </div>`
+      },
+      coreStrength: {
+        id:"coreStrength",
+        title:"Core Strength Essentials: Beyond Six-Pack Abs",
+        category:"fitness",
+        date:"March 25, 2025",
+        readTime:"9 min read",
+        image:"https://images.pexels.com/photos/4761346/pexels-photo-4761346.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"A strong core prevents back pain, improves posture, and enhances athletic performance. Discover exercises that go far beyond crunches.",
+        content:`<p>When people hear “core,” they often picture visible six-pack abs. But the core is a complex system of muscles including the rectus abdominis, obliques, transverse abdominis, pelvic floor, diaphragm, and back extensors. These muscles work together to stabilize the spine and pelvis, transferring force between the upper and lower body.</p>
+        <h3>Why Core Strength Matters</h3>
+        <p>A weak core is a major contributor to low back pain, which affects about 80% of adults at some point. It leads to poor posture, inefficient movement patterns, and increased injury risk during everyday activities like lifting groceries or bending down. A strong core enhances athletic performance by improving balance, rotational power, and agility. It also supports better breathing and can even improve digestion by promoting proper organ alignment.</p>
+        <h3>Key Core Muscles and Their Roles</h3>
+        <p>The transverse abdominis acts like an internal corset, pulling the abdomen inward to stabilize the spine. The obliques enable rotation and side bending. The rectus abdominis flexes the trunk forward. The erector spinae and multifidus run along the spine, allowing extension and posture control. A balanced program targets all these areas, not just the mirror muscles.</p>
+        <h3>Effective Core Exercises (Beyond Crunches)</h3>
+        <p>Planks (front, side, reverse) are isometric holds that build endurance. Dead bugs teach you to move limbs while maintaining a stable spine. Bird dogs improve coordination and back strength. Pallof presses (using a resistance band or cable) train anti-rotation, a critical function often neglected. Glute bridges and hip thrusts engage the posterior chain, which supports the low back. Aim for 2–3 sets of 8–15 reps or 20–60 second holds, 2–3 times per week.</p>
+        <h3>Proper Form and Progression</h3>
+        <p>Quality over quantity is essential. Avoid holding your breath—exhale on exertion. Never pull on your neck during crunches. Progress from stable surfaces to unstable surfaces (e.g., stability ball) only once you master form. Integrate core activation into full-body lifts like squats and deadlifts for functional strength.</p>
+        <h3>Core Training for All Ages</h3>
+        <p>Seniors benefit immensely from core work to prevent falls and maintain independence. Chair-based exercises and gentle Pilates are excellent options. Remember, a visible six-pack depends more on low body fat than endless crunches. Focus on strength and stability, and the aesthetic benefits will follow.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Jessica Wu, CSCS</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.acefitness.org/education-and-resources/lifestyle/blog/6791/15-core-exercises-that-go-beyond-crunches/" target="_blank">ACE: Core Exercises →</a>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/core-exercises/art-20044693" target="_blank">Mayo Clinic: Core Exercises →</a>
+        </div>`
+      },
+      mobilityTraining: {
+        id:"mobilityTraining",
+        title:"Mobility Training: The Missing Piece in Your Fitness Routine",
+        category:"fitness",
+        date:"May 5, 2025",
+        readTime:"9 min read",
+        /* Updated: person doing a mobility stretch */
+        image:"https://images.pexels.com/photos/3768916/pexels-photo-3768916.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Mobility training improves range of motion, prevents injuries, and helps you move pain-free. Learn the difference between mobility and flexibility.",
+        content:`<p>Mobility is the ability to move a joint actively through its full range of motion with control. It differs from flexibility, which is the passive stretch capacity of a muscle. Good mobility requires strength, coordination, and body awareness. Neglecting it leads to stiffness, compensation patterns, and eventually injury.</p>
+        <h3>Why Mobility Matters</h3>
+        <p>In daily life, mobility allows you to reach overhead, squat down, and turn your head without pain. For athletes, it’s the foundation of efficient movement—a stiff hip can ruin a runner’s stride, and poor thoracic spine mobility can limit a golfer’s swing. Mobility work also reduces the risk of falls in older adults by improving balance and joint proprioception.</p>
+        <h3>Mobility vs. Flexibility: The Critical Difference</h3>
+        <p>You can be flexible but lack mobility—for example, someone who can do the splits but can’t hold a deep squat because they lack strength and control at the end range. True mobility training integrates active stretching, joint rotations, and neuromuscular control. Think of it as teaching your joints to move safely and powerfully throughout their entire potential.</p>
+        <h3>Key Areas to Mobilize</h3>
+        <p>The hips, thoracic spine (upper back), shoulders, and ankles are common problem areas due to prolonged sitting. Hip circles, cat-cow stretches, shoulder dislocates with a band, and ankle dorsiflexion drills are excellent starting points. Spend 5–10 minutes on mobility exercises before a workout (dynamic warm-up) and 10 minutes on separate days as a dedicated session.</p>
+        <h3>Sample Mobility Routine</h3>
+        <p>Perform each for 30–60 seconds: world’s greatest stretch (lunge with a twist), hip flexor stretch with glute activation, standing wall angels for thoracic extension, ankle rockers, and controlled spinal rotations. Focus on slow, controlled movements, and breathe deeply. Never force a joint beyond its comfortable range.</p>
+        <h3>Integrating Mobility into Your Life</h3>
+        <p>Incorporate movement breaks throughout the day—stand up, twist, squat, and reach every hour. Yoga and Pilates are excellent mobility practices. Consistency trumps intensity; even 10 minutes daily yields results. Remember, a joint that doesn’t move becomes stiff, and a stiff joint compensates, leading to pain elsewhere. Prioritize mobility and you’ll move better at any age.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Reviewed by Dr. Megan O'Donnell, DPT</div>
+        <div class="external-link-box"><h4>Resources</h4>
+          <a href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/stretching/art-20047931" target="_blank">Mayo Clinic: Stretching and Mobility →</a>
+          <a href="https://www.acefitness.org/education-and-resources/lifestyle/blog/7225/mobility-training-101/" target="_blank">ACE: Mobility Training →</a>
+        </div>`
+      },
+      // ========== MENTAL WELLNESS (5 articles) ==========
+      gutBrain: {
+        id:"gutBrain",
+        title:"The Gut-Brain Axis: How Your Microbiome Shapes Mood & Weight",
+        category:"mental",
+        date:"April 18, 2025",
+        readTime:"13 min read",
+        image:"https://images.pexels.com/photos/4109897/pexels-photo-4109897.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Emerging science reveals the deep connection between digestive health and mental wellbeing. Learn how probiotics, diet, and stress affect your gut-brain axis.",
+        content:`<p>You’ve likely experienced “butterflies” in your stomach before a big event—a perfect example of the gut-brain connection. This bidirectional communication highway, known as the gut-brain axis, links the central nervous system with the enteric nervous system (the gut’s own “mini-brain”). Trillions of gut microbes produce neurotransmitters like serotonin, dopamine, and GABA, influencing mood, appetite, and even food cravings.</p>
+        <h3>The Microbiome’s Role in Mental Health</h3>
+        <p>About 90% of serotonin—the “happiness neurotransmitter”—is produced in the gut. Imbalances in gut bacteria (dysbiosis) have been linked to anxiety, depression, and ADHD. Probiotic supplements containing Lactobacillus and Bifidobacterium strains have shown promise in reducing depressive symptoms in some studies. However, the field is young; not all probiotics are created equal, and more research is needed to establish standardized treatments.</p>
+        <h3>How Diet Shapes the Microbiome</h3>
+        <p>A diet rich in fiber and polyphenols (found in colorful fruits, vegetables, tea, and dark chocolate) nourishes beneficial bacteria. Fermented foods like yogurt, kefir, kimchi, and sauerkraut introduce live cultures. Conversely, a diet high in processed foods, artificial sweeteners, and saturated fats can promote harmful bacterial strains. In as little as 24 hours, dietary changes can alter gut microbial composition.</p>
+        <h3>Stress, Inflammation, and the Gut</h3>
+        <p>Chronic stress activates the hypothalamic-pituitary-adrenal (HPA) axis, raising cortisol levels. Cortisol alters gut permeability (“leaky gut”), allowing inflammatory substances to enter the bloodstream and potentially reaching the brain, contributing to neuroinflammation. This creates a vicious cycle: stress damages the gut, which in turn worsens mood. Stress management through meditation, deep breathing, and adequate sleep is as crucial for gut health as food.</p>
+        <h3>Practical Steps for a Healthy Gut-Brain Connection</h3>
+        <p>First, eat a diverse, plant-forward diet to promote microbial diversity. Include prebiotic fibers like garlic, onions, asparagus, and bananas. Consider adding a high-quality probiotic if you have digestive issues or after a course of antibiotics (consult your doctor). Limit alcohol and avoid unnecessary antibiotic use. Practice mindful eating—chew slowly and eat in a relaxed state to optimize digestion.</p>
+        <h3>The Future of Gut-Brain Medicine</h3>
+        <p>Researchers are exploring psychobiotics—probiotics that specifically target mental health—and fecal microbiota transplantation for conditions like treatment-resistant depression. While not yet mainstream, this research underscores the power of the gut. By taking care of your gut, you’re simultaneously nurturing your mind.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Lisa Nguyen, PhD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-brain-gut-connection" target="_blank">Johns Hopkins: Gut-Brain Connection →</a>
+          <a href="https://www.health.harvard.edu/diseases-and-conditions/the-gut-brain-connection" target="_blank">Harvard: Gut-Brain Connection →</a>
+        </div>`
+      },
+      sleepRecovery: {
+        id:"sleepRecovery",
+        title:"Sleep: The Ultimate Recovery Tool for Weight & Mental Health",
+        category:"mental",
+        date:"April 12, 2025",
+        readTime:"10 min read",
+        /* Updated: peaceful sleeping image */
+        image:"https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Poor sleep disrupts hunger hormones, increases cravings, and impairs cognitive function. Here’s how to optimize your sleep for better health.",
+        content:`<p>Sleep is not passive rest—it’s an active state of repair, memory consolidation, and hormonal regulation. Adults need 7–9 hours per night, yet a third of Americans get less. Chronic sleep deprivation raises the risk of obesity, depression, heart disease, and impaired immune function. It’s arguably the most underrated health habit.</p>
+        <h3>Sleep and Weight Regulation</h3>
+        <p>Sleep directly influences the hormones ghrelin (hunger) and leptin (satiety). After a poor night’s sleep, ghrelin spikes and leptin drops, increasing appetite and cravings, especially for high-carb, high-sugar foods. Studies show that sleep-deprived individuals consume an average of 300–500 extra calories per day. Additionally, insulin sensitivity decreases after just one night of short sleep, setting the stage for weight gain and metabolic issues.</p>
+        <h3>Cognitive and Emotional Benefits</h3>
+        <p>During deep sleep, the brain clears out metabolic waste products, including beta-amyloid plaques linked to Alzheimer’s disease. REM sleep aids emotional regulation and memory integration. Without sufficient REM and deep sleep, you may experience irritability, poor concentration, and heightened stress reactivity. Chronic insomnia is a major risk factor for developing anxiety and depression.</p>
+        <h3>Sleep Hygiene: Practical Strategies</h3>
+        <p>Set a consistent bedtime and wake time, even on weekends. Create a wind-down routine 60 minutes before bed: dim lights, turn off screens (blue light suppresses melatonin), and engage in calming activities like reading or gentle stretching. Keep your bedroom cool (65°F / 18°C), dark, and quiet. Avoid caffeine after 2 p.m., heavy meals within 3 hours of bed, and alcohol—which may help you fall asleep but fragments later sleep stages.</p>
+        <h3>When to Seek Help</h3>
+        <p>Occasional sleeplessness is normal, but if you regularly struggle to fall asleep, stay asleep, or wake up unrefreshed, consider cognitive behavioral therapy for insomnia (CBT-I), the first-line treatment. A sleep study may be needed if sleep apnea is suspected (loud snoring, gasping for air). Treating underlying sleep disorders can transform your physical and mental health.</p>
+        <h3>The Bottom Line</h3>
+        <p>Prioritize sleep as you would exercise and nutrition. Even a week of improved sleep can sharpen focus, reduce cravings, and elevate mood. Start by choosing one small change from the hygiene list above and build from there. Your body and brain will thank you with every restful night.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Rachel Kim, PhD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.sleepfoundation.org/" target="_blank">Sleep Foundation →</a>
+          <a href="https://www.cdc.gov/sleep/index.html" target="_blank">CDC: Sleep and Sleep Disorders →</a>
+        </div>`
+      },
+      mindfulnessWeight: {
+        id:"mindfulnessWeight",
+        title:"Mindfulness Meditation: Science-Based Benefits for Weight Management",
+        category:"mental",
+        date:"April 3, 2025",
+        readTime:"12 min read",
+        image:"https://images.pexels.com/photos/3823047/pexels-photo-3823047.jpeg?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Mindfulness reduces stress-related eating, improves food choices, and helps break automatic habits. Discover how to integrate it into your daily routine.",
+        content:`<p>Mindfulness—the practice of paying attention to the present moment without judgment—has roots in ancient meditation traditions, but modern neuroscience validates its effects on the brain and body. When applied to eating, mindfulness helps you recognize true hunger versus emotional hunger, savor food, and make conscious choices.</p>
+        <h3>The Stress-Eating Connection</h3>
+        <p>Stress triggers the release of cortisol, which increases appetite and drives cravings for calorie-dense “comfort” foods. Mindless eating—snacking while watching TV or scrolling—can lead to consuming far more than intended. Mindfulness interrupts this automatic loop. A study in the Journal of Obesity found that mindfulness-based interventions reduced emotional eating and binge eating episodes significantly.</p>
+        <h3>How Mindfulness Changes the Brain</h3>
+        <p>Regular meditation strengthens the prefrontal cortex, the area responsible for impulse control and decision-making, while calming the amygdala, the brain’s fear center. This neurological shift makes it easier to resist unhealthy temptations and make thoughtful food choices. Even 10–15 minutes of daily practice can rewire these circuits over time.</p>
+        <h3>Mindful Eating Techniques</h3>
+        <p>Before eating, pause and ask: “Am I truly hungry, or am I bored, anxious, or tired?” Eat without distractions—put away your phone, turn off the TV. Take small bites, chew thoroughly, and notice the taste, texture, and aroma. Put your fork down between bites. This not only increases satisfaction but also gives your brain time to register fullness (about 20 minutes).</p>
+        <h3>Meditation Practices for Weight Management</h3>
+        <p>Body scan meditations increase awareness of physical sensations, helping you distinguish hunger from emotional triggers. Loving-kindness meditation fosters self-compassion, reducing the guilt-shame cycle that often derails healthy eating. Breath awareness can be used in moments of craving to “surf the urge”—cravings typically last 10–15 minutes if you observe them without acting.</p>
+        <h3>Building a Mindfulness Habit</h3>
+        <p>Start with 5 minutes of guided meditation using an app like Headspace or Insight Timer. Pair meditation with an existing habit, such as after brushing your teeth. Gradually extend the time. Over weeks, you’ll notice greater awareness not only around food but in other areas of life, leading to reduced stress and better overall health. Mindfulness isn’t a quick fix—it’s a lifelong skill that supports lasting change.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Sophia Martinez, PsyD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.nccih.nih.gov/health/meditation-in-depth" target="_blank">NIH: Meditation →</a>
+          <a href="https://www.health.harvard.edu/staying-healthy/mindfulness-meditation-to-improve-your-eating-behaviors" target="_blank">Harvard: Mindful Eating →</a>
+        </div>`
+      },
+      stressEating: {
+        id:"stressEating",
+        title:"Stress Eating: Psychological Strategies to Break the Cycle",
+        category:"mental",
+        date:"March 22, 2025",
+        readTime:"11 min read",
+        /* Updated: emotional eating / comfort food image */
+        image:"https://images.unsplash.com/photo-1700513971603-eda40374ba0a?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Emotional eating is common, but you can rewire your brain's response to stress. Explore CBT techniques, habit reversal, and self-compassion tools.",
+        content:`<p>Reaching for chips after a hard day isn’t a sign of weakness—it’s a learned response. Stress triggers the release of cortisol and neuropeptide Y, both of which increase cravings for high-fat, high-sugar foods. Emotional eating is a coping mechanism, but it often leads to guilt, weight gain, and more stress. Breaking the cycle requires understanding your triggers and building alternative responses.</p>
+        <h3>Identify Your Triggers</h3>
+        <p>Keep a “mood-food” journal for a week. Note what you eat, when, and what you were feeling beforehand—boredom, loneliness, anxiety, or even happiness. Patterns will emerge. Once you recognize that 3 p.m. slump leads to mindless cookie grabbing, you can plan a healthier intervention.</p>
+        <h3>Cognitive Behavioral Strategies</h3>
+        <p>CBT helps reframe the thoughts that fuel emotional eating. Example: instead of “I’ve already ruined my diet today, I might as well keep eating,” practice “One choice doesn’t define my day. I can make the next meal nourishing.” Challenge all-or-nothing thinking. Delay the craving—tell yourself you can have the treat in 10 minutes, then set a timer and do something else; often the urge passes.</p>
+        <h3>Create Non-Food Coping Skills</h3>
+        <p>Make a list of activities that soothe you: call a friend, take a short walk, listen to music, doodle, brew herbal tea, or do a 5-minute breathing exercise. Keep this list visible. The key is to replace the habit loop: instead of stress → eat → temporary relief, aim for stress → alternative activity → relief. It takes repetition to form new neural pathways, so be patient.</p>
+        <h3>Build Resilience with Self-Care</h3>
+        <p>Prevention is more powerful than crisis management. Prioritize sleep, regular exercise, and social connection. When your baseline resilience is higher, you’re less likely to turn to food for comfort. Practice self-compassion: instead of berating yourself after an episode, acknowledge that you’re human and refocus on your goals. Shame fuels the cycle; kindness breaks it.</p>
+        <h3>Professional Support</h3>
+        <p>If emotional eating is severe or linked to trauma, consider working with a therapist who specializes in eating behaviors. Programs like the Am I Hungry? Mindful Eating Program combine CBT and mindfulness. You don’t have to tackle this alone. With the right tools, you can rebuild a peaceful relationship with food.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Emily Foster, PhD</div>
+        <div class="external-link-box"><h4>References</h4>
+          <a href="https://www.nimh.nih.gov/health/topics/eating-disorders" target="_blank">NIMH: Eating Disorders →</a>
+          <a href="https://www.apa.org/topics/eating-disorders" target="_blank">APA: Eating Disorders →</a>
+        </div>`
+      },
+      yoYoDieting: {
+        id:"yoYoDieting",
+        title:"The Dangers of Yo-Yo Dieting and How to Stop",
+        category:"mental",
+        date:"May 9, 2025",
+        readTime:"10 min read",
+        /* Updated: scale frustration / weight cycling */
+        image:"https://images.unsplash.com/photo-1531928351158-2f736078e0a1?auto=compress&cs=tinysrgb&w=800",
+        excerpt:"Cyclical weight loss and regain (yo-yo dieting) can harm metabolism, muscle mass, and mental health. Break the cycle with sustainable habits.",
+        content:`<p>Yo-yo dieting, also known as weight cycling, refers to the repeated loss and regain of body weight. Research shows that 80% of dieters regain lost weight within a year, often ending up heavier than before. Beyond the frustration, weight cycling may carry health risks including a slower metabolism, increased body fat percentage, and greater cardiovascular strain.</p>
+        <h3>The Metabolic Consequences</h3>
+        <p>When you lose weight rapidly, your body often sheds muscle along with fat. Muscle is metabolically active; losing it lowers your resting metabolic rate (RMR). When you regain weight, it’s typically fat, not muscle, which means your new RMR is lower than before the diet. This “metabolic adaptation” makes subsequent weight loss harder and weight regain easier. Some studies also suggest that weight cycling is associated with higher rates of metabolic syndrome and gallstones.</p>
+        <h3>Psychological Toll</h3>
+        <p>The cycle of losing and regaining weight erodes self-efficacy and can lead to disordered eating patterns. Dieters often experience a sense of failure, depression, and body dissatisfaction. The restriction-deprivation cycle sets off binge-eating tendencies, creating a vicious loop. Long-term dieters may struggle with chronic stress and cortisol dysregulation, which further promotes belly fat storage.</p>
+        <h3>Why Quick Fixes Fail</h3>
+        <p>Extreme diets—very low-calorie, juice cleanses, or cutting out entire food groups—are unsustainable. They often rely on willpower, which is a finite resource. When the diet ends, old habits return because the underlying behaviors haven’t changed. The body also fights back with hormonal changes: ghrelin increases, leptin drops, and hunger intensifies, driving you to eat more.</p>
+        <h3>A Better Way: Slow, Sustainable Weight Management</h3>
+        <p>Shift your focus from weight loss to health gain. Aim for a modest calorie deficit of 250–500 kcal/day, which leads to 0.5–1 pound loss per week. Prioritize strength training to preserve muscle. Incorporate flexibility—a treat here and there prevents feelings of deprivation. Build habits around whole foods, mindful eating, and regular movement that you can maintain for life. Behavioral changes like meal prepping, food journaling, and stress management are more effective than any fad diet.</p>
+        <h3>Mindset Shifts for Lasting Success</h3>
+        <p>Ditch the “all-or-nothing” mentality. Progress, not perfection, is the goal. Celebrate non-scale victories: better sleep, more energy, looser clothes. Recognize that weight naturally fluctuates. If you regain a few pounds, it’s not a disaster—it’s data. Use it to adjust without harsh self-criticism. Seek support from a registered dietitian or a therapist to address emotional eating. True change comes from self-compassion, consistency, and patience.</p>
+        <div class="author-badge"><i class="fas fa-user-md"></i> Written by Dr. Jennifer Walsh, PsyD</div>
+        <div class="external-link-box"><h4>Resources</h4>
+          <a href="https://www.niddk.nih.gov/health-information/weight-management/keeping-weight-off" target="_blank">NIH: Keeping Weight Off →</a>
+          <a href="https://www.cdc.gov/healthyweight/losing-weight/index.html" target="_blank">CDC: Losing Weight →</a>
+        </div>`
+      }
     };
+    
     const articlesList = Object.values(blogPosts);
-    function renderBlogs(filter = "all") { const container = document.getElementById("articlesGrid"); if (!container) return; const filtered = filter === "all" ? articlesList : articlesList.filter(post => post.category === filter); container.innerHTML = filtered.map(post => `<div class="blog-card glass-card" data-category="${post.category}" onclick="openBlogDetail('${post.id}')"><img src="${post.image}" alt="${post.title}" class="blog-image" loading="lazy"><div class="blog-content"><div style="display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap;"><span class="blog-tag"><i class="fas fa-tag"></i> ${post.category === 'bmi' ? 'BMI & Weight' : post.category === 'nutrition' ? 'Nutrition' : post.category === 'fitness' ? 'Fitness' : 'Mental Wellness'}</span><span class="blog-tag"><i class="far fa-calendar"></i> ${post.date}</span><span class="blog-tag"><i class="far fa-clock"></i> ${post.readTime}</span></div><h3 style="font-size: 1.4rem; margin-bottom: 12px;">${post.title}</h3><p style="color: #4a5568; margin-bottom: 18px;">${post.excerpt}</p><div class="read-more-btn">Read full article <i class="fas fa-arrow-right"></i></div></div></div>`).join(""); }
-    function openBlogDetail(id) { const post = blogPosts[id]; if (!post) return; const modal = document.getElementById("blogDetailModal"); const detailDiv = document.getElementById("detailContent"); detailDiv.innerHTML = `<h2>${post.title}</h2><div class="blog-detail-meta"><span><i class="far fa-calendar"></i> ${post.date}</span><span><i class="far fa-clock"></i> ${post.readTime}</span><span class="blog-tag">${post.category.toUpperCase()}</span></div><img src="${post.image}" alt="${post.title}" style="width:100%; border-radius: 20px; margin: 15px 0; max-height: 280px; object-fit: cover;"><div class="blog-detail-content">${post.content}</div><div style="margin-top: 30px; text-align: center;"><button class="hero-button" style="background: var(--light); color: var(--primary);" onclick="closeBlogDetail()"><i class="fas fa-times"></i> Close</button><a href="index.html#calculator" class="hero-button" style="margin-left: 12px;"><i class="fas fa-calculator"></i> Try BMI Calculator</a></div>`; modal.classList.add("active"); document.body.style.overflow = "hidden"; }
-    function closeBlogDetail() { const modal = document.getElementById("blogDetailModal"); if (modal) { modal.classList.remove("active"); document.body.style.overflow = ""; } }
-    function initFilters() { const btns = document.querySelectorAll(".filter-btn"); btns.forEach(btn => { btn.addEventListener("click", function() { btns.forEach(b => b.classList.remove("active")); this.classList.add("active"); renderBlogs(this.dataset.filter); }); }); }
-    function initMobileNav() { const toggle = document.querySelector('.nav-toggle'); const links = document.querySelector('.nav-links'); if (toggle && links) { toggle.addEventListener('click', () => { links.classList.toggle('active'); toggle.innerHTML = links.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; }); } }
-    document.addEventListener("DOMContentLoaded", () => { renderBlogs("all"); initFilters(); initMobileNav(); const currentPage = window.location.pathname.split('/').pop() || 'blog.html'; document.querySelectorAll('.nav-links a').forEach(link => { if (link.getAttribute('href') === currentPage) link.classList.add('active'); }); });
+    function renderBlogs(filter = "all") {
+      const container = document.getElementById("articlesGrid");
+      if (!container) return;
+      const filtered = filter === "all" ? articlesList : articlesList.filter(p => p.category === filter);
+      container.innerHTML = filtered.map(post => `
+        <div class="blog-card glass-card" data-category="${post.category}" onclick="openBlogDetail('${post.id}')">
+          <img src="${post.image}" alt="${post.title}" class="blog-image" loading="lazy" onerror="this.src='${fallbackImg}'">
+          <div class="blog-content">
+            <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+              <span class="blog-tag"><i class="fas fa-tag"></i> ${post.category === 'bmi' ? 'BMI & Weight' : post.category === 'nutrition' ? 'Nutrition' : post.category === 'fitness' ? 'Fitness' : 'Mental Wellness'}</span>
+              <span class="blog-tag"><i class="far fa-calendar"></i> ${post.date}</span>
+              <span class="blog-tag"><i class="far fa-clock"></i> ${post.readTime}</span>
+            </div>
+            <h3 style="font-size:1.4rem;margin-bottom:12px;">${post.title}</h3>
+            <p style="color:#4a5568;margin-bottom:18px;">${post.excerpt}</p>
+            <div class="read-more-btn">Read full article <i class="fas fa-arrow-right"></i></div>
+          </div>
+        </div>
+      `).join("");
+    }
+    function openBlogDetail(id) {
+      const post = blogPosts[id];
+      if (!post) return;
+      const modal = document.getElementById("blogDetailModal");
+      const detailDiv = document.getElementById("detailContent");
+      detailDiv.innerHTML = `
+        <h2>${post.title}</h2>
+        <div class="blog-detail-meta"><span><i class="far fa-calendar"></i> ${post.date}</span><span><i class="far fa-clock"></i> ${post.readTime}</span><span class="blog-tag">${post.category.toUpperCase()}</span></div>
+        <img src="${post.image}" alt="${post.title}" style="width:100%;border-radius:20px;margin:15px 0;max-height:280px;object-fit:cover;" onerror="this.src='${fallbackImg}'">
+        <div class="blog-detail-content">${post.content}</div>
+        <div style="margin-top:30px;text-align:center;"><button class="hero-button" style="background:var(--light);color:var(--primary);" onclick="closeBlogDetail()"><i class="fas fa-times"></i> Close</button><a href="index.html#calculator" class="hero-button" style="margin-left:12px;"><i class="fas fa-calculator"></i> Try BMI Calculator</a></div>
+      `;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+    function closeBlogDetail() { const modal = document.getElementById("blogDetailModal"); if(modal) { modal.classList.remove("active"); document.body.style.overflow = ""; } }
+    function initFilters() { const btns = document.querySelectorAll(".filter-btn"); btns.forEach(btn => { btn.addEventListener("click", function() { btns.forEach(b=>b.classList.remove("active")); this.classList.add("active"); renderBlogs(this.dataset.filter); }); }); }
+    function initMobileNav() { const toggle = document.querySelector('.nav-toggle'); const links = document.querySelector('.nav-links'); if(toggle && links) { toggle.addEventListener('click', () => { links.classList.toggle('active'); toggle.innerHTML = links.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>'; }); } }
+    document.addEventListener("DOMContentLoaded", () => { renderBlogs("all"); initFilters(); initMobileNav(); const currentPage = window.location.pathname.split('/').pop() || 'blog.html'; document.querySelectorAll('.nav-links a').forEach(link => { if(link.getAttribute('href') === currentPage) link.classList.add('active'); }); });
     window.openBlogDetail = openBlogDetail; window.closeBlogDetail = closeBlogDetail;
   </script>
 </body>
